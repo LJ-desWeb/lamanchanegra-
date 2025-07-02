@@ -1,0 +1,415 @@
+/* -------------- otra forma de incorporar fuentes externas ---------------------------------------------------------------------------- */
+/* -------------- otra forma de incorporar fuentes externas ---------------------------------------------------------------------------- */
+/* -------------- otra forma de incorporar fuentes externas ---------------------------------------------------------------------------- */
+@import url('https://fonts.googleapis.com/css2?family=Pirata+One&display=swap');
+/* ------------------------ Propiedades para todo el documento ------------------------------------------------------------------------- */
+/* ------------------------ Propiedades para todo el documento ------------------------------------------------------------------------- */
+/* ------------------------ Propiedades para todo el documento ------------------------------------------------------------------------- */
+*{
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: 'Pirata One', cursive;
+  background: #FCEABB;
+  background: linear-gradient(to right, #FCEABB 0%, #F8E4BB 51%, #FBDF93 100%);
+}
+
+/* ====== HEADER =========== HEADER ======= HEADER ========= HEADER ====== HEADER ================================================= */
+/* ====== HEADER =========== HEADER ======= HEADER ========= HEADER ====== HEADER ================================================= */
+/* ====== HEADER =========== HEADER ======= HEADER ========= HEADER ====== HEADER ================================================= */
+/* ====== HEADER =========== HEADER ======= HEADER ========= HEADER ====== HEADER ================================================= */
+header.header {
+  height: 20vh;
+  background: url('../img/header-madera-negra-ancho-250-.webp') no-repeat center;
+  background-size: cover;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  z-index: 1000;
+}
+/*  ------------ fin datos generales de HEADER ----------------*/
+
+
+/* ============================================= LOGO LA MANCHA NEGRA ================================================= */
+/* ============================================= LOGO LA MANCHA NEGRA ================================================= */
+.logo-lmn{
+  width:9vw; /* 70px - se aplica a la imagen del logo */
+  transition: transform 0.3s ease;
+}
+
+.glow-lmn { /* clase para generar aura */
+  transition: transform 0.3s ease, filter 0.3s ease;
+  filter: drop-shadow(0 0 10px rgb(255, 255, 255));
+}
+
+/* 🌟 Aplica la animación pulsante solo cuando NO está en hover */
+.glow-lmn:not(:hover) {
+  animation: pulse-lmn 2s infinite;
+}
+
+/* 🚀 Al pasar el ratón: escala + resplandor fijo */
+.glow-lmn:hover {
+   transform: scale(1.5) translateX(40px);
+  filter: drop-shadow(0 0 25px rgb(226, 55, 3));
+}
+
+@keyframes pulse-lmn {
+  0%, 100% { filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.6)); }
+  50% { filter: drop-shadow(0 0 20px rgba(255, 255, 255, 1)); }
+}
+/*  ------------------------------------------- fin LOGO LA MANCHA NEGRA  -----------------------------------------------*/
+
+
+/* ============================================= Menú NAV ========================================================== */
+/* ============================================= Menú NAV ========================================================== */
+.menu {  /* clase del nav */
+  display: flex;
+  gap: 8rem;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 0;
+}
+.menu a { /* clase del enlace */
+  text-decoration: none;
+  color: goldenrod;
+  font-size: 2.5rem;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  will-change: transform;
+}
+.menu .titnav {  /* clase del texto */
+  margin-top: 0.2rem;
+}
+.menu a.titnav {
+  text-decoration: none;
+  color: goldenrod;
+  font-size: 3rem;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  will-change: transform;
+  margin-top: 0.2rem;
+}
+.menu a:hover {
+  background-image: url('../img/textura-oro.webp');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent; /* <- ESTA ES LA CLAVE */
+  -webkit-text-stroke: 1px #000000;
+  color: transparent;
+  transform: scale(1.3); /* Menor escala para mantener la legibilidad */
+  filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.5)); /* sombra externa sin afectar el fondo */
+}
+
+/* ---------------- Palpitación para enlace principal landing page  ----------- */
+.buscaTesoro {
+  display: inline-block;       /* Para que el transform y la animación afecten correctamente */
+  animation: palpitacion 3s infinite ease-in-out;
+}
+/* 1. Se define la animación “pulse” */
+@keyframes palpitacion {
+  0% { transform: scale(1); opacity: 1; } 
+  50% { transform: scale(1.9); opacity: 0.8; }
+  100% { transform: scale(1); opacity: 1; }
+}
+/* ========================================= FIN Menú NAV ========================================================== */
+
+
+/*  ---------------------------------------------- LOGIN -----------------------------------------------------*/
+/*  ---------------------------------------------- LOGIN -----------------------------------------------------*/
+.logo-login {
+  width: 10vw; /* 70px */
+  transition: transform 0.3s ease;
+}
+.glow-login { /* clase para generar aura */
+  transition: transform 0.3s ease, filter 0.3s ease;
+  filter: drop-shadow(0 0 10px rgb(255, 255, 255));
+}
+/* 🌟 Aplica la animación pulsante solo cuando NO está en hover */
+/*.glow-img:not(:hover) {
+  animation: pulse-login 2s infinite;
+}
+@keyframes pulse-login {
+0%, 100% {filter: drop-shadow(0 0 10px rgba(238, 151, 151, 0.6)); }
+50% { filter: drop-shadow(0 0 20px rgba(255, 255, 255, 1)); }
+}*/
+/* 🚀 Al pasar el ratón: escala + resplandor fijo */
+.glow-login:hover {
+   transform: scale(1.5) translateX(-40px) translateY(20px) rotate(-20deg);
+  /* filter: drop-shadow(0 0 10px rgb(226, 55, 3));*/
+  animation: pulse-login 2s infinite;
+  filter: drop-shadow(0 0 20px rgb(255, 255, 255));
+
+}
+/*  ----------------------------------------- FIN --- LOGIN -----------------------------------------------------*/
+
+/* ---------------------------------------- USUARIO LOGUEADO --------------------------------------- */
+/* ---------------------------------------- USUARIO LOGUEADO --------------------------------------- */
+/* ---------------------------------------- USUARIO LOGUEADO --------------------------------------- */
+
+#userArea {
+  display: flex;
+  justify-content: space-between; /* separa spans a la izquierda, botón a la derecha */
+  align-items: center;
+  gap: 1rem;
+  flex-direction: row;
+  width: 100%;
+  max-width: 350px; /* ajusta si necesitas más o menos ancho */
+}
+/* Contenedor para los saludos uno encima del otro */
+#userGreeting_a,
+#userGreeting_b {
+  display: block;
+  width: 100%;
+  text-align: left;
+}
+
+/* Agrupamos los dos span en un div para que estén en columna */
+.saludos-enlace {
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-right: 1rem;
+  /* flex-grow: 1;*/ 
+}
+
+.saludos-enlace:hover .felicitacion {
+  color:rgb(211, 63, 63); /* Efecto al pasar el ratón */
+  transform: scale(1.1);
+}
+ 
+/* Estilos del botón */
+#bot-login-out{
+  display:none;
+  font-family: 'Pirata One', cursive; ;
+  font-size: 2rem;
+  background-color: transparent;
+  color:goldenrod;
+  cursor: pointer;
+  border:none;
+  margin-left: 40px;
+  white-space: nowrap;
+}
+#bot-login-out:hover{
+  transform:scale(1.2);
+  color:greenyellow;
+}
+
+.felicitacion {
+  color: rgb(255, 251, 0);
+  display: flex;
+
+  font-size: 2rem; /* MODIFICADO: antes 3rem */
+  flex-wrap: wrap; /* AÑADIDO: permite salto si es necesario */
+  max-width: 250px; /* AÑADIDO: evita que se desborde horizontalmente */
+  /*word-break: break-word; /* AÑADIDO: divide si se pasa */
+
+  transition: all 0.3s ease;
+  will-change: transform;
+}
+
+/*  ------------------------------------------ FIN USUARIO LOGUEADO----------------------------------------------*/
+
+
+/* -------------------------------------------- SECCION ----------------------------------------------- */
+/* -------------------------------------------- SECCION ----------------------------------------------- */
+/* -------------------------------------------- SECCION ----------------------------------------------- */
+/* GRID + DISPLAY */
+.container-fluid {
+  width: 100%;
+  padding-right: var(--bs-gutter-x, 0.75rem);
+  padding-left: var(--bs-gutter-x, 0.75rem);
+  margin-right: auto;
+  margin-left: auto;
+}
+.section {
+  padding: 140px 20px 60px; /* para compensar el header fijo */
+  min-height: 100vh;
+  text-align: center;
+}
+.text-center {
+  text-align: center !important;
+}
+
+/* ------------------- default styling --- se añade .titulo_0_--------------- */
+.titulo_0_ {
+  font-size: 5rem;
+  margin-bottom: 1rem;
+  
+  color: #4b3a28;
+  text-shadow: 2px 2px #f4e0b3;
+  transition: all 0.4s ease;
+  text-align: center;
+  margin-top: 10rem;
+}
+/* ------------------- display  ------------------------------------------- */
+.d-flex {
+  display: flex !important;
+}
+.justify-content-between {
+  justify-content: space-between !important;
+}
+.align-items-center {
+  align-items: center !important;
+}
+
+/* -------------------- SPACING ------------------------------------------- */
+.px-3 {
+  padding-left: 1rem !important;
+  padding-right: 1rem !important;
+}
+.py-3 {
+  padding-top: 1rem !important;
+  padding-bottom: 1rem !important;
+}
+.mt-3 {
+  margin-top: 1rem !important;
+}
+.mx-2 {
+  margin-left: 0.5rem !important;
+  margin-right: 0.5rem !important;
+}
+
+
+/* -----------------------   RESPONSIVE HEADER-NAV ---------------------------- */     
+/* -----------------------   RESPONSIVE HEADER-NAV ---------------------------- */
+/* -----------------------   RESPONSIVE HEADER-NAV ---------------------------- */
+/* -----------------------   RESPONSIVE HEADER-NAV ---------------------------- */
+
+/* ===================== TABLETS (768px - 1024px) ===================== */
+@media (min-width: 768px) and (max-width: 1024px) {
+/* ------ HEADER ----------------*/
+header.header {
+  height: 18vh;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+/* ---- LOGO LA MANCHA NEGRA ---- */
+.logo-lmn,
+.logo-login {
+  width: 14vw;
+}
+.glow-lmn:hover {
+  transform: scale(1.3) translateX(10px);
+}
+/* ---- Menú NAV ------------------ */
+.menu{
+  gap:9rem;
+}
+.menu a {
+  font-size: 4rem;
+}
+/* ---- LOGIN ---------------------- */
+.glow-login:hover {
+  transform: scale(1.3) translateX(-40px) translateY(20px);
+}
+/* ---- SECCION -------------------- */
+.titulo_0_ {
+  font-size: 3rem;
+  margin-top:1rem;
+}
+}
+
+/* =============== MÓVIL LANDSCAPE (576px - 767px) =================== */
+@media (min-width: 576px) and (max-width: 767px) {
+/* ------ HEADER ----------------*/
+header.header {
+  height: 18vh;
+  flex-direction: row;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+/* ---- LOGO LA MANCHA NEGRA ---- */
+.logo-lmn,
+.logo-login {
+  width: 14vw;
+}
+.glow-lmn:hover {
+  transform: scale(1.3) translateX(10px);
+}
+/* ---- Menú NAV ------------------ */
+.menu{
+  gap:9rem;
+}
+.menu a {
+  font-size: 2rem;
+}
+/* ---- LOGIN ---------------------- */
+.glow-login:hover {
+  transform: scale(1.3) translateX(-40px) translateY(20px);
+}
+/* ---- SECCION -------------------- */
+.titulo_0_ {
+  font-size: 3rem;
+  margin-top:1rem;
+}
+}
+
+/* =============== MÓVIL PORTRAIT (< 576px) ========================= */
+@media (max-width: 575px) {
+header.header {
+  height: 16vh;
+  flex-wrap: wrap;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+.logo-lmn,  
+.logo-login {
+  width: 14vw;
+}
+.glow-lmn:hover {
+transform: scale(1.3) translateX(10px);
+}
+.menu {
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.menu a {
+  font-size: 1.3em;
+}
+.glow-login:hover {
+  transform: scale(1.3) translateX(-40px) translateY(20px);
+}
+.titulo_0_ {
+  font-size: 3rem;
+  margin-top:1rem;
+}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

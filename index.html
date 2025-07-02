@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- etiqueta meta, con palabras clave en posicionamiento -->
+        <meta name="keywords" content="Aventura,tesoro,pirata,juego,libro,mapa,">
+        <meta name="author" content="Solweb Estudio">
+        <meta name="author" content="Luis J. Borge">
+
+        <!-- <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon" /> -->
+        <link rel="icon" type="image/png" href="/img/favicon/favicon-96x96.png" sizes="96x96">
+        <link rel="icon" type="image/svg+xml" href="/img/favicon/favicon.svg">
+        <link rel="shortcut icon" href="/img/favicon/favicon.ico">
+        <link rel="apple-touch-icon" sizes="180x180" href="/img/favicon/apple-touch-icon.png">
+        <link rel="manifest" href="/img/favicon/site.webmanifest">
+
+
+        <title>lamanchanegra</title>
+
+        <!-- enlaces a ficheros de estilos -->
+        <link rel="stylesheet" href="css/estilo-header-index.css"><!--  Fondo + header + baner cookies -->
+        <link rel="stylesheet" href="css/estilo-footer-carajo.css"><!--  footer + carajo  -->
+        
+        <link rel="stylesheet" href="css/estilo-mensaje-invisible.css"><!--  Mensaje  -->
+        <link rel="stylesheet" href="css/estilo-memory.css"><!--  Memory  -->
+        <link rel="stylesheet" href="css/estilo-call-to-action.css"><!--  Seccion 3-mensaje Call to action -->
+        
+        <!-- google fonts Pirata One - Edu+ALD+Hand -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>  
+
+        <link href="https://fonts.googleapis.com/css2?family=Edu+QLD+Hand:wght@400..700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Pirata+One&display=swap" rel="stylesheet">
+
+        <!-- bootstrap 
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"> -->
+
+        <!-- ENLACE A los iconos del footer, Facebook, instagram, etc , se agrega  Font Awesome-->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+        <style>
+                /*  <weight>: Use a value from 400 to 700
+                    <uniquifier>: Use a unique and descriptive class name
+                    .edu-qld-hand-<uniquifier> {
+                        font-family: "Edu QLD Hand", cursive;
+                        font-optical-sizing: auto;
+                        font-weight: <weight>;
+                        font-style: normal;
+                    }
+                */
+                /*  
+                    .pirata-one-regular {
+                        font-family: "Pirata One", system-ui;
+                        font-weight: 400;
+                        font-style: normal;
+                    } 
+                */                
+        </style>
+</head>
+
+<body >
+    <!--  -------------------------------- header ------------------------------------------ -->
+
+    <header class="header d-flex justify-content-between align-items-center px-3">
+        <a href="solweb-estudio-info.html" target="_blank" class="logo-left">
+            <img src="img/logo-la-mancha-negra.webp" alt="Logo La Mancha Negra" class="logo-lmn  glow-lmn">
+        </a>
+
+
+        <button id="menu-toggle" class="menu-toggle" aria-label="Abrir menú">Menú
+             <img src="img/menu-hamburguesa-pirata.webp" alt="Abrir menú" width="40" height="40">
+            <!--<i class="fas fa-bars"></i> -->
+        </button>
+
+
+
+        <nav id="main-menu" class="menu py-3">
+            <a href="index.html" class="inicio" id="inicio"><p class="titnav">Inicio</p></a>
+            <a href="#tit_sec_1" class="buscaTesoro" id="buscaTesoro"><p class="titnav">Busca el Tesoro</p></a>   
+        </nav>
+        
+        <div id="userArea">
+            <a href="libros-de-piratas-lmn.html" class="saludos-enlace"> 
+                <div class="saludos">
+                    <span id="userGreeting_a" class="felicitacion"></span>
+                    <span id="userGreeting_b" class="felicitacion"></span>
+                </div>
+            </a> 
+            <button id="bot-login-out">Cerrar sesión</button>
+        </div>
+
+        <a href="login-lmn.html" class="logo-right">
+            <img src="img/login-pirata.webp" alt="figura lego para login" class="logo-login glow-login">
+        </a>
+    </header>
+                    
+        <main class="container-fluid" ><!-- -->
+            <!--     
+            <section id="sec1" class="section hidden-section text-center" >-->
+            <h1 class="titulo_0_">¡ La Mancha Negra!</h1><br><br>
+                
+            <!-- SECCION 1 -------MENSAJE OCULTO------------------------  -->
+            <section id="sec_1" class="seccion1" hidden>
+
+                <h2 class="titulo_1_" id="tit_sec_1">¡Bienvenido a bordo!</h2>
+                <h2 class="titulo_1_">¡ Explora los siete mares !</h2>
+
+                <div class="pergamino-container"> 
+                    <img src="img/002_03_cuadro_transp_1200x940_01.png" alt="Pergamino" class="pergamino">
+                    <article>
+                        <div class="contenido-pergamino">
+                            <p class="texto_invisible hidden-text" id="mensajePirata">
+                            <span>¡Este&nbsp;puede</span> <span>&nbsp;</span>
+                            <span>ser&nbsp;tu&nbsp;mapa</span> 
+                            <span>&nbsp;</span> <span>del&nbsp;tesoro!</span> <span>&nbsp;</span> 
+                            <span>pero&nbsp;ahora</span> <span>&nbsp;</span> <span>eres&nbsp;solo</span> <span>&nbsp;</span>
+                            <span>un&nbsp;grumete</span> <span>&nbsp;</span> <span>¿Quieres&nbsp;enrolarte</span> <span>&nbsp;</span>
+                            <span>en&nbsp;mi&nbsp;tripulación?</span> <span>&nbsp;</span> <span>Si&nbsp;es&nbsp;así,</span> <span>&nbsp;</span> 
+                            <span>tendrás&nbsp;que</span> <span>&nbsp;</span> 
+                            <span>pasar&nbsp;una&nbsp;prueba</span> 
+                            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                            <span>¡¡¡&nbsp;JUEGA&nbsp;!!!</span> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>&nbsp;</span><span>&nbsp;</span><br>
+                            <span>Debes demostrar que estás a la altura&nbsp;&nbsp;&nbsp;</span> <br>
+                            <span class="activar-final">¡¡Supera la prueba!!</span>
+                            </p>
+                    </article>                        
+                        <a href="#sec_2" class="brujula-link" id="brujula-enlace">
+                        <img src="img/002_08_Brujula_2_256x256_.png" alt="Brújula" class="brujula">
+                        </a>
+                                                
+                    </div>
+
+                </div>
+            </section> <!-- FIN seccion 1 - mensaje -->
+    
+            <!-- SECCION 2 -------------------------------------------------  -->
+            <section id="sec_2" class="section hidden-section text-center" hidden>
+                <h2 class="titulo_1_" id="s1t1_1">Tu Misión:&nbsp; ¡&nbsp; Demostrar tus habilidades&nbsp; !</h2>
+                                    
+                <div class="zona-juego">
+                    <img src="img/000_03_fond_headrer_05_04_.webp" alt=" imagen mesa" class="tablero">
+                    <div class="contenedor-mesa">
+                        <div class="mesa" id="mesaJuego"></div>
+                                                        
+                        <div class="info-panel">
+                            <div>Tiempo: <span id="cronometro">00:00</span></div>
+                            <div>Tiempo máximo: <span id="tiempoMaximo">00:30</span></div>
+                            <div>Partidas: <span id="partidas">0</span></div>
+                        </div>
+                    </div>
+                    <div class="barco-reset" id="resetBtn" title="Iniciar partida">¡Zarpa!</div>
+                </div>
+
+                <div class="popup" id="popupMensaje">
+                    <h3 id="mensajeFinal"></h3>
+                    <img id="gifFinal" src="img/004_el_barco.png" alt="gif cañon antiguo"/>
+                    <button id="cerrarPopup">Cerrar</button>
+                </div>
+            </section>
+
+            <!-- SECCION 3 -------------------------------------------------  -->
+            <section id="sec_3" class="section hidden-section text-center" hidden>
+               
+                <span><h2 class="titulo_1_">Envíanos un mensaje en botella</h2></span>
+                <span><img src="img/005_01_Botella_mensaje_01_.png" alt="botella con mensaje" class="bot_mensaje" id="bot_mensaje"></span>
+
+                <div class="call_to_action">
+                    <img src="img/005_02_Mensaje registro_01_.webp" alt=" imagen pergamino con texto" class="pergamino_2">
+                    
+                        <a href="registro-lmn.html" class="lacre_LMN" id="lacre_LMN">
+                        <img src="img/005_03_Lacre_LMN_07_256x256_.webp" alt="sello de lacre La Mancha Negra" class="lacre_LMN"></a>
+                    </div>
+                    
+                </div>
+
+
+            </section>
+            
+            <!-- ----------------------------------  Botón para subir hacia arriba, a la cabecera -------------------------------------------------------  -->
+            <!-- ----------------------------------  Botón para subir hacia arriba, a la cabecera -------------------------------------------------------  -->
+            <!-- ----------------------------------  Botón para subir hacia arriba, a la cabecera -------------------------------------------------------  -->
+            <button id="btn-arriba" title="Volver arriba" class="bot_fuente"><img src="img/000_10_carajo_143x298x72_02.png" alt="imagen de un carajo" id="carajo"><span class="texto-carajo">Sube al carajo</span></button>
+        </main>
+
+
+    <!-- --------------------- FOOTER ---------------------------------------- -->
+    <footer class="footer">
+        <div class="footer-main"></div>
+            <button class="footer-toggle" aria-expanded="false">☰ Menú del sitio</button>
+            
+            <div class="footer-content closed">
+                <div class="footer-container">
+                    <!-- Columna: Logo -->
+                    <div class="footer-col">
+                        <a href="solweb_estudio.html" target="_blank">
+                        <img src="img/000_20_LOGO_SolWeb_Estudio_00_fnegro_02_.webp" alt="SolWeb Estudio" class="footer-logo">
+                        </a>
+                        <address>
+                        <p class="parr-1">Contacto </p><br>
+                        <a href="mailto:solweb@gmail.com" class="parr-1">solweb@gmail.com</a>
+                        </address>                     
+                    </div>
+
+                    <!-- Columna: Enlaces -->
+                    <div class="footer-col">
+                        <h4>Enlaces</h4>
+                        <ul>
+                            <li><a href="#sec1">Inicio</a></li>
+                            <li><a href="registro-lmn.html">Registro</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Columna: Newsletter -->
+                    <div class="footer-col">
+                        <h4>Suscríbete a nuestra newsletter</h4>
+                        <form id="newsletter-form" action="https://formsubmit.co/lujebor@gmail.com" method="POST" target="_blank" novalidate>
+                        <input type="email" id="email-input" name="correo" placeholder="ejemplo@correo.com" required>
+                        <div id="email-message" class="email-message"></div>
+                        <p class="privacy-note">
+                            Al enviar tu email, aceptas que SolWeb Estudio almacene tus datos solo para enviarte información relacionada. No se compartirán con terceros.
+                        </p>
+                        <button type="submit" class="subscribe-btn"><p class="p_boton">Suscribirse</p></button>
+                        <div id="submit-message" class="submit-message"></div>
+                        </form>
+                    </div>
+
+                    <!-- Columna: Redes Sociales -->
+                    <div class="footer-col">
+                        <h4>Síguenos</h4>
+                        <ul class="social-icons">
+                        <li><a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i> Facebook</a></li>
+                        <li><a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i> Instagram</a></li>
+                        </ul>
+                    </div>
+
+                </div>
+            
+
+                <div class="footer-legal">
+                    <a href="politica-privacidad-lmn.html">Política de Privacidad</a>&nbsp;&nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp;&nbsp;
+                    <a href="aviso-legal-lmn.html">Aviso Legal</a>&nbsp;&nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp;&nbsp;
+                    <a href="politica-cookies-lmn.html">Política de Cookies</a>
+                </div>
+
+                <div class="footer-bottom">
+                    <p>&copy; SOLWEB Estudio - 2025. Todos los derechos reservados.</p>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+     
+    <!-- --------------------- BANER COOKIES --------------------------------- -->
+    <div id="cookie-banner" class="cookie-banner">
+
+        <div class="cookie-buttons">
+            <button id="cookie-accept">Aceptar</button>
+            <button id="cookie-reject">Rechazar</button>
+        </div>
+
+        <div class="cookie-content">
+            <p>
+                Utilizamos cookies y otras tecnologías para garantizar el correcto funcionamiento, la seguridad y analizar el tráfico de nuestra plataforma. Si estás de acuerdo 
+                con el uso de todas las cookies. haz click en "Aceptar todas". Al hacerlo, consientes que compartamos la información con terceros.
+                Al continuar navegando, aceptas nuestro uso de cookies. Para obtener más información, consulta nuestra 
+                <a href="/politica_privacidad_00_.html" target="_blank">Política de Privacidad,</a>&nbsp;y&nbsp;<a href="/politica_cookies_00_.html" target="_blank">Política de Cookies.</a>  </p>      </p>
+        </div>
+   
+    </div>   
+    
+    
+    <!-- --------------------- AUDIOS --------------------------------- -->
+    <audio id="voltear" src="audio/004_pick.mp3" preload="auto"></audio>
+    <audio id="match" src="audio/004_pick.mp3" preload="auto"></audio>
+    <audio id="victoria" src="audio/004_pick.mp3" preload="auto"></audio>
+    <audio id="disparo" src="audio/004_cannon_5s_.mp3" autoplay></audio>
+    <audio id="olas" src="audio/004_navegar_02_.mp3" autoplay></audio>
+
+
+    <!-- --------------------- SCRIPTS --------------------------------- -->
+    <script src="js/script-index.js" defer></script> <!--  header-section-baner  -->
+    <script src="js/script-comun.js" defer></script> <!--  footer-carajo-politicas  -->
+
+    <script src="js/script-mensaje-invisible.js" defer></script> <!--  mensaje  -->   
+    <script src="js/script-memory.js" defer></script> <!--  memory  -->
+
+<script>
+
+</script>
+
+
+
+
+         
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

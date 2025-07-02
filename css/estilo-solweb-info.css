@@ -1,0 +1,224 @@
+/* -------------------- SOLWEB ESTUDIO INFO -------------------------------------- */
+/* -------------------- SOLWEB ESTUDIO INFO -------------------------------------- */
+/* -------------------- SOLWEB ESTUDIO INFO -------------------------------------- */
+
+/* ===================================================
+   SOLWEB ESTUDIO - CSS UNIFICADO + RESPONSIVE BASE
+   =================================================== */
+
+/* -------------------- ESTILOS GENERALES -------------------- */
+html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: 'Pirata One', cursive;
+      background: url('../img/fondo-arena.webp') no-repeat center center fixed;
+      background-size: cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+    .contenedor_ppal {/* Contenedor central */
+      width: 90vw;
+      max-width: 1200px;
+      aspect-ratio: 3 / 2.5;
+      animation: desenrollar 1.5s ease-out;
+      overflow: hidden;
+    }  
+    .pergamino_contenedor { /* Contenedor visual del pergamino */
+      position: relative;
+      width: 100%;
+      height: auto;
+    }
+    .pergamino_img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    @keyframes desenrollar { /* Animación de entrada */
+      0% {
+        transform: scaleY(0.1) translateY(-200px);
+        opacity: 0;
+      }
+      100% {
+        transform: scaleY(1) translateY(0);
+        opacity: 1;
+      }
+    }
+    .textos {/* Textos dentro del pergamino */
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80%;
+      color: #2d1200;
+      text-align: center;
+      z-index: 1;
+      top: 18%;
+      padding-bottom: 5rem;
+    }
+/* Flex horizontal entre imagen y h1 */
+.sello-h1-contenedor {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+}
+
+/* Imagen junto al h1 */
+.sello-solweb-01 {
+  width: 15%;
+  height: auto;
+  flex-shrink: 0;
+}
+/* -------------------- TIPOGRAFÍAS RESPONSIVAS -------------------- */
+    h2 {
+      font-size: clamp(1rem, 3vw, 3.5rem);
+      color: #362808;
+    }
+    /* Contenedor del h1 + imagen */
+    .bloque_h1 {
+      display: flex;
+      flex-direction: row;
+      gap: 0.8rem;
+    }
+    h1.solweb {
+      font-size: clamp(1.8rem, 4.5vw, 5rem);
+      color: #362808;
+      margin:0rem;
+    }
+    .textos p {
+      font-size: clamp(1rem, 2.5vw, 2rem);
+      margin-top: 0.2rem;
+      color: #2d1200;
+    }
+    a {
+      text-decoration: none;
+    }
+    .solweb:hover {
+      cursor: pointer;
+      transform: scale(1.1);
+      background-image: url('../img/textura-plata.webp');
+      background-size: cover;
+      background-position: center;
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      -webkit-text-stroke: 1px #362808;
+    }
+
+   
+/* -------------------- BOTONES Y SELLO -------------------- */
+    /* Sello de lacre */
+    .lacre {
+      position: absolute;
+      bottom: 18%;
+      right: 20%;
+      width: 15%;
+      z-index: 1;
+      transition: transform 0.3s ease;
+    }
+    .lacre:hover {
+      transform: scale(1.1);
+    }
+
+
+    /* Botón de cierre */
+    .bot_cierre {
+      position: absolute;
+      bottom: 15%;
+      left: 17%;
+      background: url('../img/logoLMN-cerrar.webp') no-repeat center center;
+      background-size: contain;
+      border: none;
+      width: 20%;
+      height: 30%;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+      z-index: 2;
+    }
+
+    .bot_cierre:hover {
+      transform: scale(1.1);
+    }
+
+  /* ===================================================
+   BREAKPOINTS RESPONSIVE ESTÁNDARIZADOS SOLWEB
+   =================================================== */
+
+/* ===================== TABLETS (768px - 1024px) ===================== */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .textos {
+    width: 85%;
+    top: 20%;
+  }
+
+  .lacre {
+    width: 14%;
+    bottom: 15%;
+    right: 18%;
+  }
+
+  .bot_cierre {
+    width: 18%;
+    bottom: 15%;
+    left: 17%;
+  }
+}
+
+/* =============== MÓVIL LANDSCAPE (576px - 767px) =================== */
+    @media (min-width: 576px) and (max-width: 767px) {
+  .contenedor_ppal {
+    width: 96vw;
+    aspect-ratio: auto;
+  }
+
+  .textos {
+    top: 14%;
+    width: 90%;
+  }
+
+  .lacre {
+    width: 18%;
+    bottom: 15%;
+    right: 18%;
+  }
+
+  .bot_cierre {
+    width: 18%;
+    bottom: 18%;
+    left: 17%;
+  }
+}
+
+/* =============== MÓVIL PORTRAIT (< 576px) ========================== */
+@media (max-width: 575px) {
+  .contenedor_ppal {
+    width: 96vw;
+    aspect-ratio: auto;
+  }
+
+  .textos {
+    top: 18%;
+    width: 90%;
+  }
+
+  h2,
+  h1,
+  .textos p {
+    font-size: 1rem;
+  }
+
+  .lacre {
+    width: 20%;
+    bottom: 18%;
+    right: 18%;
+  }
+
+  .bot_cierre {
+    width: 20%;
+    bottom: 18%;
+    left: 17%;
+  }
+}
+

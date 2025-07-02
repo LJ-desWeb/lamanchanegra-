@@ -1,0 +1,149 @@
+/* ----------------------------------- AVISO + POLITICAS PRIVACIDAD Y COOKIES -------------------------------------- */
+/* ----------------------------------- AVISO + POLITICAS PRIVACIDAD Y COOKIES -------------------------------------- */
+/* ----------------------------------- AVISO + POLITICAS PRIVACIDAD Y COOKIES -------------------------------------- */
+
+/* --------------------------- ESTILOS PARA MAIN ----------------------------- */
+main {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 10rem 8vw 6rem; /* espacio superior compensando header fijo */
+  line-height: 1.6;
+  color: #333;
+  background: #FCEABB;
+  background: linear-gradient(to right, #FCEABB 0%, #F8E4BB 51%, #FBDF93 100%);
+  min-height: 100vh;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  
+}
+
+main h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-top: 3rem;
+  margin-bottom: 2rem;
+  color: #222;
+  text-align: center;
+  max-width: 80ch;
+}
+
+main h2, .titulo {
+  color: #2b2b2b;
+  font-weight: bold;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  line-height: 1.3;
+  text-align: center;
+}
+
+main, .parr-2 {
+  text-indent: 2em;
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+  color: #333;
+  text-align: justify;
+  max-width: 90ch;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+main ul {
+  list-style-position: inside;
+  padding-left: 2em;
+  max-width: 90ch;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+main ul li {
+  text-indent: 2em;
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+  color: #333;
+  text-align: justify;
+  max-width: 90ch;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.section {
+  margin-bottom: 3rem;
+}
+
+/* ==============================================================
+   BREAKPOINTS RESPONSIVE ESTÁNDARIZADOS AVISO LEGAL Y POLITICAS
+   ============================================================== */
+
+
+
+/* ===================== TABLETS (768px - 1024px) ===================== */
+@media screen and (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+  main {
+   
+    padding: 8rem 4rem 8rem;
+  }
+
+  main p,
+  main ul li {
+    font-size: 1.05rem;
+    text-align: justify;
+    max-width: 85%;
+  }
+}
+
+  main p,
+  .parr-2,
+  main ul li {
+    font-size: 1.05rem;
+    text-align: justify;
+    max-width: 85%;
+  }
+
+
+/* =============== MÓVIL LANDSCAPE (576px - 767px) =================== */
+@media (min-width: 576px) and (max-width: 767px) {
+  main {
+    
+    padding: 8rem 2rem 10rem;
+  }
+
+  main p,
+  main ul li {
+    font-size: 1.05rem;
+    text-align: justify;
+    max-width: 90%;
+  }
+}
+
+  main p,
+  .parr-2,
+  main ul li {
+    font-size: 1.05rem;
+    text-align: justify;
+    max-width: 90%;
+  }
+
+
+/* =============== MÓVIL PORTRAIT (< 576px) ========================== */
+@media (max-width: 575px) {
+   main {
+    
+    padding: 8rem 1rem 12rem;
+  }
+
+  main p,
+  main ul li {
+    font-size: 1rem;
+    text-align: justify;
+    max-width: 100%;
+  }
+}
+
+  main p,
+    main ul li {
+    font-size: 1rem;
+    text-align: justify;
+    max-width: 100%;
+  }
+

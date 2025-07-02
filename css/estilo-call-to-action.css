@@ -1,0 +1,123 @@
+/* ============================
+   Sección 3: Mensaje en botella
+   ============================ */
+
+/* 1) Asegurar que el título y la imagen “bot_mensaje” estén en la misma línea */
+#sec_3 > span {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0; /* eliminar márgenes por defecto de <h2> si es necesario */
+}
+#sec_3 > span h2.titulo_1_ {
+  display: inline-block;
+  margin-right: 1rem; /* separación entre el texto y la botella */
+  vertical-align: middle;
+}
+#sec_3 > span img.bot_mensaje {
+  display: inline-block;
+  vertical-align: middle;
+  max-height: 3rem; /* ajusta según el tamaño deseado */
+  height: auto;
+}
+
+/* 2) Contenedor “call_to_action” ocupa el 80% del ancho de la pantalla y centra su contenido */
+.call_to_action {
+  position: relative;       /* para posicionar el enlace de manera absoluta dentro de este contenedor */
+  width: 80vw;              /* 80% del ancho de la ventana */
+  max-width: 1000px;        /* opcional, un tope máximo si lo necesitas */
+  margin: 2rem auto;        /* centrado horizontal y algo de margen vertical */
+  box-sizing: border-box;
+}
+
+/* 3) Imagen de pergamino: ocupa todo el ancho del contenedor */
+.call_to_action .pergamino_2 {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* 4) Enlace “lacre_LMN” posicionado sobre la imagen a la izquierda y a mitad de altura */
+.call_to_action a.lacre_LMN {
+  position: absolute;
+  right: 5rem;               /* pequeña distancia desde el borde derecho del pergamino */
+  top: 50%;                 /* posición vertical a mitad de su contenedor */
+  transform: translateY(-10%);
+  text-decoration: none;    /* eliminar subrayado si el <a> tuviera texto, aunque aquí contiene solo la imagen */
+}
+
+/* 5) Imagen del lacre dentro del enlace */
+.call_to_action a.lacre_LMN img.lacre_LMN {
+  display: block;
+  width: 8rem;              /* ajusta al tamaño deseado sobre el pergamino */
+  height: auto;
+  opacity: 0.95;            /* ligera transparencia opcional para efecto visual */
+}
+
+.lacre_LMN {
+  display: inline-block;           /* Necesario para que transform funcione */
+  animation: palpitar 1.5s ease-in-out infinite;
+}
+
+/* Definición de la animación “palpitar” */
+@keyframes palpitar {
+  0% {
+    transform: scale(1);
+  }
+  25% {
+    transform: scale(1.05);
+  }
+  50% {
+    transform: scale(1);
+  }
+  75% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+
+
+
+/* ============================
+   Ajustes responsivos (opcional)
+   ============================ */
+@media (max-width: 800px) {
+  #sec_3 > span h2.titulo_1_ {
+    font-size: 1.25rem;
+    margin-right: 0.5rem;
+  }
+  #sec_3 > span img.bot_mensaje {
+    max-height: 2.5rem;
+  }
+  .call_to_action {
+    width: 90vw;
+  }
+  .call_to_action a.lacre_LMN img.lacre_LMN {
+    width: 3.5rem;
+  }
+}
+
+@media (max-width: 500px) {
+  #sec_3 > span h2.titulo_1_ {
+    font-size: 1rem;
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+  #sec_3 > span img.bot_mensaje {
+    display: block;
+    margin: 0.5rem auto;
+    max-height: 2rem;
+  }
+  .call_to_action {
+    width: 100vw;
+    margin: 1rem 0;
+  }
+  .call_to_action a.lacre_LMN {
+    left: 0.5rem;
+  }
+  .call_to_action a.lacre_LMN img.lacre_LMN {
+    width: 3rem;
+  }
+}

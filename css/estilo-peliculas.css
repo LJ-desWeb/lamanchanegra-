@@ -1,0 +1,512 @@
+/* =====================================   HTML. PELÍCULAS ================================        
+/* =====================================   HTML. PELÍCULAS ================================        
+/* =====================================   HTML. PELÍCULAS ================================        
+/* =====================================   HTML. PELÍCULAS ================================        
+      
+         
+/* =========================
+    Reset básico y tipografías
+    ========================= */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Pirata One', cursive;
+            background: #FCEABB;
+            background: linear-gradient(to right, #FCEABB 0%, #F8E4BB 51%, #FBDF93 100%);
+            color: #5D4037;
+            overflow-x: hidden; /*cambia al intro TV */
+          
+        }
+
+        /* Importa la fuente Allura para títulos h2 y párrafos */
+        @import url('https://fonts.googleapis.com/css2?family=Allura&display=swap');
+
+/* ============================================================
+    Sección 1: Títulos y Párrafos
+    ============================================================ */
+        
+        ._6_sec_1_ {
+            margin-top:250px; 
+            padding: 20px 0; 
+        }
+         ._6_sec_1_ a{           
+           color:#6c4e47;
+        }
+        ._6_sec_1_ a:hover{
+            transform:scale(1.1);
+            color:black;
+        }
+    
+        .titulo_6_0_ {
+            max-width: 80%;
+            font-size: 5rem;
+            text-align: center;
+            margin-top: 14rem;
+            margin-left: auto;
+            margin-right: auto;
+            font-family: 'Pirata One', cursive;
+        }
+        /* Estilo para todos los títulos h2 */
+        .titulo_6_1_ {
+            font-size: 4rem;
+            font-weight: bold;
+            text-align: center;
+            margin: 0rem auto;
+            line-height: 1.2;
+        }
+
+        .titulo_6_3_ {
+            font-size: 1.5rem;     /* Cambia esto para hacer la letra más grande o más pequeña */
+            font-weight: bold;     /* Usa "normal" si quieres quitar la negrita */
+            text-align: center;
+            margin: 0.8rem auto;
+        }
+
+        .titulo_6_3_ a {
+            text-decoration: none;
+            color: #6c4e47;
+        }
+
+        .titulo_6_3_ a:hover {
+            color: black;
+            transform: scale(1.1);
+        }
+
+        /* Separador (la imagen de línea de tinta) */
+        .separador_6 {
+            text-align: center;
+            margin: 1rem auto;
+        }
+        .linea {
+            width: 90%;
+            max-width: 1200px;
+            height: auto;
+        }
+        /* Estilo para el párrafo de introducción */
+        .p_peliculas {
+            font-family: "Edu QLD Hand", cursive;
+            font-size: 2rem;
+            line-height: 1.6;
+            max-width: 1200px;        /* No ocupará todo el ancho */
+            margin: 3rem auto 3rem auto;  /* Centrado horizontal y separación vertical */
+            text-indent: 2em;        /* Sangría inicial */
+            padding: 0 1rem;         /* Algo de margen interno en lados para pantallas estrechas */
+            word-wrap: break-word;
+            text-align: justify;
+            }
+
+        /* -----------------------------------
+        Diseño Responsive  títulos y párrafos
+        ----------------------------------- */
+        /* Tablets o pantallas medianas */
+        @media (max-width: 1024px) {
+        .titulo_6_0_ {
+            font-size: 2rem;
+            margin: 1rem auto 0.6rem;
+        }
+        .titulo_6_1_ {
+            font-size: 2rem;
+            margin: 1.2rem auto 0.8rem;
+        }
+        .p_peliculas {
+            font-size: 2rem;
+            max-width: 90%;
+            text-indent: 1.5em;
+            margin: 0.8rem auto 1.5rem;
+        }
+        .linea {
+            width: 95%;
+            max-width: 700px;
+        }
+        }
+        /* Móvil en horizontal (landscape) */
+        @media (max-width: 768px) {
+        .titulo_6_0_ {
+            font-size: 2rem;
+            margin: 1rem auto 0.6rem;
+        }
+        .titulo_6_1_ {
+            font-size: 2rem;
+            margin: 1rem auto 0.6rem;
+        }
+        .p_peliculas {
+            font-size: 0.95rem;
+            max-width: 95%;
+            text-indent: 2rem;
+            margin: 0.6rem auto 1rem;
+            padding: 0 0.8rem;
+        }
+        .linea {
+            width: 100%;
+            max-width: 600px;
+        }
+        }
+        /* Móvil en vertical (portrait) */
+        @media (max-width: 480px) {
+        .titulo_6_0_ {
+            font-size: 2rem;
+            margin: 1rem auto 0.6rem;
+        }
+        .titulo_6_1_ {
+            font-size: 2rem;
+            margin: 0.8rem auto 0.5rem;
+        }
+        .separador_6 {
+            text-align: center;
+            margin: 1rem auto;
+        }
+        .p_peliculas {
+            font-size: 2rem;
+            max-width: 100%;
+            text-indent: 1em;
+            margin: 0.5rem auto 0.8rem;
+            padding: 0 0.6rem;
+        }
+        .linea {
+            width: 100%;
+            max-width: 400px;
+        }
+        }
+
+/* ============================================================
+Sección 2: Películas de Dominio Libre
+============================================================ */
+/* ============================================================
+Sección 2: Películas de Dominio Público
+============================================================ */
+
+        /* section:nth-of-type(2) article, Estilo general para la sección de dominio público (el "contenedor" principal de esta sección) */
+        section, .secVarias  article { /* Selecciona el <article> dentro de la segunda <section> */
+            max-width: 900px;
+            margin: 4rem auto; /* Centrado y con margen superior/inferior para separación */
+            background: rgba(255, 255, 255, 0.85); /* Fondo blanco con ligera transparencia para que se vea el degradado */
+            padding: 30px;
+            border-radius: 8px;
+            backdrop-filter: blur(3px); /* Efecto de desenfoque en el fondo, si es compatible */
+        }
+
+        /* Título principal de la sección de dominio público */
+        section, .secVarias  h2{
+            font-family: 'Pirata One', cursive; /* Mantener la fuente principal de piratas */
+            color: #5D4037; /* Color de texto que ya usas */
+            border-bottom: 2px solid #FBDF93; /* Línea inferior del color más claro del degradado */
+            padding-bottom: 15px;
+            margin-bottom: 25px;
+            text-align: center; /* Centrar el título */
+            font-size: 2.8rem; /* Tamaño acorde */
+        }
+
+        /* Subtítulo de la sección de dominio público */
+        section, .secVarias  h3 {
+            font-family: "Edu QLD Hand", cursive;
+            color: #8D6E63; /* Un tono más oscuro del marrón para contraste sutil */
+            margin-top: 25px;
+            margin-bottom: 15px;
+            text-align: center; /* Centrar el subtítulo */
+            font-size: 1.8rem;
+            font-weight: normal; /* Menos negrita que los títulos principales */
+        }
+
+        /* Estilo para la lista de películas (ul) */
+        .section-dominio-publico {
+            list-style: none; /* Quitar las viñetas predeterminadas */
+            padding: 0;
+            margin-top: 30px;
+        }
+
+        /* Estilo para cada elemento de la lista (li - cada película) */
+        .section-dominio-publico li {
+            background: #FCEABB; /* Usar el color base del degradado para los ítems */
+            margin-bottom: 15px; /* Espacio entre cada película */
+            padding: 20px;
+            border-radius: 5px;
+            border-left: 6px solid #D4AC57; /* Una barra lateral con un color más dorado/cálido */
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Sombra suave para elevación */
+            line-height: 1.6; /* Espaciado de línea para mejor legibilidad */
+            font-family: "Edu QLD Hand", cursive; /* Una fuente más legible para el contenido de la lista */
+            color: #4E342E; /* Un marrón oscuro para el texto */
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out; /* Transición suave al pasar el ratón */
+            cursor: pointer; /* Indica que es clicable */
+        }
+
+        /* Efecto hover para cada elemento de la lista */
+        .section-dominio-publico li:hover {
+            transform: translateY(-3px); /* Ligeramente elevado al pasar el ratón */
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15); /* Sombra más intensa al pasar el ratón */
+        }
+
+        /* Estilo para los títulos de las películas dentro de la lista (strong) */
+        .section-dominio-publico li strong {
+            color: #8D6E63; /* Un marrón más oscuro para el título de la película */
+            font-size: 1.2em; /* Un poco más grande que el texto normal del li */
+            display: block; /* Para que el título ocupe su propia línea */
+            margin-bottom: 5px;
+        }
+
+        /* Estilo para la nota "(Película de dominio público - ¡Haz clic para ver!)" */
+        .section-dominio-publico li em {
+            font-size: 0.9em;
+            color: #3007eb; /* Un color anaranjado/cobrizo para esta nota, que llame la atención */
+            display: block; /* Para que ocupe su propia línea */
+            margin-top: 8px;
+            font-style: normal; /* Quitar la cursiva predeterminada del <em> */
+        }
+        .section-dominio-publico li a{
+            font-size: 0.9em;
+            color: #B5651D; /* Un color anaranjado/cobrizo para esta nota, que llame la atención */
+            display: block; /* Para que ocupe su propia línea */
+            margin-top: 8px;
+            font-style: normal; /* Quitar la cursiva predeterminada del <em> */
+
+        }
+
+/* -----------------------------------
+Diseño Responsive para la Sección 2
+----------------------------------- */
+
+        /* Tablets o pantallas medianas */
+        @media (max-width: 1024px) {
+            section:nth-of-type(2) article {
+                margin: 2.5rem auto;
+                padding: 25px;
+            }
+            section:nth-of-type(2) h2 {
+                font-size: 2.2rem;
+                padding-bottom: 10px;
+                margin-bottom: 20px;
+            }
+            section:nth-of-type(2) h3 {
+                font-size: 1.5rem;
+                margin-top: 20px;
+                margin-bottom: 10px;
+            }
+            .section-dominio-publico li {
+                padding: 18px;
+            }
+            .section-dominio-publico li strong {
+                font-size: 1.1em;
+            }
+        }
+
+        /* Móvil en horizontal (landscape) */
+        @media (max-width: 768px) {
+            section:nth-of-type(2) article {
+                margin: 2rem auto;
+                padding: 20px;
+                border-radius: 6px;
+            }
+            section:nth-of-type(2) h2 {
+                font-size: 1.8rem;
+                padding-bottom: 8px;
+                margin-bottom: 18px;
+            }
+            section:nth-of-type(2) h3 {
+                font-size: 1.3rem;
+                margin-top: 18px;
+                margin-bottom: 8px;
+            }
+            .section-dominio-publico li {
+                padding: 15px;
+                margin-bottom: 10px;
+                border-left: 5px solid #D4AC57;
+            }
+            .section-dominio-publico li strong {
+                font-size: 1em;
+            }
+            .section-dominio-publico li em {
+                font-size: 0.85em;
+            }
+        }
+
+        /* Móvil en vertical (portrait) */
+        @media (max-width: 480px) {
+            section:nth-of-type(2) article {
+                margin: 1.5rem auto;
+                padding: 15px;
+                border-radius: 5px;
+                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+            }
+            section:nth-of-type(2) h2 {
+                font-size: 1.5rem;
+                padding-bottom: 6px;
+                margin-bottom: 15px;
+            }
+            section:nth-of-type(2) h3 {
+                font-size: 1.1rem;
+                margin-top: 15px;
+                margin-bottom: 6px;
+            }
+            .section-dominio-publico li {
+                padding: 12px;
+                margin-bottom: 8px;
+                border-left: 4px solid #D4AC57;
+                font-size: 0.9em;
+            }
+            .section-dominio-publico li strong {
+                font-size: 0.95em;
+            }
+            .section-dominio-publico li em {
+                font-size: 0.8em;
+            }
+        }
+
+
+/* ============================================================
+   Sección 2: Películas de Dominio Público - Maquetación con imágenes
+   ============================================================ */
+
+        .movie-item-content {
+            display: flex; /* Habilitar flexbox para colocar elementos en línea */
+            align-items: flex-start; /* Alinear los ítems al inicio del contenedor (arriba) */
+            gap: 20px; /* Espacio entre los detalles y el póster */
+            justify-content: space-between; /* Empuja los ítems a los extremos, si es necesario */
+        }
+
+        .movie-details {
+            flex: 1; /* Ocupa el espacio restante después de que el póster tome el suyo */
+            min-width: 0; /* Permite que el texto se encoja correctamente en pantallas pequeñas */
+        }
+
+        .movie-poster {
+            flex-shrink: 0; /* Evita que el póster se encoja */
+            width: 180px; /* Ancho fijo para el póster */
+            height: auto; /* Altura automática para mantener la proporción */
+            border-radius: 4px; /* Bordes ligeramente redondeados para el póster */
+            overflow: hidden; /* Asegura que la imagen no se salga si es más grande */
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15); /* Sombra para el póster */
+        }
+
+        .movie-poster img {
+            width: 100%; /* La imagen ocupa todo el ancho de su contenedor */
+            height: 100%; /* La imagen ocupa toda la altura de su contenedor */
+            object-fit: cover; /* Asegura que la imagen cubra el área sin distorsionarse, recortando si es necesario */
+            display: block; /* Elimina espacio extra debajo de la imagen */
+        }
+
+/* -----------------------------------
+   Diseño Responsive para la Sección 2 con imágenes
+   ----------------------------------- */
+
+        /* Móvil en horizontal (landscape) y tabletas pequeñas */
+        @media (max-width: 768px) {
+            .movie-item-content {
+                flex-direction: column; /* Apila los elementos verticalmente */
+                align-items: center; /* Centra los elementos al apilarlos */
+                gap: 15px;
+            }
+            .movie-details {
+                text-align: center; /* Centra el texto cuando está apilado */
+            }
+            .movie-poster {
+                width: 100px; /* Ajusta el tamaño del póster para móviles */
+                height: auto;
+            }
+            .section-dominio-publico li strong {
+                text-align: center; /* Asegura que el título también esté centrado */
+                display: block;
+            }
+        }
+
+        /* Móvil en vertical (portrait) */
+        @media (max-width: 480px) {
+            .movie-item-content {
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+            }
+            .movie-details {
+                text-align: center;
+                font-size: 0.9em; /* Reduce el tamaño de fuente para móviles */
+            }
+            .movie-poster {
+                width: 80px; /* Tamaño del póster aún más pequeño */
+            }
+            .section-dominio-publico li em {
+                font-size: 0.75em;
+            }
+        }
+
+
+/* ============================================================
+   Sección 3: Reproductor de películas de Dominio Público
+   ============================================================ */
+/* Estilo para todos los títulos h2 */
+        .titulo_6_2_ {
+            font-family: 'Pirata one', cursive;
+            font-size: 4rem;
+            font-weight: bold;
+            text-align: center;
+            margin: 0rem auto;
+            line-height: 1.2;
+        }
+        /* Estilos para la sección de la TV retro */
+        .tv-container {
+        position: relative;
+        width: 100%;
+        max-width: 700px;
+        aspect-ratio: 16 / 9;
+        margin: 0 auto;
+        min-height: 50vh; /* Al menos la mitad de la pantalla */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        border: 6px solid #5D4037; /* o el color que prefieras */
+        border-radius: 12px; /* bordes redondeados */
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3); /* sombra suave */
+        background-color: rgba(255, 255, 255, 0.1); /* para que se note la sombra bajo el marco de la TV */
+        }
+
+        /* Iframe centrado y responsive */
+        .tv-video {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border: none;
+        z-index: 1;
+        }
+
+        /* Imagen del marco de TV */
+        .tv-container::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url('/mnt/data/011_01_TVbn_02_.webp'); /* tu imagen del marco */
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        z-index: 2;
+        pointer-events: none;
+        }
+
+        /* Título centrado */
+        .titulo_6_1_ {
+        text-align: center;
+        margin: 2rem 0 1rem;
+        font-size: 1.8rem;
+        }
+
+        /* Responsive para móviles */
+        @media (max-width: 768px) {
+        .tv-container {
+            max-width: 95%;
+            min-height: 45vh;
+        }
+
+        .titulo_6_1_ {
+            font-size: 1.4rem;
+        }
+        }
+
+        @media (orientation: landscape) and (max-height: 500px) {
+        .tv-container {
+            min-height: 60vh;
+        }
+        }
+

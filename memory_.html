@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Juego de Memoria</title>
+    <style>
+            body {
+                margin: 0;
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                overflow-x: hidden;
+            }
+
+            section#memoriaJuego {
+                height: 100vh;       
+                position: relative;
+                background: url('img/002_03_cuadro_arenaAgua_1200x940_01.webp') no-repeat center center;
+                background-size: cover;
+            }
+
+            .zona-juego {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background: url('img/000_03_fond_headrer_05_04_.webp') no-repeat center center;
+                background-size: cover;
+                gap: 1vw; /* antes era 40px */
+                margin-left: 5vw;
+                margin-right: 5vw;
+            }
+
+            .mesa {
+                display: grid;
+                gap: 1vw;
+                grid-template-rows: repeat(4, 1fr);
+                /* 4 filas fijas */
+                grid-auto-flow: column;
+                /* rellena por columnas */
+                justify-content: center;
+                padding: 4vh;
+                max-width: 90vw;
+                margin: auto;
+            }
+
+            .info-panel {
+                background: rgba(255, 255, 255, 0.8);
+                padding: 1.25rem;
+                border-radius: 0.625rem;
+                box-shadow: 0 0 0.5rem rgba(0,0,0,0.3);
+                display: flex;
+                flex-direction: column;
+                gap: 0.625rem;
+                font-weight: bold;
+                font-size: 1rem;
+            }
+
+            .tarjeta {
+                width: 7vw;
+                height: 9.8vw;
+                perspective: 62.5rem;
+                background-color: beige;
+                border-radius: 0.375rem;
+                min-height: 9.8vw;
+            }
+
+            .tarjeta-inner {
+                width: 100%;
+                height: 100%;
+                transition: transform 0.8s;
+                transform-style: preserve-3d;
+                position: relative;
+            }
+
+            .tarjeta.volteada .tarjeta-inner {
+                transform: rotateY(180deg);
+            }
+
+            .cara,
+            .reverso {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                backface-visibility: hidden;
+                border-radius: 0.5rem;
+                background-color: beige;
+            }
+
+            .reverso {
+                background: url('img/003_01_carta_reverso_03_.webp') no-repeat center;
+                background-size: cover;
+            }
+
+            .cara {
+                transform: rotateY(180deg);
+                background-size: cover;
+                background-position: center;
+            }
+
+            .cara,
+            .reverso {
+                background-size: contain;
+                background-position: center center;
+                background-repeat: no-repeat;
+            }
+
+            .info-panel {
+                display: flex;
+                justify-content: space-around;
+                padding: 0.625rem;
+                background: rgba(255, 255, 255, 0.8);
+            }
+
+            /* ✅ Posicionar el barco justo debajo de la mesa pero arriba del fondo */
+            .barco-reset {
+                position: absolute;
+                bottom: 2vh; /* más cerca del fondo del contenedor */
+                left: 2vw;
+                width: 35vw;
+                max-width: 500px;
+                height: auto;
+                aspect-ratio: 2 / 1;
+                background: url('img/004_el_barco.png') no-repeat center;
+                background-size: contain;
+                cursor: pointer;
+                display: flex;
+                align-items: flex-end;
+                justify-content: center;
+                font-size: 1.125rem;
+                font-weight: bold;
+                color: #302929;
+                transition: left 4s linear;
+                z-index: 10;
+            }
+
+            #seccion3 {
+                display: none;
+                background: #111;
+                color: #fff;
+                padding: 5vh 2vw;
+                text-align: center;
+            }
+
+            .popup {
+                position: fixed;
+                top: 30%;
+                left: 50%;
+                transform: translate(-50%, -30%);
+                padding: 2vh 2vw;
+                border: 0.2rem solid #333;
+                z-index: 999;
+                display: none;
+                text-align: center;
+                background: url('img/003_00_pliego_05_.webp') no-repeat center center;
+                background-size: fill;
+                color: rgb(58, 51, 51);
+                /* asegúrate de que el texto contraste */
+                /* text-shadow: 1px 1px 2px black; */
+                border-radius: 0.75rem;
+            }
+
+            .popup button {
+                margin-top: 1rem;
+                padding: 0.5rem 1rem;
+                font-size: 1rem;
+                background-color: #eee;
+                border: 0.0625rem solid #444;
+                border-radius: 0.375rem;
+                cursor: pointer;
+            }
+
+            .barco-reset.animate {
+                animation:
+                    moveRight 4s linear forwards,
+                    headBounce 0.8s ease-in-out infinite;
+            }
+
+            @keyframes moveRight {
+                0% { left: 2vw; }
+                100% { left: calc(100vw - 40vw); }
+            }
+
+            @keyframes headBounce {
+                0%, 100% { transform: rotateZ(0deg); }
+                25% { transform: rotateZ(1.5deg); }
+                50% { transform: rotateZ(0deg); }
+                75% { transform: rotateZ(-1.5deg); }
+            }
+
+            #gifFinal {
+                width: 100%;
+                max-width: 31.25rem; /* 500px */
+                display: none;
+            }
+
+            /* Tablets */
+            @media (max-width: 1024px) {
+                .mesa {
+                    grid-template-rows: repeat(3, 1fr);
+                    grid-auto-flow: row;
+                    gap: 1vh;
+                }
+
+                .tarjeta {
+                    width: 16vw;
+                    height: 22vw;
+                }
+
+                .barco-reset {
+                    width: 45vw;
+                }
+
+                .info-panel {
+                    flex-direction: column;
+                    align-items: center;
+                    text-align: center;
+                }
+            }
+
+            /* Móviles */
+            /* Móviles */
+@media (max-width: 600px) {
+    .mesa {
+        grid-template-columns: repeat(3, 1fr);
+        grid-auto-flow: row;
+        gap: 1vh;
+    }
+
+    .tarjeta {
+        width: 16vw;
+        height: 22vw;
+       /* width: clamp(40vw, 20vw, 16vw);
+        height: clamp(110vw, 32vw, 22vw);*/
+    }
+
+    .barco-reset {
+        width: 45vw;
+        font-size: 1em;
+    }
+
+    .zona-juego {
+        padding: 2vh 3vw;
+    }
+
+    .info-panel {
+        font-size: 0.9em;
+        padding: 0.8em;
+    }
+
+    .popup {
+        width: 90vw;
+        font-size: 0.9em;
+    }
+
+    .popup button {
+        font-size: 1em;
+    }
+}
+
+    </style>
+</head>
+
+<body>
+
+    <section id="memoriaJuego">
+       
+        <div class="zona-juego">
+            <div class="contenedor-mesa">
+                <div class="mesa" id="mesaJuego"></div>
+                <div class="barco-reset" id="resetBtn" title="Iniciar partida">¡Zarpa!</div>
+            </div>
+
+            <div class="info-panel">
+                <div>Tiempo: <span id="cronometro">00:00</span></div>
+                <div>Tiempo máximo: <span id="tiempoMaximo">00:30</span></div>
+                <div>Partidas: <span id="partidas">0</span></div>
+            </div>
+        </div>
+     
+    </section>
+
+   
+    <section id="seccion3">
+        <h2>Sección 3: Vuelve a intentarlo</h2>
+    </section>
+
+        <div class="popup" id="popupMensaje">
+            <h3 id="mensajeFinal"></h3>
+            <img id="gifFinal" src="" alt="gif cañon antiguo"/>
+            <button id="cerrarPopup">Cerrar</button>
+        </div>
+
+   
+
+
+    <audio id="voltear" src="audio/004_pick.mp3" preload="auto"></audio>
+    <audio id="match" src="audio/004_pick.mp3" preload="auto"></audio>
+    <audio id="victoria" src="audio/004_pick.mp3" preload="auto"></audio>
+    <audio id="disparo" src="audio/004_cannon_5s_.mp3" autoplay></audio>
+    <audio id="olas" src="audio/004_navegar.mp3" autoplay></audio>
+    
+
+
+
+
+
+    <script>
+        const mesa = document.getElementById('mesaJuego');
+        const tiempoMaximo = 7; // ================================= Variable colocada por el administrador ================
+        const tiempoMaxSpan = document.getElementById('tiempoMaximo');
+        const minutosMax = String(Math.floor(tiempoMaximo / 60)).padStart(2, '0');
+        const segundosMax = String(tiempoMaximo % 60).padStart(2, '0');
+        tiempoMaxSpan.textContent = `${minutosMax}:${segundosMax}`;
+
+        let tiempoActual = 0;
+        let cronometroInterval;
+        let partidas = 0;
+        let pareja = [];
+        let aciertos = 0;
+        let juegoActivo = false;
+
+        const baseImgs = [
+            'img/004_barco-2palos.webp',
+            'img/004_barco-cañon-humo.webp',
+           /* 'img/004_barco-mayflower.webp',
+            'img/004_calavera-huesos.webp',
+            'img/004_mapa1.webp',
+            'img/004_mapa2.webp',
+            'img/004_pirata.webp',
+            'img/004_telescopio.webp'*/
+        ];
+        const imagenes = [...baseImgs, ...baseImgs];
+        const totalParejas = baseImgs.length;
+
+        const sonidos = {
+            voltear: document.getElementById('voltear'),
+            match: document.getElementById('match'),
+            victoria: document.getElementById('victoria'),
+            disparo: document.getElementById('disparo'),
+            olas: document.getElementById('olas')
+        };
+        // Desbloquea sonidos al primer clic del usuario
+        window.addEventListener('click', () => {
+            Object.values(sonidos).forEach(audio => {
+                audio.play().then(() => {
+                    audio.pause();
+                    audio.currentTime = 0;
+                }).catch(() => {
+                    // Ignorar errores de autoplay bloqueado
+                });
+            });
+        }, { once: true });
+
+
+        function iniciarJuego() {
+            document.getElementById('seccion3').style.display = 'none';
+            generarTarjetas();
+            iniciarCronometro();
+            aciertos = 0;
+            pareja = [];
+            partidas++;
+            document.getElementById('partidas').textContent = partidas;
+            juegoActivo = true;
+        }
+
+        function generarTarjetas() {
+            mesa.innerHTML = '';
+            const mezcladas = [...imagenes].sort(() => Math.random() - 0.5);
+
+            mezcladas.forEach(img => {
+                const carta = document.createElement('div');
+                carta.classList.add('tarjeta');
+                carta.innerHTML = `
+        <div class="tarjeta-inner" data-img="${img}">
+          <div class="cara" style="background-image: url('${img}')"></div>
+          <div class="reverso"></div>
+        </div>
+      `;
+                carta.addEventListener('click', () => voltearCarta(carta));
+                mesa.appendChild(carta);
+            });
+        }
+
+        function voltearCarta(carta) {
+
+            if (!juegoActivo || carta.classList.contains('volteada') || pareja.length === 2) return;
+            carta.classList.add('volteada');
+            sonidos.voltear.play();
+            pareja.push(carta);
+
+            if (pareja.length === 2) {
+                const [c1, c2] = pareja;
+                const img1 = c1.querySelector('.tarjeta-inner').dataset.img;
+                const img2 = c2.querySelector('.tarjeta-inner').dataset.img;
+
+                if (img1 === img2) {
+                    aciertos++;
+                    sonidos.match.play();
+                    pareja = [];
+                    if (aciertos === totalParejas) finalizarJuego();
+                } else {
+                    setTimeout(() => {
+                        c1.classList.remove('volteada');
+                        c2.classList.remove('volteada');
+                        pareja = [];
+                    }, 1000);
+                }
+            }
+        }
+
+        function iniciarCronometro() {
+            tiempoActual = 0;
+            actualizarCrono();
+            clearInterval(cronometroInterval);
+            cronometroInterval = setInterval(() => {
+                tiempoActual++;
+                actualizarCrono();
+                if (tiempoActual >= tiempoMaximo) {
+                    finalizarJuego(true);
+                }
+            }, 1000);
+        }
+
+        function actualizarCrono() {
+            const min = String(Math.floor(tiempoActual / 60)).padStart(2, '0');
+            const seg = String(tiempoActual % 60).padStart(2, '0');
+            document.getElementById('cronometro').textContent = `${min}:${seg}`;
+        }
+
+        
+        function finalizarJuego(tiempoExcedido = false) {
+            clearInterval(cronometroInterval);
+            const popup = document.getElementById('popupMensaje');
+            const mensaje = document.getElementById('mensajeFinal');
+            const gif = document.getElementById('gifFinal');
+
+            if (tiempoExcedido) {
+                mensaje.textContent = "¡Se acabó el tiempo! Prueba otra vez.";
+                gif.style.display = "none";
+                popup.dataset.estado = "perdido"; // 🔴 MARCAR COMO DERROTA
+            } else {
+                mensaje.textContent = "¡Felicidades, has ganado!";
+                gif.src = 'img/004_gif_cannon_.gif';
+                gif.style.display = "block";
+                sonidos.victoria.play();
+                sonidos.disparo.play();
+                popup.dataset.estado = "ganado"; // 🟢 MARCAR COMO VICTORIA
+            }
+
+            popup.style.display = 'block';
+            juegoActivo = false;
+        }
+
+
+
+
+
+        // 🛳 Control del BARCO y sonido de olas  ============================================================
+        // 🛳 Control del BARCO y sonido de olas  ============================================================
+        document.getElementById('resetBtn').addEventListener('click', () => {
+            const barco = document.getElementById('resetBtn');
+
+            // Activar sonido del mar (en caso de bloqueo de autoplay)
+            sonidos.olas.play().catch(() => {
+                console.warn('El navegador bloqueó la reproducción automática del sonido.');
+            });
+
+            // ✅ Inicia el viaje: de posición inicial a la derecha
+           barco.classList.add('animate');
+
+            // Al terminar, quitar clase y volver al inicio
+            setTimeout(() => {
+            barco.classList.remove('animate');
+            barco.style.transition = 'none';
+            barco.style.left = '20px';
+            void barco.offsetWidth;
+            barco.style.transition = 'left 4s linear';
+            }, 4000);
+
+
+            // ⏳ Al terminar el trayecto (4s), vuelve sin animación
+            setTimeout(() => {
+                barco.style.transition = 'none';           // quitar transición
+                barco.style.left = '20px';                 // volver al punto inicial exacto
+                void barco.offsetWidth;                    // forzar reflow
+                barco.style.transition = 'left 4s linear'; // restaurar animación
+            }, 4000); // duración igual al viaje
+
+            // 🧠 Iniciar partida
+            iniciarJuego();
+            document.getElementById('popupMensaje').style.display = 'none';
+        });
+
+
+
+
+        // Mostrar el juego desde el principio  =======================================================================
+        window.onload = () => {
+            document.getElementById('memoriaJuego').style.display = 'block';
+        };
+
+        // Si el usuario cierra o recarga, mostrar sección 3
+        window.onbeforeunload = function () {
+            document.getElementById('memoriaJuego').style.display = 'none';
+            document.getElementById('seccion3').style.display = 'block';
+            return null;
+        };
+
+
+    // cierre de ventana de victoria y envio a sección 3 - revelandola - ya que estaba oculta =========================
+    // cierre de ventana FALLo Y envio DE VUELTA AL JUEGO  ============================================================
+   document.getElementById('cerrarPopup').addEventListener('click', function () {
+    const popup = document.getElementById('popupMensaje');
+    const estado = popup.dataset.estado;
+
+    popup.style.display = 'none';
+
+    if (estado === "ganado") {
+        sonidos.disparo.currentTime = 0;
+        sonidos.disparo.play().catch(() => {
+            console.warn("Sonido de cañón bloqueado.");
+        });
+
+        document.getElementById('memoriaJuego').style.display = 'none';
+        document.getElementById('seccion3').style.display = 'block';
+    }
+});
+    // FIN - cierre de ventana de victoria y envio a sección 3 - revelandola - ya que estaba oculta =========================
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,260 @@
+/* ----------------------------------- REGISTRO -------------------------------------- */
+/* ----------------------------------- REGISTRO -------------------------------------- */
+/* ----------------------------------- REGISTRO -------------------------------------- */
+
+html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: 'Pirata One', cursive;
+      background: url('../img/fondo-arena.webp') no-repeat center center fixed;
+      background-size: cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .contenedor_ppal {
+      width: 90vw;
+      max-width: 1200px;
+      animation: desenrollar 1.5s ease-out;
+    }
+
+    .pergamino_contenedor {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 3 / 2;
+      background: url('../img/pergamino-horizontal.webp') no-repeat center center;
+      background-size: contain;
+      background-repeat: no-repeat;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 2rem;
+      box-sizing: border-box;
+    }
+
+    @keyframes desenrollar {
+      0% {
+        transform: scaleY(0.1) translateY(-200px);
+        opacity: 0;
+      }
+      100% {
+        transform: scaleY(1) translateY(0);
+        opacity: 1;
+      }
+    }
+
+    .textos {
+      width: 100%;
+      max-width: 600px;
+      text-align: center;
+      color: #2d1200;
+      z-index: 1;
+    }
+
+    .titulo_2_0{
+      margin-top: 4rem;
+      font-size: 3.5rem;
+    }
+
+    .login-form {
+      background-color: rgba(0, 0, 0, 0);
+      padding: 1rem;
+      
+    }
+
+    .login-form label,
+    .login-form input {
+      width: 100%;
+      display: block;
+      margin-bottom: 0.2rem;
+      font-size: 1.5rem;
+      font-family: 'Pirata One', cursive;
+    }
+
+    .login-form input {
+      padding: 0.6rem;
+      border-radius: 0.5rem;
+      border: 1px solid #999;
+      background-color: blanchedalmond;
+    }
+
+    .error-message {
+      color: darkred;
+      font-size: 1.4rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .password-container {
+      position: relative;
+    }
+
+    #togglePassword {
+      position: absolute;
+      right: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 28px;
+      cursor: pointer;
+    }
+
+    .enviar-button,
+    .cerrar-button {
+      background: none;
+      border: none;
+      cursor: pointer;
+      margin: 1rem 1rem 0;
+    }
+
+    .enviar-button img {
+      width: 100px;
+    }
+
+    .cerrar-button img {
+      width: 150px;
+    }
+
+    .enviar-button:hover,
+    .cerrar-button:hover {
+      transform:scale(1.2)
+    }
+
+    .login-men-bot {
+      margin-top: 0.3rem;
+      font-size: 1.5rem;
+      font-family: 'Pirata One', cursive;
+      color: #2d1200;
+    }
+
+    .enlace-a-registro {
+      margin-top: 0.0rem;
+      font-size: 1.6rem;
+    }
+
+    .enlace-a-registro a {
+      color: darkred;
+      text-decoration: none;
+    }
+    .enlace-a-registro:hover{
+      transform: scale(1.2);
+    }
+
+  /* ===================================================
+   BREAKPOINTS RESPONSIVE ESTÁNDARIZADOS REGISTRO
+   =================================================== */
+
+    /* ===================== TABLETS (768px - 1024px) ===================== */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .pergamino_contenedor {
+        background: none;
+        padding: 0rem;
+  }
+  .titulo_2_0 {
+    font-size: 2.8rem;
+    margin-top: 3rem;
+  }
+
+  .textos {
+    max-width: 90%;
+  }
+
+  .login-form label,
+  .login-form input {
+    font-size: 1.3rem;
+  }
+
+  .login-men-bot {
+    font-size: 1.3rem;
+  }
+
+  .enviar-button img {
+    width: 80px;
+  }
+  .cerrar-button img {
+    width: 120px;
+  }
+}
+
+/* =============== MÓVIL LANDSCAPE (576px - 767px) =================== */
+@media (min-width: 576px) and (max-width: 767px) {
+  .pergamino_contenedor {
+    background: none;
+    padding: 1rem;
+  }
+
+  .titulo_2_0 {
+    font-size: 2.4rem;
+    margin-top: 2.5rem;
+  }
+
+  .pergamino_contenedor {
+    padding: 1.5rem;
+    aspect-ratio: auto; /* Libera la altura fija */
+  }
+
+  .textos {
+    max-width: 100%;
+    padding: 0 1rem;
+  }
+
+  .login-form label,
+  .login-form input {
+    font-size: 1.2rem;
+  }
+
+  .login-men-bot {
+    font-size: 1.2rem;
+  }
+
+  .enviar-button img {
+    width: 70px;
+  }
+  .cerrar-button img {
+    width: 110px;
+  }
+}
+
+   
+
+/* =============== MÓVIL PORTRAIT (< 576px) ========================== */
+@media (max-width: 575px) {
+  .pergamino_contenedor {
+    background: none;
+    padding: 1rem;
+  }
+
+   .pergamino_contenedor {
+    padding: 1rem;
+    flex-direction: column;
+  }
+
+  .textos {
+    padding: 0 0.5rem;
+  }
+
+  .login-form label,
+  .login-form input {
+    font-size: 1rem;
+  }
+
+  .login-men-bot {
+    font-size: 1rem;
+  }
+
+  .enviar-button img {
+    width: 60px;
+  }
+  .cerrar-button img {
+    width: 100px;
+  }
+
+  #togglePassword {
+    width: 24px;
+  }
+
+  .enlace-a-registro {
+    font-size: 1.2rem;
+  }
+}
+   

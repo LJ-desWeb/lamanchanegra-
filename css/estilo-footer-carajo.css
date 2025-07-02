@@ -1,0 +1,566 @@
+/* -------------- otra forma de incorporar fuentes externas ---------------------------------------------------------------------------- */
+/* -------------- otra forma de incorporar fuentes externas ---------------------------------------------------------------------------- */
+/* -------------- otra forma de incorporar fuentes externas ---------------------------------------------------------------------------- */
+@import url('https://fonts.googleapis.com/css2?family=Pirata+One&display=swap');
+
+/*  ------------------------------------------------------ FOOTER -----------------------------------------------------*/
+/*  ------------------------------------------------------ FOOTER -----------------------------------------------------*/
+/*  ------------------------------------------------------ FOOTER -----------------------------------------------------*/
+.footer {
+  background-image: url('../img/footer-madera-negra-ancho-450.webp'); /* Imagen del fondo */
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+  color: #eee;
+  padding: 3rem 1rem 2rem 1rem;
+}
+.footer-container { /*  contenedor de enlaces y texto */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: auto;
+}
+.footer-col { /*  contenedor del logo, columna 1 */
+  flex: 1 1 22%;
+  margin: 1rem 0;
+  min-width: 250px;
+  padding: 1rem;
+  text-align: center;
+}
+.footer-logo {
+  max-width: 180px;
+  display: block;
+  margin: 0 auto;
+}
+.footer-logo{
+  transform: scale(1.2);
+  cursor:pointer;
+}
+.parr-1{
+  color: #ccc;
+  font-size: 1.4rem;
+  padding: 0.5rem;
+}
+.footer h4 {  /* contenedor -ir a inicio - datos y enlaces - columnas 2 y 4 ----- */
+  color: goldenrod;
+  margin-bottom: 1rem;
+  font-size: 1.6rem;
+}
+.footer a {
+  color: #ccc;
+  font-size: 1.4rem;
+  text-decoration: none;
+  transition: transform 0.2s ease, color 0.2s ease;
+  display: inline-block; /* necesario para que transform funcione bien */
+}
+.footer a:hover {
+  text-decoration: none; /* undeline */
+  color: goldenrod;
+  transform:scale(1.2);
+  cursor:pointer;
+}
+.footer ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.footer ul li {
+  margin-bottom: 0.5rem;
+}
+
+/* ---------- FORMULARIO -------------------------- */
+input[type="email"] {
+  width: 80%;
+  max-width: 300px;
+  padding: 0.5rem;
+  border-radius: 4px;
+  border: none;
+  margin-bottom: 0.5rem;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: 'Pirata One', cursive;
+  font-size: 1.3rem;
+}
+.email-message { /*  mensajes de error   */
+  font-size: 1.3rem;
+  text-align: center;
+  color: red;
+  margin-bottom: 0.5rem;
+}
+.submit-message {/*  mensaje  de suscripcion  */
+  font-size: 1.3rem;
+  text-align: center;
+  color: rgb(30, 223, 126);
+  margin-bottom: 0.5rem;
+}
+.privacy-note { /*  nota privacidad suscripcion  */
+  font-size: 1.1rem;
+  color: #ccc;
+  text-align: center;
+  max-width: 300px;
+  margin: 0.5rem auto;
+}
+.subscribe-btn {  /* boton suscripcion */
+  background-color: orange;
+  color: rgb(63, 55, 55);
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 0.5rem;
+  transition: background-color 0.3s ease;
+}
+
+.p_boton{
+    font-family: 'Pirata One', cursive;
+    font-size: 1.5rem;
+}
+.subscribe-btn:hover {  /* boton suscripcion-hover   */
+  background-color: darkorange;
+  color:black;
+  font-weight: bold;
+  transform:scale(1.2);
+}
+/* -------- Columna 4 - redes sociales - estilo especifico ------------ */
+.social-icons {
+  list-style: none;
+  padding: 0;
+}
+.social-icons li {
+  margin-bottom: 0.5rem;
+  font-size: 1.5rem;
+}
+.social-icons a i {
+  margin-right: 0.5rem;
+}
+
+/* -------- Líneas  Copyright y Politica cookies, aviso legal. Politica de cookies ------------ */
+.footer-legal,
+.footer-bottom {
+  text-align: center;
+  font-size: 1.3rem;
+  margin-top: 1rem;
+}
+.footer-legal a {
+  color: #ccc;
+  margin: 0 0.3rem;
+}
+/*  ------------------------------------------------- FIN  FOOTER -----------------------------------------------------*/
+/*  ------------------------------------------------- FIN  FOOTER -----------------------------------------------------*/
+
+
+
+/*  --------------------------------------- Boton arriba - CARAJO -----------------------------------------------------*/
+/*  --------------------------------------- Boton arriba - CARAJO -----------------------------------------------------*/
+/*  --------------------------------------- Boton arriba - CARAJO -----------------------------------------------------*/
+    #btn-arriba {
+        position: fixed; /* Mantiene el botón en una posición fija */
+        bottom: 20px; /* Distancia del borde inferior de la pantalla */
+        right: 20px; /* Distancia del borde derecho de la pantalla */
+        background-color: rgba(236, 219, 219, 0.6); /* Color de fondo */
+        color: rgb(97, 84, 50); /* Color del texto */
+        padding: 0; /* Espaciado interno */
+        border: 2px black solid;
+        border-radius: 10px; /* Bordes redondeados */
+        cursor: pointer; /* Cambiar cursor a mano */
+        font-size: 3em; /* Tamaño de fuente */
+        opacity: 0.8; /* Transparencia */
+        transition: opacity 0.3s; /* Transición suave para la transparencia */
+        transition: max-height 0.3s ease;
+        z-index: 5000;
+    }
+    #btn-arriba img {
+        display: block;
+        width: 100%; /* o un ancho fijo si prefieres */
+        max-width: 100px; /* por ejemplo */
+        height: auto;
+    }
+
+    .texto-carajo {
+        display: block;
+        width: 100%;
+        max-width: 100px; /* que coincida con la imagen */
+        margin: 0 auto;
+        text-align: center;
+        font-size: 14px;
+        color:black; /* ajusta color según tu diseño */
+    }
+   #btn-arriba, .texto-carajo img:hover {
+      background-color: rgba(122, 104, 70, 0.6);
+   }
+/* --------------------------------------- FIN Boton arriba - CARAJO -----------------------------------------------------*/
+/* --------------------------------------- FIN Boton arriba - CARAJO -----------------------------------------------------*/
+
+
+
+
+
+
+/* ---------------------------------------- Responsive para móvil e intermedio --------------------------------------- */
+/* ---------------------------------------- Responsive para móvil e intermedio --------------------------------------- */
+/* ---------------------------------------- Responsive para móvil e intermedio --------------------------------------- */
+
+/* -------------- Responsive Boton arriba ---------------- */
+    @media screen and (max-width: 600px) {
+      #btn-arriba {
+        bottom: 10px;
+        right: 10px;
+      }
+
+      #btn-arriba img {
+        max-width: 70px;
+      }
+
+      .texto-carajo {
+        max-width: 70px;
+        font-size: 12px;
+      }
+    }
+/* ------------- FIN Responsive Boton arriba ---------------- */
+
+/* -----------------------   RESPONSIVE  ---------------------------- */
+/* Botón para mostrar menú en pantallas pequeñas */
+      .footer-toggle {
+        display: none;
+        background-color: #222;
+        color: #fff;
+        border: none;
+        padding: 0.5rem 1rem;
+        font-size: 1.2rem;
+        cursor: pointer;
+        width: auto;           /* <– cambia de 100% a auto */
+        margin: 0 auto 1rem 1rem;  /* alinea a la izquierda con margen */
+        margin-top: 0;
+        text-align: left;
+        font-family: 'Pirata One', cursive; /* Fuente pirata */
+      }
+
+      /* Contenedor del contenido colapsable */
+      .footer-content {
+        overflow: hidden;
+        max-height: 999px; /* valor alto por defecto */
+        transition: max-height 0.3s ease;
+      }
+      /* Contenedor del botón + contenido desplegable */
+      .footer-main {
+        display: block;
+      }
+
+
+
+/* Botón para mostrar menú en pantallas pequeñas */
+      .menu-toggle {
+        display: none;
+        background: none;
+        border: none;
+        color: goldenrod;
+        font-size: 3rem;
+        cursor: pointer;
+        font-family: 'Pirata One', cursive; /* Fuente pirata */
+      }
+
+      .footer-toggle {
+        display: none;
+        background-color: #222;
+        color: #fff;
+        border: none;
+        padding: 0.5rem 1rem;
+        font-size: 2rem;
+        cursor: pointer;
+        width: auto;
+        margin: 0 auto 1rem 1rem;
+        text-align: left;
+        font-family: 'Pirata One', cursive; /* Fuente pirata */
+      }
+
+
+
+
+      
+/* -----------------------   RESPONSIVE HEADER-NAV ---------------------------- */
+/* -----------------------   RESPONSIVE HEADER-NAV ---------------------------- */
+/* -----------------------   RESPONSIVE HEADER-NAV ---------------------------- */
+      @media (max-width: 768px) {
+        .logo-img,
+        .logo-img2 {
+          width: 50px;
+        }
+
+        .menu {
+          flex-direction: column;
+          gap: 0.5rem;
+
+          display: none;
+          position: absolute;
+          top: 100%;
+          left: 0;
+          right: 0;
+          background-color: rgba(0, 0, 0, 0.9); /* Menú nav superior */
+          z-index: 999;
+          padding: 1rem 0;
+          transition: max-height 0.3s ease-in-out;
+          overflow: hidden;
+        }
+
+        .menu a {
+          font-size: 2rem;
+          padding: 1rem 0;
+          color: goldenrod;
+        }
+
+        .menu.show {
+          display: flex;
+        }
+
+        .menu a:hover {
+          transform: none;
+          color: goldenrod;
+        }
+
+        .menu-toggle {
+          display: block;
+          z-index: 1001;
+          margin: 0 auto;
+          order: 2;
+        }
+
+        .enlace-vibrante img.cartas {
+          width: 50px;
+        }
+        header.header,
+        footer {
+          height: 15vh;
+        }
+        .logo-img, .logo-img2 {
+            width: 12vw;
+            transition: none !important;
+          }
+
+        header.header {
+          height: auto;
+          flex-wrap: wrap;
+          justify-content: space-around;
+        }
+
+        .logo-right {
+            order: 3;
+            margin-left: auto;
+          }
+        .logo-left:hover, .logo-right:hover {
+          transform: none !important;
+        }
+      }
+
+/* -----------------------   RESPONSIVE FOOTER ---------------------------- */
+        @media (max-width: 768px) {
+          .footer-content {
+            background-color: rgba(0, 0, 0, 0.75); /* Fondo translúcido para contraste */
+            padding: 1rem;
+            border-radius: 8px;
+          }
+
+          .footer-content.closed {
+            max-height: 0;
+            overflow: hidden;
+          }
+
+          .footer-content {
+            background-color: rgba(0, 0, 0, 0.70);/* Fondo translúcido para contraste */
+            transition: max-height 0.3s ease;
+          }
+
+          .footer-toggle {
+            display: block;
+          }
+        }
+
+        /* --------------------------- VISTA INTERMEDIA ------------------------------ */
+        /* --------------------------- VISTA INTERMEDIA ------------------------------ */
+        @media (min-width: 769px) and (max-width: 1200px) {
+          .menu {
+            gap: 2rem;
+          }
+
+          .menu a {
+            font-size: 2.2rem;
+          }
+
+          .logo-img {
+            width:10vw;
+          }
+
+          .logo-img2 {
+            width:10vw;
+           }
+        }
+
+
+
+
+/* -----------------------   BANNER COOKIES ---------------------------- */
+/* -----------------------   BANNER COOKIES ---------------------------- */
+/* -----------------------   BANNER COOKIES ---------------------------- */
+.cookie-banner {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #222;
+  color: #fff;
+  padding: 1rem;
+  z-index: 9999;
+  font-size: 2rem;
+  box-shadow: 0 -2px 20px rgba(0,0,0,0.5);
+  box-sizing: border-box;
+  text-align: center;
+
+  height: 60vh;
+  padding: 2rem 1rem;
+  
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+
+.cookie-content {
+  width: 60%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.cookie-banner p {
+  font-size: 1.4rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  margin-top: 3rem;
+  margin-bottom: 5rem;
+  margin-right: auto;
+  margin-left: auto;
+  text-indent: 2em;
+  text-align: justify;
+}
+
+.cookie-banner a {
+  color: #f5c542;
+  text-decoration: underline;
+}
+
+.cookie-buttons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  flex-direction: column;
+}
+
+.cookie-buttons button {
+  padding: 0.8rem 1.6rem;
+  margin-left: 10rem;
+  margin-right: 0rem;
+  font-size: 1.2rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+#cookie-accept {
+  background-color: orange;
+  color: rgb(63, 55, 55);
+}
+
+#cookie-reject {
+  background-color: orange;
+  color: rgb(63, 55, 55);
+}
+
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+  .cookie-content {
+    width: 90%;
+  }
+
+  .cookie-banner p {
+    font-size: 1.1rem;
+  }
+
+  .cookie-buttons {
+    flex-direction: column;
+  }
+
+  .cookie-buttons button {
+    width: 100%;
+  }
+}
+
+/* -----------------------   NUEVOS AJUSTES RESPONSIVE INTERMEDIOS ---------------------------- */
+
+@media (max-width: 768px) {
+  .cookie-banner {
+    flex-direction: column;
+    height: auto;
+    padding: 1rem;
+    text-align: center;
+  }
+
+  .cookie-content {
+    width: 90%;
+    max-width: none;
+  }
+
+  .cookie-banner p {
+    font-size: 1.2rem;
+    margin: 1rem 0;
+    text-align: justify;
+    text-indent: 0;
+  }
+
+  .cookie-buttons {
+    flex-direction: row;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+
+  .cookie-buttons button {
+    margin: 0;
+    padding: 0.6rem 1.2rem;
+    font-size: 1rem;
+    width: auto;
+  }
+}
+
+@media (orientation: landscape) and (max-height: 480px) {
+  .cookie-banner {
+    flex-direction: column;
+    height: auto;
+    padding: 1rem;
+    overflow-y: auto;
+  }
+
+  .cookie-banner p {
+    font-size: 1rem;
+    margin: 1rem 0;
+    line-height: 1.4;
+  }
+
+  .cookie-buttons {
+    flex-direction: row;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+
+  .cookie-buttons button {
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
+  }
+}
+
+
+/* ----------------------- FIN  BANNER COOKIES ---------------------------- */

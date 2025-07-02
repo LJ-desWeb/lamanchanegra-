@@ -1,0 +1,314 @@
+/*  -------------------------- MENSAJE INVISIBLE - SECCIÓN 1      -----------------------------------------------------*/
+/*  -------------------------- MENSAJE INVISIBLE - SECCIÓN 1      -----------------------------------------------------*/
+/*  -------------------------- MENSAJE INVISIBLE - SECCIÓN 1      -----------------------------------------------------*/
+main {
+  padding-top: 120px; /* asegúrando que este espacio sea igual o mayor al header */
+}
+.titulo_0_0{
+  margin-top: 4rem;
+  font-size:7rem;
+  text-align: center;
+  color: rgb(97, 84, 50); 
+}
+.titulo_1_{
+  font-size: 4rem;
+  text-align: center;
+  color: rgb(97, 84, 50); 
+}
+
+.pergamino-container {
+  position: relative;
+  margin-top: 100px; /* ajustado según la altura del header */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 90%;
+  margin: 0 auto;
+  /*border: 3px blue solid;*/
+}
+
+.pergamino {
+  width: 100%;
+  height: auto;
+  display: block;
+  z-index: 0;
+  /*border: 3px green solid;*/
+}
+
+.texto_invisible {
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  right: 10%;
+  bottom: 10%;
+  z-index: 1;
+  overflow: auto;
+  font-size: 5rem;
+  color: rgba(138, 3, 3, 1); /* 70% opaco */
+  line-height: 1.6;
+  text-align: center;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+/* Inicialmente, todas las palabras son transparentes */
+.hidden-text span {
+    opacity: 0;
+    transition: opacity 0.3s;
+    cursor: default;
+}
+
+/* Cuando se pasa el cursor por encima de una palabra */
+.hidden-text span:hover {
+    opacity: 1 !important;
+}
+/* Mostrar todo el texto al pasar sobre la última frase */
+.show-all span {
+    opacity: 1 !important;
+}
+/* Ocultar la brújula inicialmente */
+.brujula {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.5s ease-in-out;
+    position:absolute;
+    width: 20vh;
+    bottom:12vh;
+    right: 5vw;
+}
+/* Mostrar brújula permanentemente /* cuando activado */
+.brujula.visible {
+    opacity: 1;
+    pointer-events: auto;
+    animation: girar-izq-der 3s infinite ease-in-out;
+     
+}
+ .brujula-link {
+  position: absolute;
+  bottom: 12vh;
+  right: 5vw;
+  opacity: 0;
+  pointer-events: none; /* 🔒 Inactivo inicialmente */
+  transition: opacity 0.5s ease-in-out;
+  display: block;       /* ✅ Asegura que el <a> ocupe todo el área de la imagen */
+  z-index: 10;          /* ✅ Se asegura de estar por encima */
+}
+
+.brujula-link.visible {
+  opacity: 1;
+  pointer-events: auto; /* 🔓 Se activa */
+  cursor: pointer;
+}
+@keyframes girar-izq-der {/* Animación de giro */
+  0% { transform: rotate(-10deg); }
+  50% { transform: rotate(10deg); }
+  100% { transform: rotate(-10deg); }
+}
+
+
+
+/* ===================== TABLET (768px - 1024px) ===================== */
+/* ===================== TABLET (768px - 1024px) ===================== */
+/* ===================== TABLET (768px - 1024px) ===================== */
+@media (min-width: 768px) and (max-width: 1024px) {
+  main {
+  padding-top: 180px; /* asegúrando que este espacio sea igual o mayor al header */
+  }
+  .titulo_0_0{
+  margin-top: 1rem;
+  font-size: 3rem;
+  }
+  .titulo_1_ {
+    font-size: 2.5rem;
+  }
+
+  /* Ajustamos tamaño del texto dentro del pergamino para adaptarse mejor a pantalla */
+  .hidden-text {
+    font-size: clamp(0.8rem, 4vw, 3rem); /* texto fluido en tablet ,  clamp   Permite que el texto se escale fluidamente según el tamaño de pantalla*/
+    padding: 1.5rem; /* reducimos padding interno */
+  }
+
+  /* Asegura que el texto se ajuste sin desbordar */
+  .texto_invisible {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    max-width: 100%;
+    width: 100%;
+    top: 8%;
+    left: 5%;
+    right: 5%;
+    bottom: 8%;
+     overflow: auto;
+  }
+
+  /* Ajuste opcional para mantener la altura del pergamino dinámica */
+  .pergamino {
+    height: auto; /* permite que el pergamino crezca con el contenido */
+    max-height: 100%;
+  }
+
+  .brujula {
+    position:absolute;
+    width: 15vh;
+    bottom:2vh;
+    right: 5vw;
+  }
+   
+  .pergamino-container {
+    flex-direction: column;
+  }
+  .contenido-pergamino {
+    padding: 6% 7%;
+  }
+}
+
+
+/* =============== MÓVIL LANDSCAPE (576px - 767px) =================== */
+/* =============== MÓVIL LANDSCAPE (576px - 767px) =================== */
+/* =============== MÓVIL LANDSCAPE (576px - 767px) =================== */
+@media (min-width: 576px) and (max-width: 767px) {
+  main {
+    padding-top: 180px; /* asegúrando que este espacio sea igual o mayor al header */
+  }
+  .titulo_0_0{
+  margin-top: 1rem;
+  font-size: 3rem;
+  }
+  .titulo_1_ {
+    font-size: 2.5rem;
+  }
+
+  /* Reducimos aún más tamaño y padding del contenido */
+  .contenido-pergamino {
+    font-size: clamp(0.85rem, 2vw, 1rem); /* texto legible pero más pequeño */
+    padding: 1.2rem;
+  }
+  .hidden-text {
+    font-size: clamp(0.8rem, 4vw, 3rem); /* texto fluido en ,  clamp   Permite que el texto se escale fluidamente según el tamaño de pantalla*/
+    padding: 1.5rem; /* reducimos padding interno */
+  }
+
+  .texto_invisible {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .pergamino {
+    height: auto;
+    max-height: 100%;
+  }
+  .brujula {
+    position:absolute;
+    width: 8vh;
+    bottom:0.5vh;
+    right: 2vw;
+  }
+}
+
+
+/* =============== MÓVIL PORTRAIT (< 576px) ========================== */
+/* =============== MÓVIL PORTRAIT (< 576px) ========================== */
+/* =============== MÓVIL PORTRAIT (< 576px) ========================== */
+@media (max-width: 575px) {
+  main {
+    padding-top: 180px; /* asegúrando que este espacio sea igual o mayor al header */
+  }
+  .titulo_0_0{
+  margin-top: 1rem;
+  font-size: 3rem;
+  }
+  .titulo_1_ {
+    font-size: 2.5rem;
+  }
+
+  /* Reducimos aún más tamaño y padding del contenido */
+  .contenido-pergamino {
+    font-size: clamp(0.85rem, 2vw, 1rem); /* texto legible pero más pequeño */
+    padding: 1.2rem;
+  }
+  .hidden-text {
+    font-size: clamp(0.8rem, 4vw, 3rem); /* texto fluido en ,  clamp   Permite que el texto se escale fluidamente según el tamaño de pantalla*/
+    padding: 1.5rem; /* reducimos padding interno */
+  }
+
+  .texto_invisible {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .pergamino {
+    height: auto;
+    max-height: 100%;
+  }
+  .brujula {
+    position:absolute;
+    width: 8vh;
+    bottom:0.5vh;
+    right: 2vw;
+  }
+
+  main {
+  padding-top: 180px; /* asegúrando que este espacio sea igual o mayor al header */
+  }
+  .titulo_0_0{
+  margin-top: 1rem;
+  font-size: 2rem;
+  }
+  .titulo_1_ {
+    font-size: 1.5rem;
+  }
+
+
+  /* Última reducción para pantallas más pequeñas */
+  .contenido-pergamino {
+    font-size: clamp(0.75rem, 2.2vw, 0.95rem); /* el tamaño más compacto pero fluido */
+    padding: 1rem;
+  }
+
+  .texto_invisible {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .pergamino {
+    flex-direction: column;
+    padding: 0 10px;
+
+    height: auto;
+    max-height: 100%;
+  }
+  .brujula {
+    position:absolute;
+    width: 15vh;
+    bottom:2vh;
+    right: 5vw;
+  }
+
+  .brujula-link {
+    bottom: 5vh;
+    right: 5vw;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

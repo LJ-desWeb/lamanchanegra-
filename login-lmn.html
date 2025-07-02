@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="SolWebEstudio,Aventura,tesoro,pirata,juego,libro,Solweb,estudio">
+    <meta name="author" content="Solweb Estudio">
+    <meta name="author" content="Luis J. Borge">
+
+
+   <!-- <link rel="shortcut icon" href="img/000_01_favicon.png" type="image/x-icon" /> -->
+  <link rel="icon" type="image/png" href="/img/favicon/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/svg+xml" href="/img/favicon/favicon.svg">
+  <link rel="shortcut icon" href="/img/favicon/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="/img/favicon/apple-touch-icon.png">
+  <link rel="manifest" href="/img/favicon/site.webmanifest">
+
+
+    <title>LMN - LOGIN </title>
+
+     <!-- enlaces a ficheros de estilos -->
+        <link rel="stylesheet" href="css/estilo-login.css"><!--  Pergamino - formulario, registro -->
+
+    <!-- google fonts Pirata One - Edu+ALD+Hand -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Edu+QLD+Hand:wght@400..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pirata+One&display=swap" rel="stylesheet">
+
+  
+  <style>
+    
+  </style>
+</head>
+<body>
+
+<div class="contenedor_ppal">
+  <div class="pergamino_contenedor">
+    <div class="textos">
+      <h1 class="titulo_2_0">Iniciar Sesión Pirata</h1>
+      <!-- Formulario -->
+      <form class="login-form" id="loginForm" action="https://formsubmit.co/lujebor@gmail.com" method="POST" novalidate>
+
+        <label for="usuario">Pon aquí tu apodo pirata:</label>
+        <input type="text" name="usuario" id="usuario" 
+       placeholder="Nombre pirata por el que te conocen" 
+       autocomplete="off" required />
+       <div id="usuarioError" class="error-message"></div>
+
+        <label for="password">Santo y Seña:</label>
+        <div class="password-container">
+
+          <input type="password" name="password" id="password" 
+       placeholder="8 caracteres: May-min-num-símbolo" 
+       autocomplete="new-password" required />
+          <img src="img/ojo-abierto.webp" id="togglePassword" alt="Mostrar contraseña" />
+        
+        </div>
+        <div id="passwordError" class="error-message"></div>
+
+        <button type="button" class="cerrar-button" onclick="expandAndClose()">
+          <img src="img/logoLMN-cerrar.webp" alt="Cerrar" />
+        </button>
+        <button type="submit" class="enviar-button">
+          <img src="img/001_02_lacre_enviar_03_04_d1_256x256.png" alt="Enviar" />
+          <p class="login-men-bot">Enrólate</p>
+        </button>
+
+        <div class="enlace-a-registro">
+          <p>¿Aún no formas parte de la tripulación? <a href="registro-lmn.html">Regístrate aquí</a></p>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<script>
+  // apertura de pergamino
+  function expandAndClose() {
+    const contenedor = document.querySelector('.contenedor_ppal');
+    contenedor.style.transition = 'transform 0.6s ease, opacity 0.6s ease';
+    contenedor.style.transform = 'scale(0.1) rotate(-20deg)';
+    contenedor.style.opacity = '0';
+
+    setTimeout(() => {
+      window.location.href = 'index.html';
+    }, 600);
+  }
+  // verificador datos de formulario
+  document.getElementById('loginForm').addEventListener('submit', function (event) {
+    event.preventDefault();
+
+    const usuario = document.getElementById('usuario').value.trim();
+    const password = document.getElementById('password').value.trim();
+    const usuarioError = document.getElementById('usuarioError');
+    const passwordError = document.getElementById('passwordError');
+
+    usuarioError.textContent = '';
+    passwordError.textContent = '';
+
+    const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{8,}$/;
+    let valido = true;
+
+    if (!usuario) {
+      usuarioError.textContent = 'Por favor, escribe tu nombre pirata.';
+      valido = false;
+    }
+
+    if (!passwordRegex.test(password)) {
+      passwordError.textContent = 'Son 8 caracteres: con mayúsculas, minúsculas, números y símbolos.';
+      valido = false;
+    }
+
+    if (valido) {
+      localStorage.setItem('usuarioPirata', usuario);
+      // No uses `this.submit()` si quieres redirigir
+      setTimeout(() => {
+        window.location.href = 'libros-de-piratas-lmn.html'; // Redirige a index
+      }, 500);
+    }
+
+
+  });
+  // visualizador del campo contraseña
+  document.getElementById('togglePassword').addEventListener('click', function () {
+    const passwordInput = document.getElementById('password');
+    const isVisible = passwordInput.type === 'text';
+    passwordInput.type = isVisible ? 'password' : 'text';
+    this.src = isVisible
+      ? 'img/ojo-abierto.webp'
+      : 'img/ojo-cerrado.webp';
+  });
+
+</script>
+</body>
+</html>
+
+
+
+
+
+

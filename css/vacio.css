@@ -1,0 +1,128 @@
+
+header.header {
+  height: 20vh;
+  padding-left: 2rem; /* MODIFICADO: antes 1rem */
+  padding-right: 2rem; /* MODIFICADO: antes 1rem */
+  gap: 1rem; /* AÑADIDO: separa hijos flex (logo/menu/user/login) */
+}
+
+.menu {
+  gap: 4rem; /* MODIFICADO: antes 8rem – más compacto para evitar colisiones en desktop */
+}
+
+.felicitacion {
+  font-size: 2rem; /* MODIFICADO: antes 3rem */
+  flex-wrap: wrap; /* AÑADIDO: permite salto si es necesario */
+  max-width: 250px; /* AÑADIDO: evita que se desborde horizontalmente */
+  word-break: break-word; /* AÑADIDO: divide si se pasa */
+}
+
+.logo-login {
+  width: 8vw; /* MODIFICADO: antes 10vw */
+  min-width: 50px; /* AÑADIDO: asegura visibilidad en móvil */
+}
+
+
+
+/* en tablet ------------------------------------ LOGO LA MANCHA NEGRA ---- */
+.logo-lmn,
+.logo-login {
+  width: 16vw; /* MODIFICADO: antes 14vw – se agranda un poco */
+  min-width: 60px; /* AÑADIDO */
+}
+/* ---- USER AREA ---- */
+.felicitacion {
+  font-size: 1.5rem; /* AÑADIDO/MODIFICADO */
+  max-width: 180px; /* AÑADIDO */
+}
+
+/* en landscape ------------------------------------ LOGO LA MANCHA NEGRA ---- */
+.logo-lmn,
+.logo-login {
+  width: 18vw; /* MODIFICADO: agrandamos un poco el logo */
+  min-width: 50px;
+}
+.menu {
+  gap: 2rem; /* MODIFICADO: más compacto para pantallas pequeñas */
+}
+.menu a {
+  font-size: 1.4rem; /* MODIFICADO: antes 1.2rem */
+}
+/* USER GREETING */
+.felicitacion {
+  font-size: 1.3rem; /* AÑADIDO/MODIFICADO */
+  max-width: 150px;
+}
+
+/* en portrait ------------------------------------ LOGO LA MANCHA NEGRA ---- */
+
+.logo-lmn,
+.logo-login {
+  width: 20vw; /* MODIFICADO: agrandamos para pantallas pequeñas */
+  min-width: 45px;
+}
+.menu {
+  gap: 1rem; /* REDUCIDO un poco para optimizar espacio vertical */
+}
+.menu a {
+  font-size: 1.2rem; /* MODIFICADO: más legible que 1rem */
+}
+.felicitacion {
+  font-size: 1.1rem; /* REDUCIDO para caber en el header */
+  max-width: 140px;
+}
+
+
+
+#userArea {
+  flex-wrap: wrap; /* AÑADIDO: permite que greeting y botón bajen si no caben */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ------------------------------------ MÓVIL PEQUEÑO < 481px ------------------------------------ */
+@media (max-width: 480px) {
+ 
+
+  .texto_invisible {
+         /* Reduce texto en pergamino */
+    line-height: 1.4;
+    top: 8%;
+    left: 5%;
+    right: 5%;
+    bottom: 8%;
+  }
+
+  .pergamino-container {
+    flex-direction: column;
+    padding: 0 10px;
+  }
+
+  .brujula {
+    width: 15vw; /* Escala proporcional al ancho */
+  }
+
+  .brujula-link {
+    bottom: 5vh;
+    right: 5vw;
+  }
+}

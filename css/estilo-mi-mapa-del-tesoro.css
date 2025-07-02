@@ -1,0 +1,171 @@
+
+
+/* =====================================   HTML. JUEGOS ================================        
+/* =====================================   HTML. JUEGOS ================================        
+/* =====================================   HTML. JUEGOS ================================        
+/* =====================================   HTML. JUEGOS ================================        
+      
+        
+        
+        /* =========================
+           Reset básico y tipografías
+           ========================= */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Pirata One', cursive;
+            background: #FCEABB;
+            background: linear-gradient(to right, #FCEABB 0%, #F8E4BB 51%, #FBDF93 100%);
+            color: #5D4037;
+            overflow-x: hidden;
+        }
+        /* Importa la fuente Allura para títulos h2 y párrafos */
+        @import url('https://fonts.googleapis.com/css2?family=Allura&display=swap');
+
+        /* =========================
+           Sección 1: Títulos y Párrafos
+           ========================= */
+        
+        .titulo_8_1_ {
+            font-size: 5rem;
+            text-align: center;
+            margin-top:14rem;
+            font-family: 'Pirata One', cursive;
+        }
+        /* Estilo para todos los títulos h2 */
+        .titulo_8_2_ {
+            font-family: 'Allura', cursive;
+            font-size: 4rem;
+            font-weight: bold;
+            text-align: center;
+            margin: 0rem auto;
+            line-height: 1.2;
+        }
+        .titulo_8_3_ {
+            font-family: 'Allura', cursive;
+            font-size: 3rem;
+            font-weight: bold;
+            text-align: center;
+            margin: 0rem auto;
+            line-height: 1.2;
+        }
+        /* Separador (la imagen de línea de tinta) */
+        .separador_8 {
+            text-align: center;
+            margin: 1rem auto;
+        }
+        .linea {
+            width: 90%;
+            max-width: 1200px;
+            height: auto;
+        }
+        /* Estilo para el párrafo de introducción */
+        .p_juegos {
+            font-family: 'Allura', cursive;
+            font-size: 2rem;
+            line-height: 1.6;
+            max-width: 1200px;        /* No ocupará todo el ancho */
+            margin: 1rem auto 2rem;  /* Centrado horizontal y separación vertical */
+            text-indent: 2em;        /* Sangría inicial */
+            padding: 0 1rem;         /* Algo de margen interno en lados para pantallas estrechas */
+            word-wrap: break-word;
+            text-align: center;
+            }
+        /* -----------------------------------
+        Diseño Responsive  títulos y párrafos
+        ----------------------------------- */
+        /* Tablets o pantallas medianas */
+        @media (max-width: 1024px) {
+        .titulo_8_1_ {
+            font-size: 2rem;
+            margin: 1rem auto 0.6rem;
+        }
+        .titulo_8_2_ {
+            font-size: 1.8rem;
+            margin: 1.2rem auto 0.8rem;
+        }
+         .titulo_8_3_ {
+            font-size: 1.6rem;
+            margin: 1rem auto 0.6rem;
+        }
+        .p_juegos {
+            font-size: 1rem;
+            max-width: 90%;
+            text-indent: 1.5em;
+            margin: 0.8rem auto 1.5rem;
+        }
+        .linea {
+            width: 95%;
+            max-width: 700px;
+        }
+        }
+        /* Móvil en horizontal (landscape) */
+        @media (max-width: 768px) {
+        .titulo_8_1_ {
+            font-size: 2rem;
+            margin: 1rem auto 0.6rem;
+        }
+
+        .titulo_8_2_ {
+            font-size: 1.6rem;
+            margin: 1rem auto 0.6rem;
+        }
+         .titulo_8_3_ {
+            font-size: 1.6rem;
+            margin: 1rem auto 0.6rem;
+        }
+        .p_juegos {
+            font-size: 0.95rem;
+            max-width: 95%;
+            text-indent: 1.2em;
+            margin: 0.6rem auto 1rem;
+            padding: 0 0.8rem;
+        }
+        .linea {
+            width: 100%;
+            max-width: 600px;
+        }
+        }
+        /* Móvil en vertical (portrait) */
+        @media (max-width: 480px) {
+         .titulo_8_1_ {
+            font-size: 2rem;
+            margin: 1rem auto 0.6rem;
+        }
+        .titulo_8_2_ {
+            font-size: 1.4rem;
+            margin: 0.8rem auto 0.5rem;
+        }
+         .titulo_8_3_ {
+            font-size: 1.6rem;
+            margin: 1rem auto 0.6rem;
+        }
+        .p_juegos {
+            font-size: 1rem;
+            max-width: 100%;
+            text-indent: 1em;
+            margin: 0.7rem auto 0.8rem;
+            padding: 0 0.6rem;
+        }
+        .linea {
+            width: 100%;
+            max-width: 400px;
+        }
+        }
+
+        /* Separador (la imagen de línea de tinta) */
+        .separador_8 {
+            text-align: center;
+            margin: 1rem auto;
+            max-width:80%;
+        }
+        
+
+/* ====================================================================== */
+/* ====================================================================== */
+/* ====================================================================== */
+
+
