@@ -193,6 +193,11 @@ main {
     overflow-wrap: break-word;
     max-width: 100%;
     width: 100%;
+    top: 8%;
+    left: 5%;
+    right: 5%;
+    bottom: 8%;
+    overflow: auto;
   }
 
   .pergamino {
@@ -204,6 +209,12 @@ main {
     width: 8vh;
     bottom:0.5vh;
     right: 2vw;
+  }
+  .pergamino-container {
+    flex-direction: column;
+  }
+  .contenido-pergamino {
+    padding: 6% 7%;
   }
 }
 
@@ -223,11 +234,7 @@ main {
     font-size: 2.5rem;
   }
 
-  /* Reducimos aún más tamaño y padding del contenido */
-  .contenido-pergamino {
-    font-size: clamp(0.85rem, 2vw, 1rem); /* texto legible pero más pequeño */
-    padding: 1.2rem;
-  }
+  
   .hidden-text {
     font-size: clamp(0.8rem, 4vw, 3rem); /* texto fluido en ,  clamp   Permite que el texto se escale fluidamente según el tamaño de pantalla*/
     padding: 1.5rem; /* reducimos padding interno */
@@ -241,60 +248,28 @@ main {
   }
 
   .pergamino {
+    flex-direction: column;
     height: auto;
     max-height: 100%;
   }
   .brujula {
     position:absolute;
-    width: 8vh;
+    width: 6vh;
     bottom:0.5vh;
     right: 2vw;
   }
-
-  main {
-  padding-top: 180px; /* asegúrando que este espacio sea igual o mayor al header */
-  }
-  .titulo_0_0{
-  margin-top: 1rem;
-  font-size: 2rem;
-  }
-  .titulo_1_ {
-    font-size: 1.5rem;
-  }
-
-
-  /* Última reducción para pantallas más pequeñas */
-  .contenido-pergamino {
-    font-size: clamp(0.75rem, 2.2vw, 0.95rem); /* el tamaño más compacto pero fluido */
-    padding: 1rem;
-  }
-
-  .texto_invisible {
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-    max-width: 100%;
-    width: 100%;
-  }
-
-  .pergamino {
-    flex-direction: column;
-    padding: 0 10px;
-
-    height: auto;
-    max-height: 100%;
-  }
-  .brujula {
-    position:absolute;
-    width: 15vh;
-    bottom:2vh;
-    right: 5vw;
-  }
-
   .brujula-link {
-    bottom: 5vh;
+    bottom: 0.5vh;
     right: 5vw;
+  }
+  .pergamino-container {
+    flex-direction: column;
+  }
+  .contenido-pergamino {
+    padding: 6% 7%;
   }
 }
+ 
 
 
 
