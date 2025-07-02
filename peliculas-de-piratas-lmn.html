@@ -1,0 +1,1263 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- etiqueta meta, con palabras clave en posicionamiento -->
+        <meta name="keywords" content="Aventura,tesoro,pirata,juego,pelicula,libro,mapa,lamanchanegra">
+        <meta name="author" content="Solweb Estudio">
+        <meta name="author" content="Luis J. Borge">
+
+        <!-- <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon" /> -->
+        <link rel="icon" type="image/png" href="/img/favicon/favicon-96x96.png" sizes="96x96">
+        <link rel="icon" type="image/svg+xml" href="/img/favicon/favicon.svg">
+        <link rel="shortcut icon" href="/img/favicon/favicon.ico">
+        <link rel="apple-touch-icon" sizes="180x180" href="/img/favicon/apple-touch-icon.png">
+        <link rel="manifest" href="/img/favicon/site.webmanifest">
+
+
+        <title>lamanchanegra-peliculas</title>
+
+        <!-- enlaces a ficheros de estilos -->
+        <link rel="stylesheet" href="css/estilo-header-resto.css"><!--  Fondo + header + baner cookies -->
+        <link rel="stylesheet" href="css/estilo-footer-carajo.css"><!--  footer + carajo  -->
+
+        <link rel="stylesheet" href="css/estilo-peliculas.css"><!--  PELICULAS  -->
+
+        <!-- google fonts Pirata One - Edu+ALD+Hand -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>  
+
+        <link href="https://fonts.googleapis.com/css2?family=Edu+QLD+Hand:wght@400..700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Pirata+One&display=swap" rel="stylesheet">
+
+         <!-- ENLACE A los iconos del footer, Facebook, instagram, etc , se agrega  Font Awesome-->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+        <style>
+        
+    </style>
+</head>
+
+<body>
+    <!--  -------------------------------- header ------------------------------------------ -->
+    <header class="header d-flex justify-content-between align-items-center px-3">
+        <a href="solweb-estudio-info.html" target="_blank" class="logo-left">
+            <img src="img/logo-la-mancha-negra.webp" alt="Logo La Mancha Negra" class="logo-lmn  glow-lmn">
+        </a>
+
+        <button id="menu-toggle" class="menu-toggle" aria-label="Abrir menú">Menú
+             <img src="img/menu-hamburguesa-pirata.webp" alt="Abrir menú" width="40" height="40">
+            <!--<i class="fas fa-bars"></i> -->
+        </button>
+
+         <nav id="main-menu" class="menu texto-hover text-center py-3">
+            <a href="/index.html" class="elmenu"><p class="titnav">Inicio</p></a>
+            <a href="/libros-de-piratas-lmn.html" class="libros" id="libros"><p class="titnav">Libros</p></a>
+            <a href="/juegos-de-piratas-lmn.html" class="enlace-vibrante"><img src="img/000_05_Cartas_Valencianas_ed_1778_06_.png" alt="2cartas" class="cartas"><p class="titnav"></p></a>
+            <a href="/peliculas-de-piratas-lmn.html" class="menu_03 activo" id="peliculas"><p class="titnav">Películas</p></a>
+            <a href="/blog-de-piratas-lmn.html" class="menu_04" id="blog"><p class="titnav">Blog</p></a>
+            <a href="/mi-mapa-del-tesoro-lmn.html" class="menu_05" id="mapa"><p class="titnav">Mapa</p></a>
+        </nav>
+
+        <div id="userArea">
+            <a href="libros-de-piratas-lmn.html" class="saludos-enlace"> 
+                <div class="saludos">
+                    <span id="userGreeting_a" class="felicitacion"></span>
+                    <span id="userGreeting_b" class="felicitacion"></span>
+                </div>
+            </a> 
+            <button id="bot-login-out">Cerrar sesión</button>
+        </div>
+
+        <a href="login-lmn.html" class="logo-right">
+            <img src="img/login-pirata.webp" alt="figura lego para login" class="logo-login glow-login">
+        </a>
+    </header>
+
+    <main class="container-fluid">
+        <!--  Seccion 1 ----------- Menu de secciones   ------->
+        <section class="_6_sec_1_">
+            <article>
+                <h2 class="titulo_6_3_">Menú General</h2>
+                <div class="separador_6" id="separador_6">
+                   <img src="img/010_00_ink_line_01_1900x30_.webp" alt="línea de tinta - separador" class="linea" id="linea">
+                </div>
+
+                <h2 class="titulo_6_3_"><a href="#tit_sec_6_0_" class="menu2">Historia de los piratas en el cine</a></h2>
+                <h2 class="titulo_6_3_"><a href="#dominioPublico" class="menu2">Películas de Dominio Público</a></h2>
+                <h2 class="titulo_6_3_"><a href="#TV" class="menu2">Visor películas de Dominio Público</a></h2>
+                <h2 class="titulo_6_3_"><a href="#listado_peliculas" class="menu2">Listado general de películas.Notas</a></h2>
+                <h2 class="titulo_6_3_"><a href="#islaTesoro" class="menu2">La Isla del Tesoro</a></h2>
+                <h2 class="titulo_6_3_"><a href="#piratasCaribe" class="menu2">Piratas del Caribe</a></h2>
+                <h2 class="titulo_6_3_"><a href="#peliDestacadas" class="menu2">Películas destacadas</a></h2>
+                <h2 class="titulo_6_3_"><a href="#peliAnimacion" class="menu2">Películas de animación</a></h2>
+                <h2 class="titulo_6_3_"><a href="#series" class="menu2">Series</a></h2>
+                <h2 class="titulo_6_3_"><a href="#menosK" class="menu2">Películas y Series menos conocidas</a></h2>
+           </article>              
+       </section> 
+                <div class="separador_6" id="separador_6">
+                   <img src="img/010_00_ink_line_01_1900x30_.webp" alt="línea de tinta - separador" class="linea" id="linea">
+                </div>
+         <!-- seccion 2 - peliculas introducción ================================== -->
+        <!-- TITULO Y SEPARADOR 1 -------------------------------------------------  -->
+        <h1 class="titulo_6_0_" id="tit_sec_6_0_">Historia de los piratas en el cine: Un Viaje a Través de los Siete Mares de la Gran Pantalla</h1><br><br>
+        <h2 class="titulo_6_1_" id="tit_sec_6_1">¡ Piratas del Caribe !</h2><br><br><br>
+
+        <div class="separador_6" id="separador_6">
+            <img src="img/010_00_ink_line_01_1900x30_.webp" alt="línea de tinta - separador" class="linea" id="linea">
+        </div>
+        
+         <section id="sec_peliculas" class="seccion1"> 
+            <article>
+
+                <p class="p_peliculas" id="p_peliculas">
+                La figura del pirata, con su aura de aventura, rebeldía y búsqueda de tesoros, ha navegado por los mares de la imaginación humana durante siglos.
+                Desde las crónicas históricas hasta las leyendas populares, estos audaces navegantes han capturado nuestra fascinación. Sin embargo, es en la pantalla
+                grande donde su mito ha alcanzado proporciones épicas, transformándose y adaptándose a cada era.
+                </p>
+                <p class="p_peliculas" id="p_peliculas">
+                Esta visualización les invita a embarcarse en un emocionante recorrido por la historia de los piratas en el cine. Desde las primeras incursiones
+                cinematográficas que sentaron las bases del género, hasta las producciones contemporáneas que han redefinido la acción y la fantasía, exploraremos
+                cómo el cine ha interpretado y reinterpretado a estos icónicos personajes.
+                </p>
+                <p class="p_peliculas" id="p_peliculas">
+                Analizaremos las películas que han marcado hitos, los arquetipos de piratas que han perdurado en el tiempo y la evolución de los temas y las técnicas
+                narrativas que han dado vida a estas emocionantes sagas marítimas. Prepárense para izar la bandera negra y descubrir cómo la magia del cine ha
+                inmortalizado a los piratas, convirtiéndolos en verdaderas leyendas de la cultura popular.
+                </p>
+            </article>
+        </section> <!-- FIN seccion 1 - peliculas ============================================= -->
+                <div class="separador_6" id="separador_6">
+                    <img src="img/010_00_ink_line_01_1900x30_.webp" alt="línea de tinta - separador" class="linea" id="linea">
+                </div> 
+        <!-- seccion 3 - peliculas de Dominio Público ================================== -->
+        <section id="dominioPublico" class="secVarias">
+            <article>  
+                <h2>0. Algunas Películas de Dominio Público:</h2>
+                <h3>Se pueden reproducir en la siguiente sección:</h3>
+                <ul class="section-dominio-publico   movie-list">
+                    <li onclick="playVideo('https://www.youtube.com/embed/OeyJu02bQxI?si=2jI-nJy1Kd3BufRh')">
+                        <div class="movie-item-content">
+                            <div class="movie-details">
+                                <strong>Título:</strong> La Isla del Tesoro<br>
+                                <strong>Año:</strong> 1934<br>
+                                <strong>Director:</strong> Victor Fleming<br>
+                                <strong>Duración:</strong> 105 min.<br>
+                                <em>(Haz clic para ver en el televisor de abajo)</em>
+                                <a href="https://ok.ru/video/2046072785564" target="_blank" class="enla_you">(Película de dominio público - ¡Haz clic para ver en YT!)</a>
+                            </div>
+                            <div class="movie-poster">
+                                <img src="img/011_07_la_isla_del_tesoro_1934_01_.webp" alt="Cartel de Captain Kidd">
+                            </div>
+                        </div>
+                        </div>
+                    </li>
+            
+                    <li onclick="playVideo('https://www.youtube.com/embed/g29vrOH3WVQ?si=QKs9vCpPFM8O0YDZ')">
+                        <div class="movie-item-content">
+                            <div class="movie-details">
+                                <strong>Título:</strong> Captain Kidd<br>
+                                <strong>Año:</strong> 1945<br>
+                                <strong>Director:</strong> Rowland V. Lee<br>
+                                <strong>Duración:</strong> 89 min.<br>
+                                <em>(Haz clic para ver en el televisor de abajo)</em>
+                                <a href="https://www.youtube.com/watch?v=g29vrOH3WVQ" target="_blank" class="enla_you">(Película de dominio público - ¡Haz clic para ver en YT!)</a>
+                            </div>
+                            <div class="movie-poster">
+                                <img src="img/011_04_Captain_Kidd_01_.webp" alt="Cartel de Captain Kidd">
+                            </div>
+                        </div>
+                    </li>
+            
+                    <li onclick="playVideo('//ok.ru/videoembed/1316425959938?nochat=1')">
+                        <div class="movie-item-content">
+                            <div class="movie-details">
+                                <strong>Título:</strong> The Spanish Main (Fragmento)<br>
+                                <strong>Año:</strong> 1945<br>
+                                <strong>Director:</strong> Frank Borzage<br>
+                                <strong>Duración:</strong> 100 min.<br>
+                                <em>(Fragmento de película - ¡Haz clic para ver! en el televisor de abajo)</em>
+                                <a href="https://ok.ru/video/1316425959938" target="_blank" class="enla_you">(Película de dominio público - ¡Haz clic para ver en Bing!)</a>
+                            </div>
+                            <div class="movie-poster">
+                                <img src="img/011_05_the_spanish_main_01_.webp" alt="Cartel de Captain Kidd">
+                            </div>
+                        </div>
+                    </li>                                       
+                    
+                </ul>          
+                <div class="separador_6" id="separador_6">
+                    <img src="img/010_00_ink_line_01_1900x30_.webp" alt="línea de tinta - separador" class="linea" id="linea">
+                </div>
+            </article>
+
+        </section><!-- FIN seccion 2 - peliculas de dominio público ===================== -->
+
+    <!--  Seccion 4 ----------- Contenedor con reproductor películas  ------->
+        <section class="w-full" id="TV">
+            <h2 class="titulo_6_2_">¡Disfruta de la película!</h2>
+            <!-- Contenedor con TV -->
+            <div class="tv-container">
+                <!-- Iframe del reproductor de video -->
+                <iframe id="tv-player" class="tv-video"
+                        src="" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                        referrerpolicy="strict-origin-when-cross-origin" 
+                        title="YouTube video player" 
+                        allowfullscreen>
+                </iframe>
+                                
+            </div>
+
+            <div class="separador_6" id="separador_6">
+                    <img src="img/010_00_ink_line_01_1900x30_.webp" alt="línea de tinta - separador" class="linea" id="linea">
+            </div>
+           
+        </section> <!-- FIN seccion 3 - TV ===================== -->
+    
+        <!--  Seccion 5 -----------Listado general - NOTAS  ------->
+        <section id="listado_peliculas" class="secVarias">
+            <article></article>
+            
+                <h2 class="titulo_6_0_">Otra clasificación de Películas y Series de Piratas</h2>
+                <p class="p_peliculas" id="p_peliculas"><strong>Aviso:</strong> La información sobre la duración de películas y el número exacto de temporadas/episodios de series puede variar ligeramente según la fuente (edición de DVD/Blu-ray, plataforma de streaming, país, etc.). Los datos de directores se refieren al director principal de la película o al director principal de la serie. Es un listado inicial, pendiente de revisión y ampliación.</p>
+                <p class="p_peliculas" id="p_peliculas"><strong>Aviso:</strong> Enlaces - Carteles , etc, pendientes de actualizar.</p>
+
+                <div class="separador_6" id="separador_6">
+                    <img src="img/010_00_ink_line_01_1900x30_.webp" alt="línea de tinta - separador" class="linea" id="linea">
+                </div>
+                
+            </article>
+        </section>
+
+        <!-- Sección 6 especial La Isla del Tesoro ================================== -->
+        <section id="islaTesoro" class="secVarias">
+            <h2>Películas de Piratas</h2>
+
+            <!-- 1. La Isla del Tesoro (Treasure Island) - Adaptaciones Cinematográficas -->
+            <article>
+                <h3>1. La Isla del Tesoro (Treasure Island) - Adaptaciones Cinematográficas:</h3>
+                <ul class="section-dominio-publico">
+                    <li>
+                        <div class="movie-item-content">
+                            <div class="movie-details">
+                                <strong>Título:</strong> Treasure Island<br>
+                                <strong>Año:</strong> 1934<br>
+                                <strong>Director:</strong> Victor Fleming<br>
+                                <strong>Duración:</strong> 102 min.<br>
+                                <em>(Haz clic para ver en el televisor de abajo)</em>
+                                <a href="https://example.com/treasure-island-1934" target="_blank" class="enla_you">(Ver más)</a>
+                            </div>
+                            <div class="movie-poster">
+                                <img src="https://placehold.co/150x200/E0E0E0/333333?text=Isla+Tesoro+1934" alt="Cartel de Treasure Island 1934">
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="movie-item-content">
+                            <div class="movie-details">
+                                <strong>Título:</strong> La Isla del Tesoro (Treasure Island)<br>
+                                <strong>Año:</strong> 1950<br>
+                                <strong>Director:</strong> Byron Haskin<br>
+                                <strong>Duración:</strong> 96 min.<br>
+                                <em>(Haz clic para ver en el televisor de abajo)</em>
+                                <a href="https://example.com/treasure-island-1950" target="_blank" class="enla_you">(Ver más)</a>
+                            </div>
+                            <div class="movie-poster">
+                                <img src="https://placehold.co/150x200/E0E0E0/333333?text=Isla+Tesoro+1950" alt="Cartel de La Isla del Tesoro 1950">
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="movie-item-content">
+                            <div class="movie-details">
+                                <strong>Título:</strong> Treasure Island<br>
+                                <strong>Año:</strong> 1972 (versión soviética/británica)<br>
+                                <strong>Director:</strong> John Hough, Andrey Kulish<br>
+                                <strong>Duración:</strong> 95 min.<br>
+                                <em>(Haz clic para ver en el televisor de abajo)</em>
+                                <a href="https://example.com/treasure-island-1972" target="_blank" class="enla_you">(Ver más)</a>
+                            </div>
+                            <div class="movie-poster">
+                                <img src="https://placehold.co/150x200/E0E0E0/333333?text=Isla+Tesoro+1972" alt="Cartel de Treasure Island 1972">
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="movie-item-content">
+                            <div class="movie-details">
+                                <strong>Título:</strong> La Isla del Tesoro (Treasure Island)<br>
+                                <strong>Año:</strong> 1990 (película para TV)<br>
+                                <strong>Director:</strong> Fraser Heston<br>
+                                <strong>Duración:</strong> 132 min.<br>
+                                <em>(Haz clic para ver en el televisor de abajo)</em>
+                                <a href="https://example.com/treasure-island-1990" target="_blank" class="enla_you">(Ver más)</a>
+                            </div>
+                            <div class="movie-poster">
+                                <img src="https://placehold.co/150x200/E0E0E0/333333?text=Isla+Tesoro+1990" alt="Cartel de La Isla del Tesoro 1990">
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="movie-item-content">
+                            <div class="movie-details">
+                                <strong>Título:</strong> Los Teleñecos en la Isla del Tesoro (Muppet Treasure Island)<br>
+                                <strong>Año:</strong> 1996<br>
+                                <strong>Director:</strong> Brian Henson<br>
+                                <strong>Duración:</strong> 99 min.<br>
+                                <em>(Haz clic para ver en el televisor de abajo)</em>
+                                <a href="https://example.com/muppet-treasure-island" target="_blank" class="enla_you">(Ver más)</a>
+                            </div>
+                            <div class="movie-poster">
+                                <img src="https://placehold.co/150x200/E0E0E0/333333?text=Muppet+Treasure+Island" alt="Cartel de Muppet Treasure Island">
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="movie-item-content">
+                            <div class="movie-details">
+                                <strong>Título:</strong> Treasure Island<br>
+                                <strong>Año:</strong> 1999<br>
+                                <strong>Director:</strong> Peter Rowe<br>
+                                <strong>Duración:</strong> 95 min.<br>
+                                <em>(Haz clic para ver en el televisor de abajo)</em>
+                                <a href="https://example.com/treasure-island-1999" target="_blank" class="enla_you">(Ver más)</a>
+                            </div>
+                            <div class="movie-poster">
+                                <img src="https://placehold.co/150x200/E0E0E0/333333?text=Isla+Tesoro+1999" alt="Cartel de Treasure Island 1999">
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="movie-item-content">
+                            <div class="movie-details">
+                                <strong>Título:</strong> El Planeta del Tesoro (Treasure Planet)<br>
+                                <strong>Año:</strong> 2002 (animación)<br>
+                                <strong>Directores:</strong> Ron Clements, John Musker<br>
+                                <strong>Duración:</strong> 95 min.<br>
+                                <em>(Haz clic para ver en el televisor de abajo)</em>
+                                <a href="https://example.com/treasure-planet" target="_blank" class="enla_you">(Ver más)</a>
+                            </div>
+                            <div class="movie-poster">
+                                <img src="https://placehold.co/150x200/E0E0E0/333333?text=Planeta+Tesoro+2002" alt="Cartel de El Planeta del Tesoro">
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+
+
+                <div class="separador_6" id="separador_6">
+                    <img src="img/010_00_ink_line_01_1900x30_.webp" alt="línea de tinta - separador" class="linea" id="linea">
+                </div>
+
+            </article>
+        </section>      
+        <!-- Sección 7 - Freanquicia Piratas del Caribe ========================= -->
+        <section id="piratasCaribe" class="secVarias">
+
+            <!-- 2. Piratas del Caribe (Pirates of the Caribbean) - Franquicia -->
+            <article>
+                <h3>2. Piratas del Caribe (Pirates of the Caribbean) - Franquicia:</h3>
+                <ul class="section-dominio-publico">
+                    <li>
+                        <div class="movie-item-content">
+                            <div class="movie-details">
+                                <strong>Título:</strong> Piratas del Caribe: La Maldición de la Perla Negra<br>
+                                <strong>Año:</strong> 2003<br>
+                                <strong>Director:</strong> Gore Verbinski<br>
+                                <strong>Duración:</strong> 143 min.<br>
+                                <em>(Haz clic para ver en el televisor de abajo)</em>
+                                <a href="https://example.com/perla-negra" target="_blank" class="enla_you">(Ver más)</a>
+                            </div>
+                            <div class="movie-poster">
+                                <img src="https://placehold.co/150x200/E0E0E0/333333?text=Perla+Negra+2003" alt="Cartel de La Maldición de la Perla Negra">
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="movie-item-content">
+                            <div class="movie-details">
+                                <strong>Título:</strong> Piratas del Caribe: El Cofre del Hombre Muerto<br>
+                                <strong>Año:</strong> 2006<br>
+                                <strong>Director:</strong> Gore Verbinski<br>
+                                <strong>Duración:</strong> 151 min.<br>
+                                <em>(Haz clic para ver en el televisor de abajo)</em>
+                                <a href="https://example.com/cofre-hombre-muerto" target="_blank" class="enla_you">(Ver más)</a>
+                            </div>
+                            <div class="movie-poster">
+                                <img src="https://placehold.co/150x200/E0E0E0/333333?text=Cofre+Muerto+2006" alt="Cartel de El Cofre del Hombre Muerto">
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="movie-item-content">
+                            <div class="movie-details">
+                                <strong>Título:</strong> Piratas del Caribe: En el Fin del Mundo<br>
+                                <strong>Año:</strong> 2007<br>
+                                <strong>Director:</strong> Gore Verbinski<br>
+                                <strong>Duración:</strong> 169 min.<br>
+                                <em>(Haz clic para ver en el televisor de abajo)</em>
+                                <a href="https://example.com/fin-del-mundo" target="_blank" class="enla_you">(Ver más)</a>
+                            </div>
+                            <div class="movie-poster">
+                                <img src="https://placehold.co/150x200/E0E0E0/333333?text=Fin+Mundo+2007" alt="Cartel de En el Fin del Mundo">
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="movie-item-content">
+                            <div class="movie-details">
+                                <strong>Título:</strong> Piratas del Caribe: En Mareas Misteriosas<br>
+                                <strong>Año:</strong> 2011<br>
+                                <strong>Director:</strong> Rob Marshall<br>
+                                <strong>Duración:</strong> 136 min.<br>
+                                <em>(Haz clic para ver en el televisor de abajo)</em>
+                                <a href="https://example.com/mareas-misteriosas" target="_blank" class="enla_you">(Ver más)</a>
+                            </div>
+                            <div class="movie-poster">
+                                <img src="https://placehold.co/150x200/E0E0E0/333333?text=Mareas+2011" alt="Cartel de En Mareas Misteriosas">
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="movie-item-content">
+                            <div class="movie-details">
+                                <strong>Título:</strong> Piratas del Caribe: La Venganza de Salazar<br>
+                                <strong>Año:</strong> 2017<br>
+                                <strong>Directores:</strong> Joachim Rønning, Espen Sandberg<br>
+                                <strong>Duración:</strong> 129 min.<br>
+                                <em>(Haz clic para ver en el televisor de abajo)</em>
+                                <a href="https://example.com/venganza-salazar" target="_blank" class="enla_you">(Ver más)</a>
+                            </div>
+                            <div class="movie-poster">
+                                <img src="https://placehold.co/150x200/E0E0E0/333333?text=Salazar+2017" alt="Cartel de La Venganza de Salazar">
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </article>
+            <div class="separador_6" id="separador_6">
+                <img src="img/010_00_ink_line_01_1900x30_.webp" alt="línea de tinta - separador" class="linea" id="linea">
+            </div>
+
+        </section>
+        <!-- Sección 8 de Películas destacadas ================================== -->
+        <section id="peliDestacadas" class="secVarias">
+            <!-- 3. Otras Películas Destacadas -->
+            <article>
+                <h3>3. Otras Películas Destacadas:</h3>
+                <ul class="section-dominio-publico">
+                    <li>
+                        <div class="movie-item-content">
+                            <div class="movie-details">
+                                <strong>Título:</strong> El Capitán Blood (Captain Blood)<br>
+                                <strong>Año:</strong> 1935<br>
+                                <strong>Director:</strong> Michael Curtiz<br>
+                                <strong>Duración:</strong> 119 min.<br>
+                                <em>(Haz clic para ver en el televisor de abajo)</em>
+                                <a href="https://example.com/captain-blood" target="_blank" class="enla_you">(Ver más)</a>
+                            </div>
+                            <div class="movie-poster">
+                                <img src="https://placehold.co/150x200/E0E0E0/333333?text=Capitan+Blood+1935" alt="Cartel de El Capitán Blood">
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="movie-item-content">
+                            <div class="movie-details">
+                                <strong>Título:</strong> El Cisne Negro (The Black Swan)<br>
+                                <strong>Año:</strong> 1942<br>
+                                <strong>Director:</strong> Henry King<br>
+                                <strong>Duración:</strong> 85 min.<br>
+                                <em>(Haz clic para ver en el televisor de abajo)</em>
+                                <a href="https://example.com/black-swan" target="_blank" class="enla_you">(Ver más)</a>
+                            </div>
+                            <div class="movie-poster">
+                                <img src="https://placehold.co/150x200/E0E0E0/333333?text=Cisne+Negro+1942" alt="Cartel de El Cisne Negro">
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="movie-item-content">
+                            <div class="movie-details">
+                                <strong>Título:</strong> El Temible Burlón (The Crimson Pirate)<br>
+                                <strong>Año:</strong> 1952<br>
+                                <strong>Director:</strong> Robert Siodmak<br>
+                                <strong>Duración:</strong> 105 min.<br>
+                                <em>(Haz clic para ver en el televisor de abajo)</em>
+                                <a href="https://example.com/crimson-pirate" target="_blank" class="enla_you">(Ver más)</a>
+                            </div>
+                            <div class="movie-poster">
+                                <img src="https://placehold.co/150x200/E0E0E0/333333?text=Temible+Burlon+1952" alt="Cartel de El Temible Burlón">
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="movie-item-content">
+                            <div class="movie-details">
+                                <strong>Título:</strong> Capitán Pirata (Captain Pirate)<br>
+                                <strong>Año:</strong> 1952<br>
+                                <strong>Director:</strong> Ralph Murphy<br>
+                                <strong>Duración:</strong> 85 min.<br>
+                                <em>(Haz clic para ver en el televisor de abajo)</em>
+                                <a href="https://example.com/captain-pirate" target="_blank" class="enla_you">(Ver más)</a>
+                            </div>
+                            <div class="movie-poster">
+                                <img src="https://placehold.co/150x200/E0E0E0/333333?text=Capitan+Pirata+1952" alt="Cartel de Capitán Pirata">
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="movie-item-content">
+                            <div class="movie-details">
+                                <strong>Título:</strong> El Pirata Barbanegra (Blackbeard the Pirate)<br>
+                                <strong>Año:</strong> 1952<br>
+                                <strong>Director:</strong> Raoul Walsh<br>
+                                <strong>Duración:</strong> 99 min.<br>
+                                <em>(Haz clic para ver en el televisor de abajo)</em>
+                                <a href="https://example.com/blackbeard" target="_blank" class="enla_you">(Ver más)</a>
+                            </div>
+                            <div class="movie-poster">
+                                <img src="https://placehold.co/150x200/E0E0E0/333333?text=Barbanegra+1952" alt="Cartel de El Pirata Barbanegra">
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="movie-item-content">
+                            <div class="movie-details">
+                                <strong>Título:</strong> Los Bucaneros (The Buccaneer)<br>
+                                <strong>Año:</strong> 1958<br>
+                                <strong>Director:</strong> Anthony Quinn<br>
+                                <strong>Duración:</strong> 121 min.<br>
+                                <em>(Haz clic para ver en el televisor de abajo)</em>
+                                <a href="https://example.com/buccaneer" target="_blank" class="enla_you">(Ver más)</a>
+                            </div>
+                            <div class="movie-poster">
+                                <img src="https://placehold.co/150x200/E0E0E0/333333?text=Bucaneros+1958" alt="Cartel de Los Bucaneros">
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="movie-item-content">
+                            <div class="movie-details">
+                                <strong>Título:</strong> El Pirata de O'Rourke (The Pirate of O'Rourke)<br>
+                                <strong>Año:</strong> 1961<br>
+                                <strong>Director:</strong> John Gilling<br>
+                                <strong>Duración:</strong> 83 min.<br>
+                                <em>(Haz clic para ver en el televisor de abajo)</em>
+                                <a href="https://example.com/orourke" target="_blank" class="enla_you">(Ver más)</a>
+                            </div>
+                            <div class="movie-poster">
+                                <img src="https://placehold.co/150x200/E0E0E0/333333?text=ORourke+1961" alt="Cartel de El Pirata de O'Rourke">
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="movie-item-content">
+                            <div class="movie-details">
+                                <strong>Título:</strong> Piratas (Pirates)<br>
+                                <strong>Año:</strong> 1986<br>
+                                <strong>Director:</strong> Roman Polanski<br>
+                                <strong>Duración:</strong> 121 min.<br>
+                                <em>(Haz clic para ver en el televisor de abajo)</em>
+                                <a href="https://example.com/pirates-1986" target="_blank" class="enla_you">(Ver más)</a>
+                            </div>
+                            <div class="movie-poster">
+                                <img src="https://placehold.co/150x200/E0E0E0/333333?text=Pirates+1986" alt="Cartel de Piratas 1986">
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="movie-item-content">
+                            <div class="movie-details">
+                                <strong>Título:</strong> La Isla de las Cabezas Cortadas (Cutthroat Island)<br>
+                                <strong>Año:</strong> 1995<br>
+                                <strong>Director:</strong> Renny Harlin<br>
+                                <strong>Duración:</strong> 119 min.<br>
+                                <em>(Haz clic para ver en el televisor de abajo)</em>
+                                <a href="https://example.com/cutthroat-island" target="_blank" class="enla_you">(Ver más)</a>
+                            </div>
+                            <div class="movie-poster">
+                                <img src="https://placehold.co/150x200/E0E0E0/333333?text=Cabezas+Cortadas+1995" alt="Cartel de La Isla de las Cabezas Cortadas">
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="movie-item-content">
+                            <div class="movie-details">
+                                <strong>Título:</strong> El Capitán Kidd (Captain Kidd)<br>
+                                <strong>Año:</strong> 1945<br>
+                                <strong>Director:</strong> Rowland V. Lee<br>
+                                <strong>Duración:</strong> 89 min.<br>
+                                <em>(Haz clic para ver en el televisor de abajo)</em>
+                                <a href="https://example.com/captain-kidd-1945" target="_blank" class="enla_you">(Ver más)</a>
+                            </div>
+                            <div class="movie-poster">
+                                <img src="https://placehold.co/150x200/E0E0E0/333333?text=Capitan+Kidd+1945" alt="Cartel de El Capitán Kidd 1945">
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="movie-item-content">
+                            <div class="movie-details">
+                                <strong>Título:</strong> El Fantasma del Pirata (The Ghost and Mrs. Muir)<br>
+                                <strong>Año:</strong> 1947<br>
+                                <strong>Director:</strong> Joseph L. Mankiewicz<br>
+                                <strong>Duración:</strong> 104 min.<br>
+                                <em>(Haz clic para ver en el televisor de abajo)</em>
+                                <a href="https://example.com/ghost-mrs-muir" target="_blank" class="enla_you">(Ver más)</a>
+                            </div>
+                            <div class="movie-poster">
+                                <img src="https://placehold.co/150x200/E0E0E0/333333?text=Fantasma+Pirata+1947" alt="Cartel de El Fantasma del Pirata">
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="movie-item-content">
+                            <div class="movie-details">
+                                <strong>Título:</strong> Un Pirata en la Boda (The Pirate of the Wedding)<br>
+                                <strong>Año:</strong> 1978<br>
+                                <strong>Director:</strong> Fernando Trueba<br>
+                                <strong>Duración:</strong> 95 min.<br>
+                                <em>(Haz clic para ver en el televisor de abajo)</em>
+                                <a href="https://example.com/pirate-wedding" target="_blank" class="enla_you">(Ver más)</a>
+                            </div>
+                            <div class="movie-poster">
+                                <img src="https://placehold.co/150x200/E0E0E0/333333?text=Pirata+Boda+1978" alt="Cartel de Un Pirata en la Boda">
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="movie-item-content">
+                            <div class="movie-details">
+                                <strong>Título:</strong> Hook: El Capitán Garfio (Hook)<br>
+                                <strong>Año:</strong> 1991<br>
+                                <strong>Director:</strong> Steven Spielberg<br>
+                                <strong>Duración:</strong> 142 min.<br>
+                                <em>(Haz clic para ver en el televisor de abajo)</em>
+                                <a href="https://example.com/hook" target="_blank" class="enla_you">(Ver más)</a>
+                            </div>
+                            <div class="movie-poster">
+                                <img src="https://placehold.co/150x200/E0E0E0/333333?text=Hook+1991" alt="Cartel de Hook">
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="movie-item-content">
+                            <div class="movie-details">
+                                <strong>Título:</strong> El Rey Escorpión 2: El Nacimiento de un Guerrero<br>
+                                <strong>Año:</strong> 2008<br>
+                                <strong>Director:</strong> Russell Mulcahy<br>
+                                <strong>Duración:</strong> 101 min.<br>
+                                <em>(Haz clic para ver en el televisor de abajo)</em>
+                                <a href="https://example.com/scorpion-king-2" target="_blank" class="enla_you">(Ver más)</a>
+                            </div>
+                            <div class="movie-poster">
+                                <img src="https://placehold.co/150x200/E0E0E0/333333?text=Rey+Escorpion+2008" alt="Cartel de El Rey Escorpión 2">
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="movie-item-content">
+                            <div class="movie-details">
+                                <strong>Título:</strong> Pirates of the Caribbean: Tales of the Code: Wed Locked<br>
+                                <strong>Año:</strong> 2011 (cortometraje)<br>
+                                <strong>Director:</strong> James Ward Byrkit<br>
+                                <strong>Duración:</strong> 10 min.<br>
+                                <em>(Haz clic para ver en el televisor de abajo)</em>
+                                <a href="https://example.com/tales-of-the-code" target="_blank" class="enla_you">(Ver más)</a>
+                            </div>
+                            <div class="movie-poster">
+                                <img src="https://placehold.co/150x200/E0E0E0/333333?text=Tales+Code+2011" alt="Cartel de Tales of the Code">
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="movie-item-content">
+                            <div class="movie-details">
+                                <strong>Título:</strong> Pan (Pan)<br>
+                                <strong>Año:</strong> 2015<br>
+                                <strong>Director:</strong> Joe Wright<br>
+                                <strong>Duración:</strong> 111 min.<br>
+                                <em>(Haz clic para ver en el televisor de abajo)</em>
+                                <a href="https://example.com/pan" target="_blank" class="enla_you">(Ver más)</a>
+                            </div>
+                            <div class="movie-poster">
+                                <img src="https://placehold.co/150x200/E0E0E0/333333?text=Pan+2015" alt="Cartel de Pan">
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </article>
+            <div class="separador_6" id="separador_6">
+                    <img src="img/010_00_ink_line_01_1900x30_.webp" alt="línea de tinta - separador" class="linea" id="linea">
+            </div>
+        </section>
+        <!-- Sección 9 de Películas de Animación ================================== -->
+        <section  id="peliAnimacion" class="secVarias">
+            <!-- 4. Películas de Animación con Temática Pirata -->
+            <article>
+                <h3>4. Películas de Animación con Temática Pirata:</h3>
+                <ul class="section-dominio-publico">
+                    <li>
+                        <div class="movie-item-content">
+                            <div class="movie-details">
+                                <strong>Título:</strong> Las Aventuras de Tintín: El Secreto del Unicornio<br>
+                                <strong>Año:</strong> 2011<br>
+                                <strong>Director:</strong> Steven Spielberg<br>
+                                <strong>Duración:</strong> 107 min.<br>
+                                <em>(Haz clic para ver en el televisor de abajo)</em>
+                                <a href="https://example.com/tintin" target="_blank" class="enla_you">(Ver más)</a>
+                            </div>
+                            <div class="movie-poster">
+                                <img src="https://placehold.co/150x200/E0E0E0/333333?text=Tintin+2011" alt="Cartel de Las Aventuras de Tintín">
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="movie-item-content">
+                            <div class="movie-details">
+                                <strong>Título:</strong> ¡Piratas! Una Banda de Desastrosos Inadaptados<br>
+                                <strong>Año:</strong> 2012<br>
+                                <strong>Directores:</strong> Peter Lord, Jeff Newitt<br>
+                                <strong>Duración:</strong> 88 min.<br>
+                                <em>(Haz clic para ver en el televisor de abajo)</em>
+                                <a href="https://example.com/pirates-misfits" target="_blank" class="enla_you">(Ver más)</a>
+                            </div>
+                            <div class="movie-poster">
+                                <img src="https://placehold.co/150x200/E0E0E0/333333?text=Piratas+Inadaptados+2012" alt="Cartel de ¡Piratas! Una Banda de Desastrosos Inadaptados">
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="movie-item-content">
+                            <div class="movie-details">
+                                <strong>Título:</strong> Bob Esponja: La película (The SpongeBob SquarePants Movie)<br>
+                                <strong>Año:</strong> 2004<br>
+                                <strong>Director:</strong> Stephen Hillenburg<br>
+                                <strong>Duración:</strong> 87 min.<br>
+                                <em>(Haz clic para ver en el televisor de abajo)</em>
+                                <a href="https://example.com/spongebob-movie" target="_blank" class="enla_you">(Ver más)</a>
+                            </div>
+                            <div class="movie-poster">
+                                <img src="https://placehold.co/150x200/E0E0E0/333333?text=Bob+Esponja+2004" alt="Cartel de Bob Esponja: La película">
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </article>
+            <div class="separador_6">
+            <img src="img/010_00_ink_line_01_1900x30_.webp" alt="línea de tinta - separador" class="linea">
+            </div>
+
+        </section>       
+        <!-- Sección 10 de Series de Piratas ===================================== -->
+        <section  id="series" class="secVarias">
+            <h2>Series de Piratas</h2>
+
+            <!-- 1. Series de Acción Real -->
+            <article>
+                <h3>1. Series de Acción Real:</h3>
+                <ul class="section-dominio-publico">
+                    <li>
+                        <div class="movie-item-content">
+                            <div class="movie-details">
+                                <strong>Título:</strong> La Isla del Tesoro (Treasure Island)<br>
+                                <strong>Año:</strong> 1968 (miniserie de la BBC)<br>
+                                <strong>Director:</strong> Michael Hayes<br>
+                                <strong>Nº Temporadas:</strong> 1<br>
+                                <strong>Nº Capítulos:</strong> 4<br>
+                                <em>(Haz clic para ver en el televisor de abajo)</em>
+                                <a href="https://example.com/ti-1968" target="_blank" class="enla_you">(Ver más)</a>
+                            </div>
+                            <div class="movie-poster">
+                                <img src="https://placehold.co/150x200/E0E0E0/333333?text=Isla+Tesoro+1968" alt="Cartel de La Isla del Tesoro 1968">
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="movie-item-content">
+                            <div class="movie-details">
+                                <strong>Título:</strong> Piratas (Pirates)<br>
+                                <strong>Año:</strong> 1994 (serie infantil de la BBC)<br>
+                                <strong>Director:</strong> Desconocido<br>
+                                <strong>Nº Temporadas:</strong> 1<br>
+                                <strong>Nº Capítulos:</strong> 10 (aprox.)<br>
+                                <em>(Haz clic para ver en el televisor de abajo)</em>
+                                <a href="https://example.com/pirates-1994" target="_blank" class="enla_you">(Ver más)</a>
+                            </div>
+                            <div class="movie-poster">
+                                <img src="https://placehold.co/150x200/E0E0E0/333333?text=Pirates+1994" alt="Cartel de Piratas 1994">
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="movie-item-content">
+                            <div class="movie-details">
+                                <strong>Título:</strong> Black Sails<br>
+                                <strong>Año:</strong> 2014-2017<br>
+                                <strong>Director/Showrunner principal:</strong> Jonathan E. Steinberg, Robert Levine<br>
+                                <strong>Nº Temporadas:</strong> 4<br>
+                                <strong>Nº Capítulos:</strong> 38<br>
+                                <em>(Haz clic para ver en el televisor de abajo)</em>
+                                <a href="https://example.com/black-sails" target="_blank" class="enla_you">(Ver más)</a>
+                            </div>
+                            <div class="movie-poster">
+                                <img src="https://placehold.co/150x200/E0E0E0/333333?text=Black+Sails" alt="Cartel de Black Sails">
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="movie-item-content">
+                            <div class="movie-details">
+                                <strong>Título:</strong> Crossbones<br>
+                                <strong>Año:</strong> 2014<br>
+                                <strong>Director/Showrunner principal:</strong> Neil Cross<br>
+                                <strong>Nº Temporadas:</strong> 1<br>
+                                <strong>Nº Capítulos:</strong> 9<br>
+                                <em>(Haz clic para ver en el televisor de abajo)</em>
+                                <a href="https://example.com/crossbones" target="_blank" class="enla_you">(Ver más)</a>
+                            </div>
+                            <div class="movie-poster">
+                                <img src="https://placehold.co/150x200/E0E0E0/333333?text=Crossbones" alt="Cartel de Crossbones">
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="movie-item-content">
+                            <div class="movie-details">
+                                <strong>Título:</strong> Our Flag Means Death<br>
+                                <strong>Año:</strong> 2022-2023<br>
+                                <strong>Director/Showrunner principal:</strong> David Jenkins<br>
+                                <strong>Nº Temporadas:</strong> 2<br>
+                                <strong>Nº Capítulos:</strong> 18<br>
+                                <em>(Haz clic para ver en el televisor de abajo)</em>
+                                <a href="https://example.com/our-flag-means-death" target="_blank" class="enla_you">(Ver más)</a>
+                            </div>
+                            <div class="movie-poster">
+                                <img src="https://placehold.co/150x200/E0E0E0/333333?text=Our+Flag+Means+Death" alt="Cartel de Our Flag Means Death">
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="movie-item-content">
+                            <div class="movie-details">
+                                <strong>Título:</strong> One Piece (Adaptación live-action)<br>
+                                <strong>Año:</strong> 2023-Presente<br>
+                                <strong>Directores/Showrunners:</strong> Steven Maeda, Matt Owens<br>
+                                <strong>Nº Temporadas:</strong> 1 (hasta la fecha)<br>
+                                <strong>Nº Capítulos:</strong> 8 (hasta la fecha)<br>
+                                <em>(Haz clic para ver en el televisor de abajo)</em>
+                                <a href="https://example.com/one-piece-live" target="_blank" class="enla_you">(Ver más)</a>
+                            </div>
+                            <div class="movie-poster">
+                                <img src="https://placehold.co/150x200/E0E0E0/333333?text=One+Piece+Live+Action" alt="Cartel de One Piece (Live-action)">
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="movie-item-content">
+                            <div class="movie-details">
+                                <strong>Título:</strong> The Lost Pirate Kingdom<br>
+                                <strong>Año:</strong> 2021 (docuserie)<br>
+                                <strong>Director:</strong> Gareth Ellis-Unwin<br>
+                                <strong>Nº Temporadas:</strong> 1<br>
+                                <strong>Nº Capítulos:</strong> 6<br>
+                                <em>(Haz clic para ver en el televisor de abajo)</em>
+                                <a href="https://example.com/lost-pirate-kingdom" target="_blank" class="enla_you">(Ver más)</a>
+                            </div>
+                            <div class="movie-poster">
+                                <img src="https://placehold.co/150x200/E0E0E0/333333?text=Lost+Pirate+Kingdom" alt="Cartel de The Lost Pirate Kingdom">
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </article>
+
+            <!-- 2. Series Animadas -->
+            <article>
+                <h3>2. Series Animadas:</h3>
+                <ul class="section-dominio-publico">
+                    <li>
+                        <div class="movie-item-content">
+                            <div class="movie-details">
+                                <strong>Título:</strong> Pájaro Loco (Woody Woodpecker) - Varios episodios con temática pirata<br>
+                                <strong>Año:</strong> Desde 1940s<br>
+                                <strong>Director:</strong> Varios<br>
+                                <strong>Nº Temporadas/Capítulos:</strong> Varía<br>
+                                <em>(Haz clic para ver en el televisor de abajo)</em>
+                                <a href="https://example.com/woody-woodpecker" target="_blank" class="enla_you">(Ver más)</a>
+                            </div>
+                            <div class="movie-poster">
+                                <img src="https://placehold.co/150x200/E0E0E0/333333?text=Pajaro+Loco" alt="Cartel de Pájaro Loco">
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="movie-item-content">
+                            <div class="movie-details">
+                                <strong>Título:</strong> Peter Pan y los Piratas (Peter Pan and the Pirates)<br>
+                                <strong>Año:</strong> 1990-1991<br>
+                                <strong>Director:</strong> Varios<br>
+                                <strong>Nº Temporadas:</strong> 1<br>
+                                <strong>Nº Capítulos:</strong> 65<br>
+                                <em>(Haz clic para ver en el televisor de abajo)</em>
+                                <a href="https://example.com/peter-pan-pirates" target="_blank" class="enla_you">(Ver más)</a>
+                            </div>
+                            <div class="movie-poster">
+                                <img src="https://placehold.co/150x200/E0E0E0/333333?text=Peter+Pan+Pirates" alt="Cartel de Peter Pan y los Piratas">
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="movie-item-content">
+                            <div class="movie-details">
+                                <strong>Título:</strong> Jake y los Piratas de Nunca Jamás<br>
+                                <strong>Año:</strong> 2011-2016<br>
+                                <strong>Director:</strong> Kelly Ward<br>
+                                <strong>Nº Temporadas:</strong> 4<br>
+                                <strong>Nº Capítulos:</strong> 114<br>
+                                <em>(Haz clic para ver en el televisor de abajo)</em>
+                                <a href="https://example.com/jake-neverland" target="_blank" class="enla_you">(Ver más)</a>
+                            </div>
+                            <div class="movie-poster">
+                                <img src="https://placehold.co/150x200/E0E0E0/333333?text=Jake+Nunca+Jamas" alt="Cartel de Jake y los Piratas de Nunca Jamás">
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="movie-item-content">
+                            <div class="movie-details">
+                                <strong>Título:</strong> Las Aventuras de Jackie Chan - Algunos episodios con piratas<br>
+                                <strong>Año:</strong> 2000-2005<br>
+                                <strong>Director:</strong> Varios<br>
+                                <strong>Nº Temporadas/Capítulos:</strong> Varía<br>
+                                <em>(Haz clic para ver en el televisor de abajo)</em>
+                                <a href="https://example.com/jackie-chan" target="_blank" class="enla_you">(Ver más)</a>
+                            </div>
+                            <div class="movie-poster">
+                                <img src="https://placehold.co/150x200/E0E0E0/333333?text=Jackie+Chan+Piratas" alt="Cartel de Las Aventuras de Jackie Chan">
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="movie-item-content">
+                            <div class="movie-details">
+                                <strong>Título:</strong> El Capitán Jake y los Piratas de Nunca Jamás<br>
+                                <strong>Año:</strong> 2016<br>
+                                <strong>Director:</strong> Kelly Ward<br>
+                                <strong>Nº Temporadas:</strong> 1 (dentro de la misma serie)<br>
+                                <strong>Nº Capítulos:</strong> Continuación de los anteriores<br>
+                                <em>(Haz clic para ver en el televisor de abajo)</em>
+                                <a href="https://example.com/captain-jake" target="_blank" class="enla_you">(Ver más)</a>
+                            </div>
+                            <div class="movie-poster">
+                                <img src="https://placehold.co/150x200/E0E0E0/333333?text=Capitan+Jake" alt="Cartel de El Capitán Jake">
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="movie-item-content">
+                            <div class="movie-details">
+                                <strong>Título:</strong> One Piece (Anime)<br>
+                                <strong>Año:</strong> 1999-Presente<br>
+                                <strong>Director/Estudio:</strong> Kōnosuke Uda, Munehisa Sakai, Hiroaki Miyamoto, Tatsuya Nagamine, Toei Animation<br>
+                                <strong>Nº Temporadas:</strong> En curso (más de 20 arcos argumentales)<br>
+                                <strong>Nº Capítulos:</strong> Más de 1100 (y sigue)<br>
+                                <em>(Haz clic para ver en el televisor de abajo)</em>
+                                <a href="https://example.com/one-piece-anime" target="_blank" class="enla_you">(Ver más)</a>
+                            </div>
+                            <div class="movie-poster">
+                                <img src="https://placehold.co/150x200/E0E0E0/333333?text=One+Piece+Anime" alt="Cartel de One Piece (Anime)">
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="movie-item-content">
+                            <div class="movie-details">
+                                <strong>Título:</strong> Pirate Express<br>
+                                <strong>Año:</strong> 2015<br>
+                                <strong>Director:</strong> Josh Mepham<br>
+                                <strong>Nº Temporadas:</strong> 1<br>
+                                <strong>Nº Capítulos:</strong> 26<br>
+                                <em>(Haz clic para ver en el televisor de abajo)</em>
+                                <a href="https://example.com/pirate-express" target="_blank" class="enla_you">(Ver más)</a>
+                            </div>
+                            <div class="movie-poster">
+                                <img src="https://placehold.co/150x200/E0E0E0/333333?text=Pirate+Express" alt="Cartel de Pirate Express">
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="movie-item-content">
+                            <div class="movie-details">
+                                <strong>Título:</strong> La Isla de los Monstruos Piratas (Pirate Monster Island)<br>
+                                <strong>Año:</strong> 2019<br>
+                                <strong>Director:</strong> Desconocido<br>
+                                <strong>Nº Temporadas:</strong> 1<br>
+                                <strong>Nº Capítulos:</strong> 13 (aprox.)<br>
+                                <em>(Haz clic para ver en el televisor de abajo)</em>
+                                <a href="https://example.com/pirate-monster-island" target="_blank" class="enla_you">(Ver más)</a>
+                            </div>
+                            <div class="movie-poster">
+                                <img src="https://placehold.co/150x200/E0E0E0/333333?text=Monstruos+Piratas" alt="Cartel de La Isla de los Monstruos Piratas">
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </article>
+            <div class="separador_6">
+                <img src="img/010_00_ink_line_01_1900x30_.webp" alt="línea de tinta - separador" class="linea">
+            </div>
+   
+
+        </section>
+        <!-- Sección 11  de Películas y Series Menos Conocidas o con Elementos Piratas -->
+        <section id="menosK" class="secVarias">
+            <article>
+                <h2>Películas y Series Menos Conocidas o con Elementos Piratas:</h2>
+                <ul class="section-dominio-publico">
+                    <li>
+                        <div class="movie-item-content">
+                            <div class="movie-details">
+                                <strong>Título:</strong> El Pirata Negro (The Black Pirate)<br>
+                                <strong>Año:</strong> 1926 (cine mudo)<br>
+                                <strong>Director:</strong> Albert Parker<br>
+                                <strong>Duración:</strong> 88 min.<br>
+                                <em>(Haz clic para ver en el televisor de abajo)</em>
+                                <a href="https://example.com/black-pirate" target="_blank" class="enla_you">(Ver más)</a>
+                            </div>
+                            <div class="movie-poster">
+                                <img src="https://placehold.co/150x200/E0E0E0/333333?text=Pirata+Negro+1926" alt="Cartel de El Pirata Negro">
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="movie-item-content">
+                            <div class="movie-details">
+                                <strong>Título:</strong> Los Piratas de Tortuga (Pirates of Tortuga)<br>
+                                <strong>Año:</strong> 1961<br>
+                                <strong>Director:</strong> Robert D. Webb<br>
+                                <strong>Duración:</strong> 97 min.<br>
+                                <em>(Haz clic para ver en el televisor de abajo)</em>
+                                <a href="https://example.com/pirates-tortuga" target="_blank" class="enla_you">(Ver más)</a>
+                            </div>
+                            <div class="movie-poster">
+                                <img src="https://placehold.co/150x200/E0E0E0/333333?text=Piratas+Tortuga+1961" alt="Cartel de Los Piratas de Tortuga">
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="movie-item-content">
+                            <div class="movie-details">
+                                <strong>Título:</strong> Los Piratas de Capri (The Pirates of Capri)<br>
+                                <strong>Año:</strong> 1949<br>
+                                <strong>Director:</strong> Edgar G. Ulmer<br>
+                                <strong>Duración:</strong> 94 min.<br>
+                                <em>(Haz clic para ver en el televisor de abajo)</em>
+                                <a href="https://example.com/pirates-capri" target="_blank" class="enla_you">(Ver más)</a>
+                            </div>
+                            <div class="movie-poster">
+                                <img src="https://placehold.co/150x200/E0E0E0/333333?text=Piratas+Capri+1949" alt="Cartel de Los Piratas de Capri">
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="movie-item-content">
+                            <div class="movie-details">
+                                <strong>Título:</strong> Pirates (Pirates of the Caribbean: The Legend of Captain Jack Sparrow)<br>
+                                <strong>Año:</strong> 2007 (videojuego con escenas cinemáticas)<br>
+                                <strong>Director:</strong> Desconocido<br>
+                                <strong>Nº Temporadas/Capítulos:</strong> No aplica<br>
+                                <em>(Haz clic para ver en el televisor de abajo)</em>
+                                <a href="https://example.com/pirates-game" target="_blank" class="enla_you">(Ver más)</a>
+                            </div>
+                            <div class="movie-poster">
+                                <img src="https://placehold.co/150x200/E0E0E0/333333?text=Pirates+Game+2007" alt="Cartel de Pirates (Videojuego)">
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="movie-item-content">
+                            <div class="movie-details">
+                                <strong>Título:</strong> Nell Gwynn<br>
+                                <strong>Año:</strong> 1926 (película biográfica con escenas de piratas)<br>
+                                <strong>Director:</strong> Herbert Wilcox<br>
+                                <strong>Duración:</strong> 105 min.<br>
+                                <em>(Haz clic para ver en el televisor de abajo)</em>
+                                <a href="https://example.com/nell-gwynn" target="_blank" class="enla_you">(Ver más)</a>
+                            </div>
+                            <div class="movie-poster">
+                                <img src="https://placehold.co/150x200/E0E0E0/333333?text=Nell+Gwynn+1926" alt="Cartel de Nell Gwynn">
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="movie-item-content">
+                            <div class="movie-details">
+                                <strong>Título:</strong> The Spanish Main<br>
+                                <strong>Año:</strong> 1945<br>
+                                <strong>Director:</strong> Frank Borzage<br>
+                                <strong>Duración:</strong> 100 min.<br>
+                                <em>(Haz clic para ver en el televisor de abajo)</em>
+                                <a href="https://example.com/spanish-main" target="_blank" class="enla_you">(Ver más)</a>
+                            </div>
+                            <div class="movie-poster">
+                                <img src="https://placehold.co/150x200/E0E0E0/333333?text=Spanish+Main+1945" alt="Cartel de The Spanish Main">
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="movie-item-content">
+                            <div class="movie-details">
+                                <strong>Título:</strong> Swashbuckler<br>
+                                <strong>Año:</strong> 1976<br>
+                                <strong>Director:</strong> James Goldstone<br>
+                                <strong>Duración:</strong> 101 min.<br>
+                                <em>(Haz clic para ver en el televisor de abajo)</em>
+                                <a href="https://example.com/swashbuckler" target="_blank" class="enla_you">(Ver más)</a>
+                            </div>
+                            <div class="movie-poster">
+                                <img src="https://placehold.co/150x200/E0E0E0/333333?text=Swashbuckler+1976" alt="Cartel de Swashbuckler">
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="movie-item-content">
+                            <div class="movie-details">
+                                <strong>Título:</strong> Cutthroat Island (serie animada basada en la película)<br>
+                                <strong>Año:</strong> 1996<br>
+                                <strong>Director:</strong> Desconocido<br>
+                                <strong>Nº Temporadas:</strong> 1<br>
+                                <strong>Nº Capítulos:</strong> 13<br>
+                                <em>(Haz clic para ver en el televisor de abajo)</em>
+                                <a href="https://example.com/cutthroat-island-series" target="_blank" class="enla_you">(Ver más)</a>
+                            </div>
+                            <div class="movie-poster">
+                                <img src="https://placehold.co/150x200/E0E0E0/333333?text=Cutthroat+Island+Serie+1996" alt="Cartel de Cutthroat Island (serie animada)">
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="movie-item-content">
+                            <div class="movie-details">
+                                <strong>Título:</strong> Los Piratas de Somalia (The Pirates of Somalia)<br>
+                                <strong>Año:</strong> 2017 (drama biográfico sobre piratas modernos)<br>
+                                <strong>Director:</strong> Bryan Buckley<br>
+                                <strong>Duración:</strong> 116 min.<br>
+                                <em>(Haz clic para ver en el televisor de abajo)</em>
+                                <a href="https://example.com/pirates-of-somalia" target="_blank" class="enla_you">(Ver más)</a>
+                            </div>
+                            <div class="movie-poster">
+                                <img src="https://placehold.co/150x200/E0E0E0/333333?text=Piratas+Somalia+2017" alt="Cartel de Los Piratas de Somalia">
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="movie-item-content">
+                            <div class="movie-details">
+                                <strong>Título:</strong> Captain Phillips<br>
+                                <strong>Año:</strong> 2013 (drama sobre piratería moderna)<br>
+                                <strong>Director:</strong> Paul Greengrass<br>
+                                <strong>Duración:</strong> 134 min.<br>
+                                <em>(Haz clic para ver en el televisor de abajo)</em>
+                                <a href="https://example.com/captain-phillips" target="_blank" class="enla_you">(Ver más)</a>
+                            </div>
+                            <div class="movie-poster">
+                                <img src="https://placehold.co/150x200/E0E0E0/333333?text=Captain+Phillips+2013" alt="Cartel de Captain Phillips">
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </article>
+
+            <div class="separador_6">
+                <img src="img/010_00_ink_line_01_1900x30_.webp" alt="línea de tinta - separador" class="linea">
+            </div>
+        </section>
+        <!-- FIN Secciónes -->
+
+        <!-- ----------------------------------  Botón para subir hacia arriba, a la cabecera -------------------------------------------------------  -->
+        <button id="btn-arriba" title="Volver arriba" class="bot_fuente">
+            <img src="img/000_10_carajo_143x298x72_02.png" alt="imagen de un carajo" id="carajo">
+            <span class="texto-carajo">Sube al carajo</span>
+        </button>
+    </main>
+
+    <!-- --------------------- FOOTER ---------------------------------------- -->
+    <footer class="footer">
+        <div class="footer-main"></div>
+        <button class="footer-toggle" aria-expanded="false">☰ Menú del sitio</button>
+
+        <div class="footer-content closed">
+            <div class="footer-container">
+                <!-- Columna: Logo -->
+                <div class="footer-col">
+                    <a href="solweb_estudio.html" target="_blank">
+                        <img src="img/000_20_LOGO_SolWeb_Estudio_00_fnegro_02_.webp" alt="SolWeb Estudio" class="footer-logo">
+                    </a>
+                    <address>
+                        <p class="parr-1">Contacto</p><br>
+                        <a href="mailto:solweb@gmail.com" class="parr-1">solweb@gmail.com</a>
+                    </address>
+                </div>
+
+                <!-- Columna: Enlaces -->
+                <div class="footer-col">
+                    <h4>Enlaces</h4>
+                    <ul>
+                        <li><a href="#sec1">Inicio</a></li>
+                        <li><a href="/j_05_registro_.html">Registro</a></li>
+                    </ul>
+                </div>
+
+                <!-- Columna: Newsletter -->
+                <div class="footer-col">
+                    <h4>Suscríbete a nuestra newsletter</h4>
+                    <form id="newsletter-form" action="https://formsubmit.co/lujebor@gmail.com" method="POST" target="_blank" novalidate>
+                        <input type="email" id="email-input" name="correo" placeholder="ejemplo@correo.com" required>
+                        <div id="email-message" class="email-message"></div>
+                        <p class="privacy-note">
+                            Al enviar tu email, aceptas que SolWeb Estudio almacene tus datos solo para enviarte información relacionada. No se compartirán con terceros.
+                        </p>
+                        <button type="submit" class="subscribe-btn"><p class="p_boton">Suscribirse</p></button>
+                        <div id="submit-message" class="submit-message"></div>
+                    </form>
+                </div>
+
+                <!-- Columna: Redes Sociales -->
+                <div class="footer-col">
+                    <h4>Síguenos</h4>
+                    <ul class="social-icons">
+                        <li><a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i> Facebook</a></li>
+                        <li><a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i> Instagram</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-legal">
+                <a href="/politica_privacidad_00_.html">Política de Privacidad</a> |
+                <a href="/p_aviso_legal_00_.html">Aviso Legal</a> |
+                <a href="/politica_cookies_00_.html">Política de Cookies</a>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; SOLWEB Estudio - 2025. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- --------------------- SCRIPTS --------------------------------- -->
+    <script src="js/script-index.js" defer></script> <!--  header-section-baner  -->
+    <script src="js/script-comun.js" defer></script> <!--  footer-carajo-politicas  -->
+       
+    <script>
+        // Script para sustituir el iframe que se situa debejo de la TV, por el seleccionado ---------------
+        function playVideo(url) {
+            const player = document.getElementById('tv-player');
+            player.src = url;
+        }
+    </script>
+</body>
+</html>

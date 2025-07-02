@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="SolWebEstudio,Aventura,tesoro,pirata,juego,libro,Solweb,estudio">
+    <meta name="author" content="Solweb Estudio">
+    <meta name="author" content="Luis J. Borge">
+
+
+   <!-- <link rel="shortcut icon" href="img/000_01_favicon.png" type="image/x-icon" /> -->
+  <link rel="icon" type="image/png" href="/img/favicon/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/svg+xml" href="/img/favicon/favicon.svg">
+  <link rel="shortcut icon" href="/img/favicon/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="/img/favicon/apple-touch-icon.png">
+  <link rel="manifest" href="/img/favicon/site.webmanifest">
+
+
+    <title>Info.: SolWeb Estudio</title>
+
+     <!-- enlaces a ficheros de estilos -->
+        <link rel="stylesheet" href="css/estilo-solweb-info.css"><!--  Pergamino - solweb,enlace a SOLWEB ESTUDIO -->
+
+    <!-- google fonts Pirata One - Edu+ALD+Hand -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Edu+QLD+Hand:wght@400..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pirata+One&display=swap" rel="stylesheet">
+
+  
+  <style>
+    
+  </style>
+</head>
+<body>
+ 
+<div class="contenedor_ppal">
+  <div class="pergamino_contenedor">
+    <img src="img/pergamino-horizontal.webp" alt="Pergamino SolWeb" class="pergamino_img">
+
+    <div class="textos">
+      <h2 class="presentacion">Página Web elaborada por:</h2>
+
+      <a href="solweb-estudio.html" target="_blank">
+        <div class="sello-h1-contenedor">
+          <img src="img/sello-lacre-marron-solweb.webp" alt="Sello de lacre solweb"  class="sello-solweb-01">
+          <h1 class="solweb">SolWeb Estudio</h1>
+        </div>
+        </a>
+      <p>Diseñado por Luis J. Borge</p>
+    </div>
+
+    <a href="solweb_estudio.html" class="bloque_h1">
+      <img src="img/sello-lacre-rojo-solweb.webp" alt="Sello de lacre" class="lacre">
+    </a>
+
+    <button class="bot_cierre" onclick="expandAndClose()"></button>
+  </div>
+</div>
+
+  <script>
+  // ------------- efecto cierre pergamino --------------------------
+  function expandAndClose() {
+    const contenedor = document.querySelector('.contenedor_ppal');
+    contenedor.style.transition = 'transform 0.6s ease, opacity 0.6s ease';
+    contenedor.style.transform = 'scale(0.1) rotate(-20deg)';
+    contenedor.style.opacity = '0';
+
+    setTimeout(() => {
+      // contenedor.style.display = 'none';
+      // Si quieres redirigir a otra página, descomenta esta línea:
+      window.location.href = 'index.html';
+    }, 600);
+  }
+</script>
+   
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

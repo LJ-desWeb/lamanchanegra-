@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="keywords" content="SolWebEstudio,Aventura,tesoro,pirata,juego,libro,Solweb,estudio,registro">
+  <meta name="author" content="Solweb Estudio">
+  <meta name="author" content="Luis J. Borge">
+
+   <!-- <link rel="shortcut icon" href="img/000_01_favicon.png" type="image/x-icon" /> -->
+  <link rel="icon" type="image/png" href="/img/favicon/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/svg+xml" href="/img/favicon/favicon.svg">
+  <link rel="shortcut icon" href="/img/favicon/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="/img/favicon/apple-touch-icon.png">
+  <link rel="manifest" href="/img/favicon/site.webmanifest">
+
+  <title>LMN- Formulario de Registro La Mancha Negra</title>
+
+   <!-- enlaces a ficheros de estilos -->
+  <link rel="stylesheet" href="css/estilo-registro.css"><!--  Pergamino - formulario, registro -->
+
+  <!-- google fonts Pirata One - Edu+ALD+Hand -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Edu+QLD+Hand:wght@400..700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Pirata+One&display=swap" rel="stylesheet">
+
+  
+  <style>    
+  </style>
+</head>
+
+<body>
+
+<div class="contenedor_ppal">
+  <div class="pergamino_contenedor">
+    <div class="textos">
+      <h1 class="titulo_2_0">¡ Enrólate en la tripulación !</h1>
+      <!-- Formulario -->
+      <form class="login-form" id="loginForm" action="https://formsubmit.co/lujebor@gmail.com" method="POST" novalidate>
+        
+
+        <label for="usuario">Pon aquí tu apodo pirata:</label>
+        <input type="text" name="usuario" id="usuario" 
+       placeholder="Nombre pirata por el que te conocen" 
+       autocomplete="off" required />
+       <div id="usuarioError" class="error-message"></div>
+       
+        <label>Correo electrónico:</label>
+        <input type="email" name="correo" id="correo" placeholder="direccion@hohoho.com" required /><br />
+        <div id="correoError" class="error-message"></div>
+        
+        <label for="password">Santo y Seña:</label>
+        <div class="password-container">
+          <input type="password" name="password" id="password" 
+       placeholder="8 caracteres: May-min-num-símbolo" 
+       autocomplete="new-password" required />
+          <img src="img/ojo-abierto.webp" id="togglePassword" alt="Mostrar contraseña" />
+        
+        </div>
+        <div id="passwordError" class="error-message"></div>
+        <!-- Esto le dice a FormSubmit a qué URL ir cuando todo esté correcto.-->
+        
+
+        <button type="button" class="cerrar-button" onclick="expandAndClose()">
+          <img src="img/logoLMN-cerrar.webp" alt="Cerrar" />
+        </button>
+        <button type="submit" class="enviar-button">
+          <img src="img/001_02_lacre_enviar_03_04_d1_256x256.png" alt="Enviar" />
+          <p class="login-men-bot">Enrólate</p>
+        </button>
+
+        <!-- Evita el captcha -->
+        <input type="hidden" name="_captcha" value="false">
+        <!-- Redirige tras enviar -->
+        <input type="hidden" name="_next" value="http://127.0.0.1:5500/login-lmn.html" >       
+        <div class="enlace-a-registro">
+          <p>¡Si ya formas parte de la tripulación!&nbsp;&nbsp;<a href="login-lmn.html">Inicia Sesión</a></p>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<script>
+  function expandAndClose() {
+    const contenedor = document.querySelector('.contenedor_ppal');
+    contenedor.style.transition = 'transform 0.6s ease, opacity 0.6s ease';
+    contenedor.style.transform = 'scale(0.1) rotate(-20deg)';
+    contenedor.style.opacity = '0';
+
+    setTimeout(() => {
+      window.location.href = 'index.html';
+    }, 600);
+  }
+
+  document.getElementById('loginForm').addEventListener('submit', function (event) {
+  const usuario = document.getElementById('usuario').value.trim();
+  const correo = document.getElementById('correo').value.trim();
+  const password = document.getElementById('password').value.trim();
+
+  const correoError = document.getElementById('correoError');
+  const passwordError = document.getElementById('passwordError');
+  const usuarioError = document.getElementById('usuarioError');
+
+  let valido = true;
+  correoError.textContent = '';
+  passwordError.textContent = '';
+  usuarioError.textContent = '';
+
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{8,}$/;
+
+  if (!usuario) {
+    usuarioError.textContent = 'Por favor, escribe tu nombre pirata.';
+    valido = false;
+  }
+
+  if (!emailRegex.test(correo)) {
+    correoError.textContent = 'Por favor, ingresa un correo electrónico válido.';
+    valido = false;
+  }
+
+  if (!passwordRegex.test(password)) {
+    passwordError.textContent = 'Por favor, introduce una contraseña válida.';
+    valido = false;
+  }
+
+  if (!valido) {
+    event.preventDefault(); // Solo bloquea si hay errores
+  } else {
+    // Guarda el nombre pirata y deja que FormSubmit haga su trabajo
+    //localStorage.setItem('registroPirata', usuario);  // ------------------- Cambiamos Esta línea: localStorage.setItem('usuarioPirata', usuario),  cambiando por registroPirata
+    // para seguir guardándolo el dato del registro en localStorage, pero que no se introduzca en el index
+    // ❌ NO uses preventDefault aquí
+    // ❌ NO redirijas manualmente
+  }
+});
+
+      //  imagenes para el campo de Santo y Seña - Ver o no ver la contraseña que se está escribiendo ------------
+      document.getElementById('togglePassword').addEventListener('click', function () {
+      const passwordInput = document.getElementById('password');
+      const isVisible = passwordInput.type === 'text';
+      passwordInput.type = isVisible ? 'password' : 'text';
+      this.src = isVisible ? 'img/001_03_ojo_abierto_03_.webp' : 'img/001_03_ojo_cerrado_02_.png';
+    });
+
+
+</script>
+</body>
+</html>
+
+
+
+
+
+
