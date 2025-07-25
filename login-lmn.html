@@ -110,14 +110,41 @@
       passwordError.textContent = 'Son 8 caracteres: con mayúsculas, minúsculas, números y símbolos.';
       valido = false;
     }
-
+/*
     if (valido) {
       localStorage.setItem('usuarioPirata', usuario);
       // No uses `this.submit()` si quieres redirigir
       setTimeout(() => {
         window.location.href = 'libros-de-piratas-lmn.html'; // Redirige a index
       }, 500);
+    }*/
+    if (valido) {
+      localStorage.setItem('usuarioPirata', usuario);
+
+      const usuariosValidos = {
+        'RonRoneo': { password: 'Makita_5', pagina: 'RonRoneo.html' },
+        'Calavera_Rosa': { password: 'Gomin_25', pagina: 'Calavera_Rosa.html' },
+        'Barba_Rubia': { password: 'Elsa_293', pagina: 'Barba_Rubia.html' },
+        'Pat_Pata_Palo': { password: 'Ppp_2025', pagina: 'Pat_Pata_Palo.html' },
+        'Cuatroojos': { password: '4Ojos_25', pagina: 'Cuatroojos.html' },
+        'BarbaRosa': { password: 'Barba@20', pagina: 'BarbaRosa.html' },
+        'Perla_del_Caribe': { password: 'Garfio8!', pagina: 'Perla_del_Caribe.html' },
+        'Turbulencia': { password: 'FR!F1r3!', pagina: 'Turbulencia.html' }
+      };
+
+      const datosUsuario = usuariosValidos[usuario];
+
+      if (datosUsuario && datosUsuario.password === password) {
+        window.location.href = datosUsuario.pagina;
+      } else {
+        if (datosUsuario) {
+          passwordError.textContent = 'Santo y seña incorrectos.';
+        } else {
+          usuarioError.textContent = 'Ese nombre pirata no está en la tripulación.';
+        }
+      }
     }
+
 
 
   });

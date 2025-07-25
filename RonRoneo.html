@@ -1,0 +1,944 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- etiqueta meta, con palabras clave en posicionamiento -->
+        <meta name="keywords" content="Aventura,tesoro,pirata,juego,libro,mapa,">
+        <meta name="author" content="Solweb Estudio">
+        <meta name="author" content="Luis J. Borge">
+
+        <!-- <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon" /> -->
+        <link rel="icon" type="image/png" href="/img/favicon/favicon-96x96.png" sizes="96x96">
+        <link rel="icon" type="image/svg+xml" href="/img/favicon/favicon.svg">
+        <link rel="shortcut icon" href="/img/favicon/favicon.ico">
+        <link rel="apple-touch-icon" sizes="180x180" href="/img/favicon/apple-touch-icon.png">
+        <link rel="manifest" href="/img/favicon/site.webmanifest">
+
+
+        <title>lamanchanegra</title>
+
+        <!-- enlaces a ficheros de estilos -->
+        <link rel="stylesheet" href="css/estilo-header-index.css"><!--  Fondo + header + baner cookies -->
+        <link rel="stylesheet" href="css/estilo-footer-carajo.css"><!--  footer + carajo  -->
+        
+        <link rel="stylesheet" href="css/estilo-mensaje-invisible.css"><!--  Mensaje  -->
+        <link rel="stylesheet" href="css/estilo-memory.css"><!--  Memory  -->
+                
+        <!-- google fonts Pirata One - Edu+ALD+Hand -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>  
+
+        <link href="https://fonts.googleapis.com/css2?family=Edu+QLD+Hand:wght@400..700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Pirata+One&display=swap" rel="stylesheet">
+
+        <!-- bootstrap 
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"> -->
+
+        <!-- ENLACE A los iconos del footer, Facebook, instagram, etc , se agrega  Font Awesome-->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+        <style>
+                /*  <weight>: Use a value from 400 to 700
+                    <uniquifier>: Use a unique and descriptive class name
+                    .edu-qld-hand-<uniquifier> {
+                        font-family: "Edu QLD Hand", cursive;
+                        font-optical-sizing: auto;
+                        font-weight: <weight>;
+                        font-style: normal;
+                    }
+                */
+                /*  
+                    .pirata-one-regular {
+                        font-family: "Pirata One", system-ui;
+                        font-weight: 400;
+                        font-style: normal;
+                    } 
+                */  
+                
+            
+            .pergamino_contenedor {
+                position: relative;
+                width: 100%;
+                aspect-ratio: 3 / 2;
+                background: url('../img/pergamino-horizontal.webp') no-repeat center center;
+                background-size: contain;
+                background-repeat: no-repeat;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 2rem;
+                box-sizing: border-box;
+            }
+
+            @keyframes desenrollar {
+                0% {
+                    transform: scaleY(0.1) translateY(-200px);
+                    opacity: 0;
+                }
+                100% {
+                    transform: scaleY(1) translateY(0);
+                    opacity: 1;
+                }
+            }
+
+            .textos {
+                width: 100%;
+                max-width: 900px;
+                text-align: center;
+                color: #2d1200;
+                z-index: 1;
+            }
+            .textos h2{
+                font-size: 3rem;
+            }
+            .bot_mensaje{
+                width:200px; display:block; margin:auto;
+            }
+
+
+            .login-form {
+                background-color: rgba(0, 0, 0, 0);
+                padding: 1rem;
+                
+            }
+
+                .login-form label,
+                .login-form input {
+                width: 100%;
+                display: block;
+                margin-bottom: 1rem;
+                font-size: 2.5rem;
+                font-family: 'Pirata One', cursive;
+                }
+
+                .login-form input {
+                padding: 0.6rem;
+                border-radius: 0.5rem;
+                border: 1px solid #999;
+                background-color: blanchedalmond;
+                }
+
+                .error-message {
+                color: darkred;
+                font-size: 1.4rem;
+                margin-bottom: 1rem;
+                }
+
+                                .enviar-button,
+                .cerrar-button {
+                background: none;
+                border: none;
+                cursor: pointer;
+                margin: 1rem 1rem 0;
+                }
+
+                .enviar-button img {
+                width: 100px;
+                }
+                
+                .cerrar-button img {
+                width: 150px;
+                }
+
+                .enviar-button:hover,
+                .cerrar-button:hover {
+                transform:scale(1.2)
+                }
+
+                .login-men-bot {
+                margin-top: 0.3rem;
+                font-size: 1.5rem;
+                font-family: 'Pirata One', cursive;
+                color: #2d1200;
+                }
+
+            /* ===================================================
+            BREAKPOINTS RESPONSIVE ESTÁNDARIZADOS LOGIN
+            =================================================== */
+
+                /* ===================== TABLETS (768px - 1024px) ===================== */
+            @media (min-width: 768px) and (max-width: 1024px) {
+            .pergamino_contenedor {
+                padding: 1.5rem;
+            }
+
+            .textos {
+                max-width: 500px;
+            }
+
+            .login-form label,
+            .login-form input,
+            .login-men-bot,
+            
+            .enviar-button img {
+                width: 80px;
+            }
+            .cerrar-button img {
+                width: 120px;
+            }
+            }
+
+            /* =============== MÓVIL LANDSCAPE (576px - 767px) =================== */
+            @media (min-width: 576px) and (max-width: 767px) {
+            .pergamino_contenedor {
+                background: none;
+                padding: 1rem;
+            }
+
+            .contenedor_ppal {
+                width: 95vw;
+            }
+
+            .textos {
+                max-width: 90%;
+            }
+
+            .login-form label,
+            .login-form input,
+            .login-men-bot,
+            
+            .enviar-button img {
+                width: 70px;
+            }
+            .cerrar-button img {
+                width: 110px;
+            }
+            }
+   
+        </style>
+</head>
+
+<body >
+    <!--  -------------------------------- header ------------------------------------------ -->
+
+    <header class="header d-flex justify-content-between align-items-center px-3">
+        <a href="solweb-estudio-info.html" target="_blank" class="logo-left">
+            <img src="img/logo-la-mancha-negra.webp" alt="Logo La Mancha Negra" class="logo-lmn  glow-lmn">
+        </a>
+
+
+        <button id="menu-toggle" class="menu-toggle" aria-label="Abrir menú">Menú
+             <img src="img/menu-hamburguesa-pirata.webp" alt="Abrir menú" width="40" height="40">
+            <!--<i class="fas fa-bars"></i> -->
+        </button>
+
+
+
+        <nav id="main-menu" class="menu py-3">
+            <a href="index.html" class="inicio" id="inicio"><p class="titnav">Inicio</p></a>
+            <a href="#tit_sec_1" class="buscaTesoro" id="buscaTesoro"><p class="titnav">Busca el Tesoro</p></a>   
+        </nav>
+        
+        <div id="userArea">
+            <a href="libros-de-piratas-lmn.html" class="saludos-enlace"> 
+                <div class="saludos">
+                    <span id="userGreeting_a" class="felicitacion"></span>
+                    <span id="userGreeting_b" class="felicitacion"></span>
+                </div>
+            </a> 
+            <button id="bot-login-out">Cerrar sesión</button>
+        </div>
+
+        <a href="login-lmn.html" class="logo-right">
+            <img src="img/login-pirata.webp" alt="figura lego para login" class="logo-login glow-login">
+        </a>
+    </header>
+                    
+        <main class="container-fluid" ><!-- -->
+            <!--     
+            <section id="sec1" class="section hidden-section text-center" >-->
+            <h1 class="titulo_0_">¡ La Mancha Negra!</h1><br><br>
+                
+            <!-- SECCION 1 -------MENSAJE OCULTO------------------------  -->
+            <section id="sec_1" class="seccion1" hidden>
+
+                <h2 class="titulo_1_" id="tit_sec_1">¡Bienvenido a bordo!</h2>
+                <h2 class="titulo_1_">¡ Explora los siete mares !</h2>
+
+                <div class="pergamino-container"> 
+                    <img src="img/002_03_cuadro_transp_1200x940_01.png" alt="Pergamino" class="pergamino">
+                    <article>
+                        <div class="contenido-pergamino">
+                            <p class="texto_invisible hidden-text" id="mensajePirata">
+                            <span>¡Comienza la Aventura!&nbsp;Puedes llegar </span> <span>&nbsp;</span>
+                            <span>a conseguir&nbsp;tu sola &nbsp;el mapa</span> 
+                            <span>&nbsp;</span> <span>del tesoro solo para ti!</span> <span>&nbsp;</span> 
+                            <span>pero antes &nbsp;debes pasar todas </span> <span>&nbsp;</span> <span>las pruebas </span> <span>&nbsp;</span>
+                            <span>que tienes por delante&nbsp;</span> <span>&nbsp;</span> <span>¿Quieres&nbsp;enrolarte en </span> <span>&nbsp;</span>
+                            <span>esta Aventura ?</span> <span>&nbsp;</span> <span>Si es así,</span> <span>&nbsp;</span> 
+                            <span>¡¡¡&nbsp;JUEGA&nbsp;!!!</span> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>&nbsp;</span><span>&nbsp;</span><br>
+                            <span>Debes demostrar que estás a la altura&nbsp;&nbsp;&nbsp;</span> <br>
+                            <span class="activar-final">¡¡Supera la prueba!!</span>
+                            </p>
+                    </article>                        
+                        <a href="#sec_2" class="brujula-link" id="brujula-enlace">
+                        <img src="img/002_08_Brujula_2_256x256_.png" alt="Brújula" class="brujula">
+                        </a>
+                                                
+                    </div>
+
+                </div>
+            </section> <!-- FIN seccion 1 - mensaje -->
+    
+            <!-- SECCION 2 -------------------------------------------------  -->
+            <section id="sec_2" class="section hidden-section text-center" hidden>
+                <h2 class="titulo_1_" id="s1t1_1">Tu Misión:&nbsp; ¡&nbsp; Demostrar tus habilidades&nbsp; !</h2>
+                                    
+                <div class="zona-juego">
+                    <img src="img/000_03_fond_headrer_05_04_.webp" alt=" imagen mesa" class="tablero">
+                    <div class="contenedor-mesa">
+                        <div class="mesa" id="mesaJuego"></div>
+                                                        
+                        <div class="info-panel">
+                            <div>Tiempo: <span id="cronometro">00:00</span></div>
+                            <div>Tiempo máximo: <span id="tiempoMaximo">00:30</span></div>
+                            <div>Partidas: <span id="partidas">0</span></div>
+                        </div>
+                    </div>
+                    <div class="barco-reset" id="resetBtn" title="Iniciar partida">¡Zarpa!</div>
+                </div>
+
+                <div class="popup" id="popupMensaje">
+                    <h3 id="mensajeFinal"></h3>
+                    <img id="gifFinal" src="img/004_el_barco.png" alt="gif cañon antiguo"/>
+                    <button id="cerrarPopup">Cerrar</button>
+                </div>
+            </section>
+
+            <!-- SECCION 3 -------------------------------------------------  -->
+            <section id="sec_3" class="section hidden-section text-center" hidden>
+                                    
+                <div class="pergamino_contenedor">
+                    <div class="textos">
+                        <h2 class="titulo_2_0">Envíanos un mensaje en botella</h2>
+                        <img src="img/005_01_Botella_mensaje_01_.png" alt="botella flotando con mensaje" class="bot_mensaje" id="bot_mensaje">
+                    
+                        <!-- Formulario -->
+                        <form class="login-form" id="acertijoForm" >
+
+                            <label for="usuario">¿Qué cosa cuanto más le quitas, más grande se vuelve?</label>
+                            <input type="text" name="usuario" id="respuestaUsuario" placeholder="Escribe tu respuesta en minúsculas... tienes 2 intentos"  autocomplete="off" required />
+                        
+                            <div id="mensajeError" class="error-message"></div>
+
+                        
+                            <button type="button" class="cerrar-button bot-login-out_2" onclick="expandAndClose()">
+                            <img src="img/logoLMN-cerrar.webp" alt="Cerrar" />
+                            </button>
+                            <button type="submit" class="enviar-button">
+                            <img src="img/001_02_lacre_enviar_03_04_d1_256x256.png" alt="Enviar" />
+                            <p class="login-men-bot">Comprobación</p>
+                            </button>
+
+                        </form>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- SECCION 4 -------------------------------------------------  -->
+            <section id="sec_4" class="section hidden-section text-center" hidden>
+               
+                <div class="pergamino_contenedor">
+                    <div class="textos">
+                        <h2 class="titulo_2_0">Envíanos un mensaje en botella</h2>
+                        <img src="img/005_01_Botella_mensaje_01_.png" alt="botella flotando con mensaje" class="bot_mensaje" >
+                    
+                        <!-- Formulario -->
+                        <form class="login-form" id="acertijo2-Form" >
+
+                            <label for="respuesta2-Usuario">Fuí Pirata en los siete mares, compusieron CANCiones a mis hazañas, ¿Cómo se llamaba mi barco?</label>
+                            <input type="text" name="usuario" id="respuesta2-Usuario" placeholder="Escribe tu respuesta en mayúsculas... tienes 2 intentos"  autocomplete="off" required />
+                        
+                            <div id="mensajeError2" class="error-message"></div>
+
+                        
+                            <button type="button" class="cerrar-button bot-login-out_2" onclick="expandAndClose()">
+                            <img src="img/logoLMN-cerrar.webp" alt="Cerrar" />
+                            </button>
+                            <button type="submit" class="enviar-button">
+                            <img src="img/001_02_lacre_enviar_03_04_d1_256x256.png" alt="Enviar" />
+                            <p class="login-men-bot">Comprobación</p>
+                            </button>
+
+                        </form>
+                    </div>
+
+                </div>
+
+            </section>
+
+             <!-- SECCION 5 -------------------------------------------------  -->  
+            <section id="sec_5" class="section hidden-section text-center" hidden>
+                <div class="pergamino_contenedor">
+                    <div class="textos">
+                    <h2 class="titulo_2_0">El último mensaje enbotellado</h2>
+                    <img src="img/005_01_Botella_mensaje_01_.png" alt="botella flotando con mensaje" class="bot_mensaje">
+
+                    <!-- Formulario -->
+                    <form class="login-form" id="acertijo3-Form">
+
+                        <label for="respuesta3-Usuario">En la primera edición de la Canción del Pirata, es precedida por una imágen, tiene cuatro versos. Escribe el tercero </label>
+
+                        <input type="text" name="usuario" id="respuesta3-Usuario"
+                            placeholder="Escribe la respuesta completa..." autocomplete="off" required />
+
+                        <div id="mensajeError3" class="error-message"></div>
+
+                        <button type="button" class="cerrar-button bot-login-out_2" onclick="expandAndClose()">
+                        <img src="img/logoLMN-cerrar.webp" alt="Cerrar" />
+                        </button>
+
+                        <button type="submit" class="enviar-button">
+                        <img src="img/001_02_lacre_enviar_03_04_d1_256x256.png" alt="Enviar" />
+                        <p class="login-men-bot">Comprobación</p>
+                        </button>
+
+                    </form>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECCION 6 -------------------------------------------------  -->
+            <section id="sec_6" class="section hidden-section text-center" hidden>
+                <div class="pergamino_contenedor">
+                    <div class="textos">
+                    <h2 class="titulo_2_0">El último mensaje embotellado</h2>
+                    <img src="img/005_01_Botella_mensaje_01_.png" alt="botella flotando con mensaje" class="bot_mensaje">
+
+                    <h2 class="titulo_2_0">Después de vuestras fechorías por el pueblo, es posible que os MIREN MAL, y seais SEÑALados como la banda'l CASPIU </h2>
+
+                    
+
+                        <button type="button" class="cerrar-button bot-login-out_2" onclick="expandAndClose()">
+                        <img src="img/logoLMN-cerrar.webp" alt="Cerrar" />
+                        </button>
+
+                       
+
+                    </form>
+                    </div>
+                </div>
+            </section>
+                    
+            
+            <!-- ----------------------------------  Botón para subir hacia arriba, a la cabecera -------------------------------------------------------  -->
+            <!-- ----------------------------------  Botón para subir hacia arriba, a la cabecera -------------------------------------------------------  -->
+            <!-- ----------------------------------  Botón para subir hacia arriba, a la cabecera -------------------------------------------------------  -->
+            <button id="btn-arriba" title="Volver arriba" class="bot_fuente"><img src="img/000_10_carajo_143x298x72_02.png" alt="imagen de un carajo" id="carajo"><span class="texto-carajo">Sube al carajo</span></button>
+        </main>
+
+
+    <!-- --------------------- FOOTER ---------------------------------------- -->
+    <footer class="footer">
+        <div class="footer-main"></div>
+            <button class="footer-toggle" aria-expanded="false">☰ Menú del sitio</button>
+            
+            <div class="footer-content closed">
+                <div class="footer-container">
+                    <!-- Columna: Logo -->
+                    <div class="footer-col">
+                        <a href="solweb_estudio.html" target="_blank">
+                        <img src="img/000_20_LOGO_SolWeb_Estudio_00_fnegro_02_.webp" alt="SolWeb Estudio" class="footer-logo">
+                        </a>
+                        <address>
+                        <p class="parr-1">Contacto </p><br>
+                        <a href="mailto:solweb@gmail.com" class="parr-1">solweb@gmail.com</a>
+                        </address>                     
+                    </div>
+
+                    <!-- Columna: Enlaces -->
+                    <div class="footer-col">
+                        <h4>Enlaces</h4>
+                        <ul>
+                            <li><a href="#sec1">Inicio</a></li>
+                            <li><a href="registro-lmn.html">Registro</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Columna: Newsletter -->
+                    <div class="footer-col">
+                        <h4>Suscríbete a nuestra newsletter</h4>
+                        <form id="newsletter-form" action="https://formsubmit.co/lujebor@gmail.com" method="POST" target="_blank" novalidate>
+                        <input type="email" id="email-input" name="correo" placeholder="ejemplo@correo.com" required>
+                        <div id="email-message" class="email-message"></div>
+                        <p class="privacy-note">
+                            Al enviar tu email, aceptas que SolWeb Estudio almacene tus datos solo para enviarte información relacionada. No se compartirán con terceros.
+                        </p>
+                        <button type="submit" class="subscribe-btn"><p class="p_boton">Suscribirse</p></button>
+                        <div id="submit-message" class="submit-message"></div>
+                        </form>
+                    </div>
+
+                    <!-- Columna: Redes Sociales -->
+                    <div class="footer-col">
+                        <h4>Síguenos</h4>
+                        <ul class="social-icons">
+                        <li><a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i> Facebook</a></li>
+                        <li><a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i> Instagram</a></li>
+                        </ul>
+                    </div>
+
+                </div>
+            
+
+                <div class="footer-legal">
+                    <a href="politica-privacidad-lmn.html">Política de Privacidad</a>&nbsp;&nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp;&nbsp;
+                    <a href="aviso-legal-lmn.html">Aviso Legal</a>&nbsp;&nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp;&nbsp;
+                    <a href="politica-cookies-lmn.html">Política de Cookies</a>
+                </div>
+
+                <div class="footer-bottom">
+                    <p>&copy; SOLWEB Estudio - 2025. Todos los derechos reservados.</p>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+     
+    <!-- --------------------- BANER COOKIES --------------------------------- -->
+    <div id="cookie-banner" class="cookie-banner">
+
+        <div class="cookie-buttons">
+            <button id="cookie-accept">Aceptar</button>
+            <button id="cookie-reject">Rechazar</button>
+        </div>
+
+        <div class="cookie-content">
+            <p>
+                Utilizamos cookies y otras tecnologías para garantizar el correcto funcionamiento, la seguridad y analizar el tráfico de nuestra plataforma. Si estás de acuerdo 
+                con el uso de todas las cookies. haz click en "Aceptar todas". Al hacerlo, consientes que compartamos la información con terceros.
+                Al continuar navegando, aceptas nuestro uso de cookies. Para obtener más información, consulta nuestra 
+                <a href="/politica_privacidad_00_.html" target="_blank">Política de Privacidad,</a>&nbsp;y&nbsp;<a href="/politica_cookies_00_.html" target="_blank">Política de Cookies.</a>  </p>      </p>
+        </div>
+   
+    </div>   
+    
+    
+    <!-- --------------------- AUDIOS --------------------------------- -->
+    <audio id="voltear" src="audio/004_pick.mp3" preload="auto"></audio>
+    <audio id="match" src="audio/004_pick.mp3" preload="auto"></audio>
+    <audio id="victoria" src="audio/004_pick.mp3" preload="auto"></audio>
+    <audio id="disparo" src="audio/004_cannon_5s_.mp3" autoplay></audio>
+    <audio id="olas" src="audio/004_navegar_02_.mp3" autoplay></audio>
+
+
+    <!-- --------------------- SCRIPTS --------------------------------- -->
+    <script src="js/script-index.js" defer></script> <!--  header-section-baner  -->
+    <script src="js/script-comun.js" defer></script> <!--  footer-carajo-politicas  -->
+
+    <script src="js/script-mensaje-invisible.js" defer></script> <!--  mensaje  -->   
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+        /* memory game - landing page ========================================================== */ 
+        /* memory game - landing page ========================================================== */ 
+        /* memory game - landing page ========================================================== */ 
+
+
+        // VARIABLES  ============================================
+        const mesa = document.getElementById('mesaJuego');
+        const tiempoMaximo = 37; // ================================= Variable colocada por el administrador ================
+        const tiempoMaxSpan = document.getElementById('tiempoMaximo');
+        // Convertimos segundos a formato MM:SS
+        const minutosMax = String(Math.floor(tiempoMaximo / 60)).padStart(2, '0');
+        const segundosMax = String(tiempoMaximo % 60).padStart(2, '0');
+        tiempoMaxSpan.textContent = `${minutosMax}:${segundosMax}`;
+
+        let tiempoActual = 0;
+        let cronometroInterval;
+        let partidas = 0;
+        let pareja = [];
+        let aciertos = 0;
+        let juegoActivo = false;
+
+        // NOTA: las rutas “img/…” aquí ya asumen que tu index.html está en la raíz y existe /img/…
+        const baseImgs = [
+            'img/004_barco-2palos.webp',
+            'img/004_barco-cañon-humo.webp',
+            'img/004_barco-mayflower.webp',
+            'img/004_calavera-huesos.webp',
+            'img/004_mapa1.webp',
+            'img/004_mapa2.webp',
+            'img/004_pirata.webp',
+            'img/004_telescopio.webp'
+        ];
+        const imagenes = [...baseImgs, ...baseImgs];
+        const totalParejas = baseImgs.length;
+
+        const sonidos = {
+            voltear:  document.getElementById('voltear'),
+            match:    document.getElementById('match'),
+            victoria: document.getElementById('victoria'),
+            disparo:  document.getElementById('disparo'),
+            olas:     document.getElementById('olas')
+        };
+
+        // Desbloquea sonidos al primer clic del usuario  ============================================
+        // Esto garantiza que, si el navegador bloquea el autoplay, al menos quitemos esa restricción
+        window.addEventListener('click', () => {
+            Object.values(sonidos).forEach(audio => {
+                audio.play().then(() => {
+                    audio.pause();
+                    audio.currentTime = 0;
+                }).catch(() => {
+                    // Ignorar errores de autoplay bloqueado
+                });
+            });
+        }, { once: true });
+
+
+        // 🛳 INICIAR JUEGO  ==========================================================================
+        function iniciarJuego() {
+            // Al iniciar, ocultamos cualquier popup y reiniciamos variables
+            document.getElementById('sec_3').style.display = 'none';
+            generarTarjetas();
+            iniciarCronometro();
+            aciertos = 0;
+            pareja = [];
+            partidas++;
+            document.getElementById('partidas').textContent = partidas;
+            juegoActivo = true;
+        }
+
+        // 🛳 GENERAR TARJETAS  ==========================================================================
+        function generarTarjetas() {
+            mesa.innerHTML = '';
+            // Mezclamos las imágenes al azar
+            const mezcladas = [...imagenes].sort(() => Math.random() - 0.5);
+
+            mezcladas.forEach(img => {
+                const carta = document.createElement('div');
+                carta.classList.add('tarjeta');
+                carta.innerHTML = `
+                    <div class="tarjeta-inner" data-img="${img}">
+                    <div class="cara" style="background-image: url('${img}')"></div>
+                    <div class="reverso"></div>
+                    </div>
+                `;
+                carta.addEventListener('click', () => voltearCarta(carta));
+                mesa.appendChild(carta);
+            });
+        }
+
+        // 🛳 VOLTEAR CARTAS  ==========================================================================
+        function voltearCarta(carta) {
+            if (!juegoActivo || carta.classList.contains('volteada') || pareja.length === 2) return;
+            carta.classList.add('volteada');
+            sonidos.voltear.play();
+            pareja.push(carta);
+
+            if (pareja.length === 2) {
+                const [c1, c2] = pareja;
+                const img1 = c1.querySelector('.tarjeta-inner').dataset.img;
+                const img2 = c2.querySelector('.tarjeta-inner').dataset.img;
+
+                if (img1 === img2) {
+                    aciertos++;
+                    sonidos.match.play();
+                    pareja = [];
+                    if (aciertos === totalParejas) finalizarJuego();
+                } else {
+                    setTimeout(() => {
+                        c1.classList.remove('volteada');
+                        c2.classList.remove('volteada');
+                        pareja = [];
+                    }, 1000);
+                }
+            }
+        }
+
+        // 🛳 CRONOMETRO  ==========================================================================
+        function iniciarCronometro() {
+            tiempoActual = 0;
+            actualizarCrono();
+            clearInterval(cronometroInterval);
+            cronometroInterval = setInterval(() => {
+                tiempoActual++;
+                actualizarCrono();
+                if (tiempoActual >= tiempoMaximo) {
+                    finalizarJuego(true);
+                }
+            }, 1000);
+        }
+
+        function actualizarCrono() {
+            const min = String(Math.floor(tiempoActual / 60)).padStart(2, '0');
+            const seg = String(tiempoActual % 60).padStart(2, '0');
+            document.getElementById('cronometro').textContent = `${min}:${seg}`;
+        }
+
+        // 🛳 finalizar juego -- popups   ============================================================
+        function finalizarJuego(tiempoExcedido = false) {
+            clearInterval(cronometroInterval);
+            const popup = document.getElementById('popupMensaje');
+            const mensaje = document.getElementById('mensajeFinal');
+            const gif = document.getElementById('gifFinal');
+
+            if (tiempoExcedido) {
+                mensaje.textContent = "¡Se acabó el tiempo! Prueba otra vez.";
+                gif.style.display = "none";
+                popup.dataset.estado = "perdido"; // 🔴 MARCAR COMO DERROTA
+            } else {
+                mensaje.textContent = "¡Felicidades, has ganado!";
+                gif.src = 'img/004_gif_cannon_.gif';
+                gif.style.display = "block";
+                sonidos.victoria.play();
+                sonidos.disparo.play();
+                popup.dataset.estado = "ganado"; // 🟢 MARCAR COMO VICTORIA
+            }
+
+            popup.style.display = 'block';
+            juegoActivo = false;
+        }
+
+        // 🛳 Control del BARCO y sonido de olas  ============================================================
+        // Usamos delegación de eventos para asegurarnos de que el "resetBtn" funcione
+        // aunque la sección 2 estuviera oculta inicialmente
+        document.body.addEventListener('click', (e) => {
+            if (e.target && e.target.id === 'resetBtn') {
+                const barco = e.target;
+
+                // Activar sonido del mar (olas) al pulsar
+                sonidos.olas.play().catch(() => {
+                    console.warn('El navegador bloqueó la reproducción automática del sonido.');
+                });
+
+                // ✅ Inicia el viaje: de posición inicial a la derecha
+                barco.classList.add('animate');
+
+                // Al terminar la animación, devolvemos el barco a su posición inicial
+                setTimeout(() => {
+                    barco.classList.remove('animate');
+                    barco.style.transition = 'none';
+                    barco.style.left = '2vw'; // la misma posición que en tu CSS
+                    void barco.offsetWidth;    // forzar reflow
+                    barco.style.transition = 'left 4s linear';
+                }, 4000);
+
+                setTimeout(() => {
+                    barco.style.transition = 'none';
+                    barco.style.left = '2vw';
+                    void barco.offsetWidth;
+                    barco.style.transition = 'left 4s linear';
+                }, 4000);
+
+                // 🧠 Iniciar partida
+                iniciarJuego();
+                document.getElementById('popupMensaje').style.display = 'none';
+            }
+        });
+
+        // cierre de ventana de victoria y envío a sección 3  ============================================================
+        document.getElementById('cerrarPopup').addEventListener('click', function () {
+            const popup = document.getElementById('popupMensaje');
+            const estado = popup.dataset.estado;
+
+            popup.style.display = 'none';
+
+            if (estado === "ganado") {
+                sonidos.disparo.currentTime = 0;
+                sonidos.disparo.play().catch(() => {
+                    console.warn("Sonido de cañón bloqueado.");
+                });
+
+                // Oculte la sección 2 y muestre la sección 3 (tú ya tendrás lógica en tu index para sec_3)
+                document.getElementById('sec_2').style.display = 'none';
+                document.getElementById('sec_3').style.display = 'block';
+            }
+            // Si estado === "perdido", simplemente cierra el popup y deja la sección 2 visible para volver a pulsar "¡Zarpa!".
+        });
+
+    }); // ⬅️ Fin de DOMContentLoaded
+
+    </script><!--  juego memory  -->
+
+<script>
+  // apertura de pergamino y cierre del pergamino
+  function expandAndClose() {
+    const contenedor = document.querySelector('.pergamino_contenedor');
+    contenedor.style.transition = 'transform 0.6s ease, opacity 0.6s ease';
+    contenedor.style.transform = 'scale(0.1) rotate(-20deg)';
+    contenedor.style.opacity = '0';
+
+    setTimeout(() => {
+      window.location.href = 'peliculas-de-piratas-lmn.html';
+    }, 600);
+  }
+  // verificador datos de formulario
+  
+    const form = document.getElementById('acertijoForm');
+    const respuestaInput = document.getElementById('respuestaUsuario');
+    const mensajeError = document.getElementById('mensajeError');
+    const seccion4 = document.getElementById('sec_4');
+
+    const respuestasCorrectas = ['agujero', 'hueco', 'el hueco', 'hoyo', 'pozo' ];// ✅ Puedes cambiarla
+    let intentos = 0;
+    const maxIntentos = 2;
+
+    form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        const respuesta = respuestaInput.value.trim().toLowerCase();
+
+
+        if (respuestasCorrectas.includes(respuesta)) {
+        mensajeError.textContent = ' Acertaste';
+        
+        // Ocultar sección 3
+        document.getElementById('sec_3').hidden = true;
+
+        // Mostrar y centrar sección 4
+        document.getElementById('sec_4').hidden = false;
+        document.getElementById('sec_4').scrollIntoView({ behavior: 'smooth', block: 'center' });
+        
+        } else {
+        intentos++;
+        if (intentos < maxIntentos) {
+            mensajeError.textContent = '¡Respuesta incorrecta! Solo tienes un intento más. ¿Si no? ¡vuelta a empezar!';
+        } else {
+            mensajeError.textContent = 'Has agotado los intentos. Cerrando sesión...';
+            setTimeout(() => {
+            window.location.href = 'index.html';
+            }, 2000);
+        }
+        }
+    });
+
+
+
+</script><!--  seccion 3 de preguntas  -->
+
+<script>
+// --------------------------------  LOGIN REALIZADO y CERRAR LOGIN ------------------------------------------- 
+// --------------------------------  LOGIN REALIZADO y CERRAR LOGIN ------------------------------------------- 
+// --------------------------------  LOGIN REALIZADO y CERRAR LOGIN ------------------------------------------- 
+  const nombrePirata = localStorage.getItem('usuarioPirata');
+  const greeting_a = document.getElementById('userGreeting_a');
+  const greeting_b = document.getElementById('userGreeting_b');
+  const logoutBtn = document.getElementById('bot-login-out');
+  const logoutBtn_2 = document.getElementById('bot-login-out_2');
+  if (nombrePirata) {
+      greeting_a.textContent = `¡Al abordaje`;
+      greeting_b.textContent = `${nombrePirata}!`;
+      logoutBtn.style.display = 'inline-block';
+
+      logoutBtn.addEventListener('click', () => {
+      localStorage.removeItem('usuarioPirata');
+      location.reload(); // O redirige a login si lo prefieres
+      });
+      logoutBtn_2.addEventListener('click', () => {
+      localStorage.removeItem('usuarioPirata');
+      location.reload(); // O redirige a login si lo prefieres
+      });
+  } 
+// -------------------------------- fin LOGIN REALIZADO Y CERRAR LOGIN ----------------------------------------- 
+</script><!--  SALIR DE LOGIN  -->
+
+<script>
+   // verificador datos de formulario 2
+      const form2 = document.getElementById('acertijo2-Form');
+    const respuestaInput2 = document.getElementById('respuesta2-Usuario');
+    const mensajeError2 = document.getElementById('mensajeError2');
+    const seccion5 = document.getElementById('sec_5');
+
+    const respuestasCorrectas2 = ['temido', 'el temido' ];// ✅ Puedes cambiarla
+    let intentos2 = 0;
+    const maxIntentos2 = 2;
+
+    form2.addEventListener('submit', function (e) {
+        e.preventDefault();
+        const respuesta2 = respuestaInput2.value.trim().toLowerCase();
+
+
+        if (respuestasCorrectas2.includes(respuesta2)) {
+        mensajeError2.textContent = 'Acertaste otra vez';
+        
+        // Ocultar sección 4
+        document.getElementById('sec_4').hidden = true;
+
+        // Mostrar y centrar sección 5
+        document.getElementById('sec_5').hidden = false;
+        document.getElementById('sec_5').scrollIntoView({ behavior: 'smooth', block: 'center' });
+        
+        } else {
+        intentos2++;
+        if (intentos2 < maxIntentos2) {
+            mensajeError2.textContent = '¡Respuesta incorrecta! Solo tienes un intento más. ¿Si no? ¡vuelta a empezar!';
+        } else {
+            mensajeError2.textContent = 'Has agotado los intentos. Cerrando sesión...';
+            setTimeout(() => {
+            window.location.href = 'index.html';
+            }, 2000);
+        }
+        }
+
+    });
+</script><!--  seccion 4 de preguntas  -->
+
+<script>
+  // verificador datos de formulario 3 (SECCIÓN 5)
+  const form3 = document.getElementById('acertijo3-Form');
+  const respuestaInput3 = document.getElementById('respuesta3-Usuario');
+  const mensajeError3 = document.getElementById('mensajeError3');
+  const seccion6 = document.getElementById('sec_6');
+
+  // Lista de respuestas correctas aceptadas (tolerando minúsculas/mayúsculas y acentos)
+  const respuestasCorrectas3 = [
+    'asia a un lado, al otro europa',
+    'asia á un lado, al otro europa',
+    'asia a un lado al otro europa',
+    'asia á un lado al otro europa'
+  ];
+
+  let intentos3 = 0;
+  const maxIntentos3 = 2;
+
+  form3.addEventListener('submit', function (e) {
+    e.preventDefault();
+    
+    // Procesa la respuesta del usuario: quita espacios extras y pasa a minúsculas
+    const respuesta3 = respuestaInput3.value.trim().toLowerCase().replace(/\s+/g, ' ');
+
+    if (respuestasCorrectas3.includes(respuesta3)) {
+      mensajeError3.textContent = '¡Respuesta correcta!';
+      
+      // Ocultar sección 5 y mostrar sección 6
+      document.getElementById('sec_5').hidden = true;
+      seccion6.hidden = false;
+      seccion6.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+    } else {
+      intentos3++;
+      if (intentos3 < maxIntentos3) {
+        mensajeError3.textContent = 'Respuesta incorrecta. ¡Solo te queda un intento!';
+      } else {
+        mensajeError3.textContent = '¡Has agotado los intentos! Cerrando sesión...';
+        setTimeout(() => {
+          window.location.href = 'index.html';
+        }, 2000);
+      }
+    }
+  });
+</script><!--  seccion 5 de preguntas  -->
+
+
+
+
+
+
+         
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
