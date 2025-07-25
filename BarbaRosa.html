@@ -261,15 +261,15 @@
                     <article>
                         <div class="contenido-pergamino">
                             <p class="texto_invisible hidden-text" id="mensajePirata">
-                            <span>¡Comienza la Aventura!&nbsp;Puedes llegar </span> <span>&nbsp;</span>
-                            <span>a conseguir&nbsp;tu sola &nbsp;el mapa</span> 
-                            <span>&nbsp;</span> <span>del tesoro solo para ti!</span> <span>&nbsp;</span> 
-                            <span>pero antes &nbsp;debes pasar todas </span> <span>&nbsp;</span> <span>las pruebas </span> <span>&nbsp;</span>
-                            <span>que tienes por delante&nbsp;</span> <span>&nbsp;</span> <span>¿Quieres&nbsp;enrolarte en </span> <span>&nbsp;</span>
-                            <span>esta Aventura ?</span> <span>&nbsp;</span> <span>Si es así,</span> <span>&nbsp;</span> 
+                            <span>¡Comienza el juego! &nbsp;Para conseguir una parte  </span> <span>&nbsp;</span>
+                            <span>del mapa del tesoro&nbsp;tienes que &nbsp;resolver algún</span> 
+                            <span>&nbsp;</span> <span>que otro enigma.</span> <span>&nbsp;</span> 
+                            <span>pero antes &nbsp;debes pasar por </span> <span>&nbsp;</span> <span>una primera  </span> <span>&nbsp;</span>
+                            <span>prueba que demostrará &nbsp;</span> <span>&nbsp;</span> <span>tu agilidad, &nbsp;rapidez </span> <span>&nbsp;</span>
+                            <span>e intuición.</span> <span>&nbsp;</span> <span></span> <span>&nbsp;</span> 
                             <span>¡¡¡&nbsp;JUEGA&nbsp;!!!</span> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>&nbsp;</span><span>&nbsp;</span><br>
                             <span>Debes demostrar que estás a la altura&nbsp;&nbsp;&nbsp;</span> <br>
-                            <span class="activar-final">¡¡Supera la prueba!!</span>
+                            <span class="activar-final">¡¡Supera la primera prueba!!</span>
                             </p>
                     </article>                        
                         <a href="#sec_2" class="brujula-link" id="brujula-enlace">
@@ -317,7 +317,25 @@
                         <!-- Formulario -->
                         <form class="login-form" id="acertijoForm" >
 
-                            <label for="usuario">¿Qué cosa cuanto más le quitas, más grande se vuelve?</label>
+                            <label for="usuario">En una isla, viven dos tipos de personas: <br>
+
+Los caballeros: siempre dicen la verdad. <br>
+
+Los granujas (o bribones): siempre mienten.<br>
+
+Te encuentras con dos isleños, llamados A y B.<br>
+
+A dice:
+
+“B es un granuja.”<br>
+
+B dice:
+
+“A y yo somos del mismo tipo.”<br>
+
+
+                                
+                                N<br> ¿Quién es Caballero? </label>
                             <input type="text" name="usuario" id="respuestaUsuario" placeholder="Escribe tu respuesta en minúsculas... tienes 2 intentos"  autocomplete="off" required />
                         
                             <div id="mensajeError" class="error-message"></div>
@@ -350,8 +368,8 @@
                         <!-- Formulario -->
                         <form class="login-form" id="acertijo2-Form" >
 
-                            <label for="respuesta2-Usuario">Fuí Pirata en los siete mares, compusieron CANCiones a mis hazañas, ¿Cómo se llamaba mi barco?</label>
-                            <input type="text" name="usuario" id="respuesta2-Usuario" placeholder="Escribe tu respuesta en mayúsculas... tienes 2 intentos"  autocomplete="off" required />
+                            <label for="respuesta2-Usuario">Fuí Pirata en los siete mares, un poeta me compuso una canción , ¿Cuántas veces se repite el estribillo?</label>
+                            <input type="text" name="usuario" id="respuesta2-Usuario" placeholder="Escribe tu respuesta...  Tienes 2 intentos"  autocomplete="off" required />
                         
                             <div id="mensajeError2" class="error-message"></div>
 
@@ -377,12 +395,11 @@
                     <div class="textos">
                     <h2 class="titulo_2_0">El último mensaje enbotellado</h2>
                     <img src="img/005_01_Botella_mensaje_01_.png" alt="botella flotando con mensaje" class="bot_mensaje">
-                    <h2 class="titulo_2_0">"Esta es la difícil"</h2>
 
                     <!-- Formulario -->
                     <form class="login-form" id="acertijo3-Form">
 
-                        <label for="respuesta3-Usuario">En la primera edición de la Canción del Pirata, es precedida por una imágen, tiene cuatro versos. Escribe el tercero </label>
+                        <label for="respuesta3-Usuario">Hay algo precioso que posees. <br>Lo llevas a todas partes. <br>No pesa nada pero puede ser una carga. <br>Puede compartirse con alguien a quien conoces. <br> O incluso darse a alguien que te repele. <br> Los demás pueden utilizarlo más que tú mismo. <br> ¿Qué es? </label>
 
                         <input type="text" name="usuario" id="respuesta3-Usuario"
                             placeholder="Escribe la respuesta completa..." autocomplete="off" required />
@@ -407,12 +424,10 @@
             <section id="sec_6" class="section hidden-section text-center" hidden>
                 <div class="pergamino_contenedor">
                     <div class="textos">
-                    <h2 class="titulo_2_0">El penúltimo mensaje embotellado, esta vez de vuelta.</h2>
+                    <h2 class="titulo_2_0">El último mensaje embotellado, te lo envío de vuelta</h2>
                     <img src="img/005_01_Botella_mensaje_01_.png" alt="botella flotando con mensaje" class="bot_mensaje">
 
-                    <h2 class="titulo_2_0">Después de vuestras fechorías por el pueblo, es posible que os MIREN MAL, y seais SEÑALados como la " Banda'l CASPIU "." </h2>
-
-                    
+                    <h2 class="titulo_2_0">Aquí encontrarás tu mapa del tesoro: <br> Siempre que anochece, <br>me gusta brillar. <br> No tengo estrellas, <br>pero sé alumbrar. </h2>
 
                         <button type="button" class="cerrar-button bot-login-out_2" onclick="expandAndClose()">
                         <img src="img/logoLMN-cerrar.webp" alt="Cerrar" />
@@ -755,6 +770,33 @@
     }); // ⬅️ Fin de DOMContentLoaded
 
     </script><!--  juego memory  -->
+    
+<script>
+// --------------------------------  LOGIN REALIZADO y CERRAR LOGIN ------------------------------------------- 
+// --------------------------------  LOGIN REALIZADO y CERRAR LOGIN ------------------------------------------- 
+// --------------------------------  LOGIN REALIZADO y CERRAR LOGIN ------------------------------------------- 
+  const nombrePirata = localStorage.getItem('usuarioPirata');
+  const greeting_a = document.getElementById('userGreeting_a');
+  const greeting_b = document.getElementById('userGreeting_b');
+  const logoutBtn = document.getElementById('bot-login-out');
+  const logoutBtn_2 = document.getElementById('bot-login-out_2');
+  if (nombrePirata) {
+      greeting_a.textContent = `¡Al abordaje`;
+      greeting_b.textContent = `${nombrePirata}!`;
+      logoutBtn.style.display = 'inline-block';
+
+      logoutBtn.addEventListener('click', () => {
+      localStorage.removeItem('usuarioPirata');
+      location.reload(); // O redirige a login si lo prefieres
+      });
+      logoutBtn_2.addEventListener('click', () => {
+      localStorage.removeItem('usuarioPirata');
+      location.reload(); // O redirige a login si lo prefieres
+      });
+  } 
+// -------------------------------- fin LOGIN REALIZADO Y CERRAR LOGIN ----------------------------------------- 
+</script><!--  SALIR DE LOGIN  -->
+
 
 <script>
   // apertura de pergamino y cierre del pergamino
@@ -775,7 +817,7 @@
     const mensajeError = document.getElementById('mensajeError');
     const seccion4 = document.getElementById('sec_4');
 
-    const respuestasCorrectas = ['agujero', 'hueco', 'el hueco', 'hoyo', 'pozo' ];// ✅ Puedes cambiarla
+    const respuestasCorrectas = ['a' ];// ✅ Puedes cambiarla
     let intentos = 0;
     const maxIntentos = 2;
 
@@ -812,39 +854,13 @@
 </script><!--  seccion 3 de preguntas  -->
 
 <script>
-// --------------------------------  LOGIN REALIZADO y CERRAR LOGIN ------------------------------------------- 
-// --------------------------------  LOGIN REALIZADO y CERRAR LOGIN ------------------------------------------- 
-// --------------------------------  LOGIN REALIZADO y CERRAR LOGIN ------------------------------------------- 
-  const nombrePirata = localStorage.getItem('usuarioPirata');
-  const greeting_a = document.getElementById('userGreeting_a');
-  const greeting_b = document.getElementById('userGreeting_b');
-  const logoutBtn = document.getElementById('bot-login-out');
-  const logoutBtn_2 = document.getElementById('bot-login-out_2');
-  if (nombrePirata) {
-      greeting_a.textContent = `¡Al abordaje`;
-      greeting_b.textContent = `${nombrePirata}!`;
-      logoutBtn.style.display = 'inline-block';
-
-      logoutBtn.addEventListener('click', () => {
-      localStorage.removeItem('usuarioPirata');
-      location.reload(); // O redirige a login si lo prefieres
-      });
-      logoutBtn_2.addEventListener('click', () => {
-      localStorage.removeItem('usuarioPirata');
-      location.reload(); // O redirige a login si lo prefieres
-      });
-  } 
-// -------------------------------- fin LOGIN REALIZADO Y CERRAR LOGIN ----------------------------------------- 
-</script><!--  SALIR DE LOGIN  -->
-
-<script>
    // verificador datos de formulario 2
       const form2 = document.getElementById('acertijo2-Form');
     const respuestaInput2 = document.getElementById('respuesta2-Usuario');
     const mensajeError2 = document.getElementById('mensajeError2');
     const seccion5 = document.getElementById('sec_5');
 
-    const respuestasCorrectas2 = ['temido', 'el temido' ];// ✅ Puedes cambiarla
+    const respuestasCorrectas2 = ['4' ];// ✅ Puedes cambiarla
     let intentos2 = 0;
     const maxIntentos2 = 2;
 
@@ -887,10 +903,7 @@
 
   // Lista de respuestas correctas aceptadas (tolerando minúsculas/mayúsculas y acentos)
   const respuestasCorrectas3 = [
-    'asia a un lado, al otro europa',
-    'asia á un lado, al otro europa',
-    'asia a un lado al otro europa',
-    'asia á un lado al otro europa'
+    'tu nombre'
   ];
 
   let intentos3 = 0;
